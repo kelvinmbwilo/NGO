@@ -9,21 +9,21 @@
 <ul class="nav sidebar-menu">
 <!--Dashboard-->
 <li class="active">
-    <a href="index.html">
+    <a href="{{ url('home') }}">
         <i class="menu-icon glyphicon glyphicon-home"></i>
         <span class="menu-text"> Dashboard </span>
     </a>
 </li>
 <!--Databoxes-->
 <li>
-    <a href="databoxes.html">
+    <a href="{{ url('ngos') }}">
         <i class="menu-icon glyphicon glyphicon-tasks"></i>
         <span class="menu-text"> NGO's Management </span>
     </a>
 </li>
 <!--Widgets-->
 <li>
-    <a href="widgets.html">
+    <a href="{{ url('reports') }}">
         <i class="menu-icon fa fa-th"></i>
         <span class="menu-text"> Yearly Reports </span>
     </a>
@@ -39,357 +39,39 @@
 
     <ul class="submenu">
         <li>
-            <a href="elements.html">
+            <a href="#">
                 <span class="menu-text">Reports</span>
             </a>
         </li>
         <li>
-            <a href="index.html#" class="menu-dropdown">
-                                    <span class="menu-text">
-                                        Icons
-                                    </span>
-                <b class="menu-expand"></b>
-            </a>
-
-            <ul class="submenu">
-                <li>
-                    <a href="font-awesome.html">
-                        <i class="menu-icon fa fa-rocket"></i>
-                        <span class="menu-text">Font Awesome</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="glyph-icons.html">
-                        <i class="menu-icon glyphicon glyphicon-stats"></i>
-                        <span class="menu-text">Glyph Icons</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="typicon.html">
-                        <i class="menu-icon typcn typcn-location-outline"></i>
-                        <span class="menu-text"> Typicons</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="weather-icons.html">
-                        <i class="menu-icon wi-day-snow"></i>
-                        <span class="menu-text">Weather Icons</span>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="tabs.html">
-                <span class="menu-text">Tabs & Accordions</span>
+            <a href="#">
+                <span class="menu-text">Annual Report Summary</span>
             </a>
         </li>
         <li>
-            <a href="alerts.html">
-                <span class="menu-text">Alerts & Tooltips</span>
+            <a href="#">
+                <span class="menu-text">Financial Statement Summary</span>
             </a>
         </li>
         <li>
-            <a href="modals.html">
-                <span class="menu-text">Modals & Wells</span>
-            </a>
-        </li>
-        <li>
-            <a href="buttons.html">
-                <span class="menu-text">Buttons</span>
-            </a>
-        </li>
-        <li>
-            <a href="nestable-list.html">
-                <span class="menu-text"> Nestable List</span>
-            </a>
-        </li>
-        <li>
-            <a href="treeview.html">
-                <span class="menu-text">Treeview</span>
+            <a href="#">
+                <span class="menu-text">Employment Summary</span>
             </a>
         </li>
     </ul>
 </li>
-<!--Tables-->
-<li>
-    <a href="index.html#" class="menu-dropdown">
-        <i class="menu-icon fa fa-table"></i>
-        <span class="menu-text"> Tables </span>
 
-        <b class="menu-expand"></b>
-    </a>
-
-    <ul class="submenu">
-        <li>
-            <a href="tables-simple.html">
-                <span class="menu-text">Simple & Responsive</span>
-            </a>
-        </li>
-        <li>
-            <a href="tables-data.html">
-                <span class="menu-text">Data Tables</span>
-            </a>
-        </li>
-    </ul>
-</li>
-<!--Forms-->
-<li>
-    <a href="index.html#" class="menu-dropdown">
-        <i class="menu-icon fa fa-pencil-square-o"></i>
-        <span class="menu-text"> Forms </span>
-
-        <b class="menu-expand"></b>
-    </a>
-
-    <ul class="submenu">
-        <li>
-            <a href="form-layouts.html">
-                <span class="menu-text">Form Layouts</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="form-inputs.html">
-                <span class="menu-text">Form Inputs</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="form-pickers.html">
-                <span class="menu-text">Data Pickers</span>
-            </a>
-        </li>
-        <li>
-            <a href="form-wizard.html">
-                <span class="menu-text">Wizard</span>
-            </a>
-        </li>
-        <li>
-            <a href="form-validation.html">
-                <span class="menu-text">Validation</span>
-            </a>
-        </li>
-        <li>
-            <a href="form-editors.html">
-                <span class="menu-text">Editors</span>
-            </a>
-        </li>
-    </ul>
-</li>
-<!--Charts-->
-<li>
-    <a href="index.html#" class="menu-dropdown">
-        <i class="menu-icon fa fa-bar-chart-o"></i>
-        <span class="menu-text"> Charts </span>
-
-        <b class="menu-expand"></b>
-    </a>
-
-    <ul class="submenu">
-        <li>
-            <a href="flot.html">
-                <span class="menu-text">Flot Charts</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="morris.html">
-                <span class="menu-text"> Morris Charts</span>
-            </a>
-        </li>
-        <li>
-            <a href="sparkline.html">
-                <span class="menu-text">Sparkline Charts</span>
-            </a>
-        </li>
-        <li>
-            <a href="easypiecharts.html">
-                <span class="menu-text">Easy Pie Charts</span>
-            </a>
-        </li>
-        <li>
-            <a href="chartjs.html">
-                <span class="menu-text"> ChartJS</span>
-            </a>
-        </li>
-    </ul>
-</li>
 <!--Profile-->
 <li>
-    <a href="profile.html">
+    <a href="{{ url('users') }}">
         <i class="menu-icon fa fa-picture-o"></i>
-        <span class="menu-text">Profile</span>
+        <span class="menu-text">Users</span>
     </a>
 </li>
 <!--Mail-->
-<li>
-    <a href="index.html#" class="menu-dropdown">
-        <i class="menu-icon fa fa-envelope-o"></i>
-        <span class="menu-text"> Mail </span>
 
-        <b class="menu-expand"></b>
-    </a>
-
-    <ul class="submenu">
-        <li>
-            <a href="inbox.html">
-                <span class="menu-text">Inbox</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="message-view.html">
-                <span class="menu-text">View Message</span>
-            </a>
-        </li>
-        <li>
-            <a href="message-compose.html">
-                <span class="menu-text">Compose Message</span>
-            </a>
-        </li>
-    </ul>
-</li>
-<!--Calendar-->
-<li>
-    <a href="calendar.html">
-        <i class="menu-icon fa fa-calendar"></i>
-                            <span class="menu-text">
-                                Calendar
-                            </span>
-    </a>
-</li>
-<!--Pages-->
-<li>
-    <a href="index.html#" class="menu-dropdown">
-        <i class="menu-icon glyphicon glyphicon-paperclip"></i>
-        <span class="menu-text"> Pages </span>
-
-        <b class="menu-expand"></b>
-    </a>
-    <ul class="submenu">
-        <li>
-            <a href="timeline.html">
-                <span class="menu-text">Timeline</span>
-            </a>
-        </li>
-        <li>
-            <a href="pricing.html">
-                <span class="menu-text">Pricing Tables</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="invoice.html">
-                <span class="menu-text">Invoice</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="login.html">
-                <span class="menu-text">Login</span>
-            </a>
-        </li>
-        <li>
-            <a href="register.html">
-                <span class="menu-text">Register</span>
-            </a>
-        </li>
-        <li>
-            <a href="lock.html">
-                <span class="menu-text">Lock Screen</span>
-            </a>
-        </li>
-        <li>
-            <a href="typography.html">
-                <span class="menu-text"> Typography </span>
-            </a>
-        </li>
-    </ul>
-</li>
-<!--More Pages-->
-<li>
-    <a href="index.html#" class="menu-dropdown">
-        <i class="menu-icon glyphicon glyphicon-link"></i>
-
-                            <span class="menu-text">
-                                More Pages
-                            </span>
-
-        <b class="menu-expand"></b>
-    </a>
-
-    <ul class="submenu">
-        <li>
-            <a href="error-404.html">
-                <span class="menu-text">Error 404</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="error-500.html">
-                <span class="menu-text"> Error 500</span>
-            </a>
-        </li>
-        <li>
-            <a href="blank.html">
-                <span class="menu-text">Blank Page</span>
-            </a>
-        </li>
-        <li>
-            <a href="grid.html">
-                <span class="menu-text"> Grid</span>
-            </a>
-        </li>
-        <li>
-            <a href="index.html#" class="menu-dropdown">
-                                    <span class="menu-text">
-                                        Multi Level Menu
-                                    </span>
-                <b class="menu-expand"></b>
-            </a>
-
-            <ul class="submenu">
-                <li>
-                    <a href="index.html#">
-                        <i class="menu-icon fa fa-camera"></i>
-                        <span class="menu-text">Level 3</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="index.html#" class="menu-dropdown">
-                        <i class="menu-icon fa fa-asterisk"></i>
-
-                                            <span class="menu-text">
-                                                Level 4
-                                            </span>
-                        <b class="menu-expand"></b>
-                    </a>
-
-                    <ul class="submenu">
-                        <li>
-                            <a href="index.html#">
-                                <i class="menu-icon fa fa-bolt"></i>
-                                <span class="menu-text">Some Item</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="index.html#">
-                                <i class="menu-icon fa fa-bug"></i>
-                                <span class="menu-text">Another Item</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-            </ul>
-        </li>
-
-    </ul>
-</li>
 <!--Right to Left-->
-<li>
+<li style="display: none">
     <a href="index.html#" class="menu-dropdown">
         <i class="menu-icon fa fa-align-right"></i>
         <span class="menu-text"> Right to Left </span>

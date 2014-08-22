@@ -21,40 +21,31 @@ if(Auth::user()->role_id == "National" || Auth::user()->role_id == "National IVD
                     First Name <br>  {{ Form::text('firstname','',array('class'=>'form-control','placeholder'=>'First Name','required'=>'required')) }}
                 </div>
                 <div class='col-sm-6'>
-                  Last Name <br> {{ Form::text('lastname','',array('class'=>'form-control','placeholder'=>'Last Name','required'=>'required')) }}
+                  Middle Name <br> {{ Form::text('middlename','',array('class'=>'form-control','placeholder'=>'Middle Name','required'=>'required')) }}
                 </div>
 
             </div>
 
               <div class='form-group'>
                     <div class='col-sm-6'>
-                        Username <br> {{ Form::text('username','',array('class'=>'form-control','placeholder'=>'Username','required'=>'required')) }}
+                      Surname <br> {{ Form::text('lastname','',array('class'=>'form-control','placeholder'=>'Last Name','required'=>'required')) }}
                     </div>
                   <div class='col-sm-6'>
-                      Email <br> {{ Form::email('email','',array('class'=>'form-control','placeholder'=>'Email','required'=>'required')) }}
+                      Username <br> {{ Form::text('username','',array('class'=>'form-control','placeholder'=>'Username','required'=>'required')) }}
                   </div>
             </div>
 
             <div class='form-group'>
 
                     <div class='col-sm-6'>
-                        Phone umber<br>{{ Form::text('phone','',array('class'=>'form-control','placeholder'=>'Phone Number','required'=>'required')) }}
+                        Email<br>{{ Form::email('email','',array('class'=>'form-control','placeholder'=>'Email','required'=>'required')) }}
                     </div>
                     <div class='col-sm-6'>
-                        Role <br>{{ Form::select('role',$role,'',array('class'=>'form-control','required'=>'requiered')) }}
+                        Title <br>{{ Form::text('title','',array('class'=>'form-control','placeholder'=>'Title','required'=>'required')) }}
                     </div>
 
                 </div>
-          <div class='form-group' id="area">
 
-              <div class='col-sm-6' id="regarea">
-                  Region<br>{{ Form::select('region',$region,'',array('class'=>'form-control','required'=>'requiered')) }}
-              </div>
-              <div class='col-sm-6' id="disarea">
-                  District<br><span id="district-area">{{ Form::select('district',$district,'',array('class'=>'form-control','required'=>'requiered')) }}</span>
-              </div>
-
-          </div>
              <div class='form-group'>
                  <div class='col-sm-6'>
                      Password<br>{{ Form::password('password',array('class'=>'form-control','placeholder'=>'Password','required'=>'required')) }}

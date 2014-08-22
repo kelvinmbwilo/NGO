@@ -58,3 +58,77 @@ Route::post('user/delete/{id}',array('as'=>'deleteuser', 'uses'=>'UserController
 //display a system usage log for a user
 Route::get('user/log/{id}',array('as'=>'userlog', 'uses'=>'UserController@show'));
 
+//check for a regions district...
+Route::post('user/region_check/{id}',array('uses'=>'UserController@check_region'));
+
+//check for a regions district...
+Route::post('user/region_check1/{id}',array('uses'=>'UserController@check_region1'));
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Managing NGOS actions
+ * Directing routes to correct controllers
+ */
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//display a form to add new ngo
+Route::get('ngo/add',array('as'=>'adduser', 'uses'=>'NGOController@create'));
+
+//display a list of ngos
+Route::get('ngo/list',array('uses'=>'NGOController@ngolist'));
+
+//adding new ngo
+Route::post('ngo/add',array('as'=>'addngo1', 'uses'=>'NGOController@store'));
+
+//viewing list of ngos
+Route::get('ngos',array('as'=>'listngo', 'uses'=>'NGOController@index'));
+
+//display a form to edit ngo information
+Route::get('ngo/edit/{id}',array('as'=>'editngo', 'uses'=>'NGOController@edit'));
+
+//display
+Route::get('ngo/members/{id}',array('as'=>'o', 'uses'=>'NGOController@listmembers'));
+
+//editng ngo information
+Route::post('ngo/edit/{id}',array('as'=>'editngo1', 'uses'=>'NGOController@update'));
+
+//deleting ngo
+Route::post('ngo/delete/{id}',array('as'=>'deletengo', 'uses'=>'NGOController@destroy'));
+
+//display a system usage log for a ngo
+//Route::get('user/log/{id}',array('as'=>'userlog', 'uses'=>'UserController@show'));
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Managing yearly report actions
+ * Directing routes to correct controllers
+ */
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//display a form to add new ngo
+Route::get('ngo/report/add',array('as'=>'adduser', 'uses'=>'ReportsController@create'));
+
+//display a list of ngos
+Route::get('report/list',array('uses'=>'ReportsController@reportlist'));
+
+//adding new ngo
+Route::post('report/add',array('as'=>'addngo1', 'uses'=>'NGOController@store'));
+
+//viewing list of ngos
+Route::get('reports',array('as'=>'listngo', 'uses'=>'ReportsController@index'));
+
+//display a form to edit ngo information
+Route::get('ngo/edit/{id}',array('as'=>'editngo', 'uses'=>'NGOController@edit'));
+
+//display
+Route::get('ngo/members/{id}',array('as'=>'o', 'uses'=>'NGOController@listmembers'));
+
+//editng ngo information
+Route::post('ngo/edit/{id}',array('as'=>'editngo1', 'uses'=>'NGOController@update'));
+
+//deleting ngo
+Route::post('ngo/delete/{id}',array('as'=>'deletengo', 'uses'=>'NGOController@destroy'));
+
+//display a system usage log for a ngo
+//Route::get('user/log/{id}',array('as'=>'userlog', 'uses'=>'UserController@show'));
+

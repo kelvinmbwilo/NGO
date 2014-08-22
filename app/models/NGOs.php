@@ -38,4 +38,10 @@ class NGOs extends Eloquent {
         return $this->hasMany('expenditure', 'NGOs_id', 'id');
     }
 
+    public function get_district(){
+        return $this->belongsTo('District','district','id');
+    }
+    public function nregion(){
+        return $this->belongsTo('Region', 'region_id', 'id');
+    }
 }

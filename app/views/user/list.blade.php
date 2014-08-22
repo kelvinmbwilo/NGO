@@ -1,18 +1,13 @@
 <?php
 $users=array();
-if(Auth::user()->role_id == "National" || Auth::user()->role_id == "National IVD" || Auth::user()->role_id == "admin"){
-    $users = User::where('status','active')->get();
-}elseif(Auth::user()->role_id == "Region" ){
-    $users = User::where('status','active')->where('region_id',Auth::user()->region->id)->orWhereIn('district_id',Auth::user()->region->district->lists('id'))->get();
-
-}
+  $users = User::where('status','active')->get();
 ?>
 <div class="row">
 <div class="panel panel-default">
 <div class="panel-heading">
     <div class="text-muted bootstrap-admin-box-title">
         System Users
-        <button class="btn btn-primary btn-xs pull-right add" id="add"><i class="fa fa-plus"></i> add</button>
+        <button class="btn btn-primary btn-xs pull-left add" id="add"><i class="fa fa-plus"></i> add</button>
     </div>
 </div>
 <div class="bootstrap-admin-panel-content">
@@ -26,8 +21,7 @@ if(Auth::user()->role_id == "National" || Auth::user()->role_id == "National IVD
         <th> Name </th>
         <th> Username </th>
         <th> Email </th>
-        <th> Phone </th>
-        <th> Role </th>
+        <th> Title</th>
         <th> Action </th>
     </tr>
     </thead>
@@ -38,9 +32,8 @@ if(Auth::user()->role_id == "National" || Auth::user()->role_id == "National IVD
         <td>{{ $i++ }}</td>
         <td style="text-transform: capitalize">{{ $us->firstname }} {{ $us->middlename }} {{ $us->lastname }}</td>
         <td>{{ $us->username }}</td>
-        <td>{{ $us->email }}</td>
-        <td>{{ $us->phone }}</td>
-        <td>{{ $us->role_id }}</td>
+        <td><a href="mailto:{{ $us->email }}">{{ $us->email }}</a></td>
+        <td>{{ $us->title }}</td>
         <td id="{{ $us->id }}">
 
             <a href="#log" title="View Staff log" class="userlog"><i class="fa fa-list text-success"></i> log</a>&nbsp;&nbsp;&nbsp;

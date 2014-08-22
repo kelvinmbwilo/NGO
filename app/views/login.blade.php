@@ -25,7 +25,7 @@ Purchase: http://wrapbootstrap.com
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300" rel="stylesheet" type="text/css">
 
     <!--Beyond styles-->
-    <link id="beyond-link" href="{{ asset('assets/css/beyond.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/css/beyond.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/demo.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/animate.min.css') }}" rel="stylesheet" />
     <link id="skin-link" href="{{ URL::current() }}" rel="stylesheet" type="text/css" />
@@ -46,14 +46,14 @@ Purchase: http://wrapbootstrap.com
             <div class="or">OR</div>
         </div>
         <div class="loginbox-textbox">
-            <input name="email" type="text" class="form-control" placeholder="Username" />
+            <input name="email" type="text" class="form-control" placeholder="Username" required="required" />
         </div>
         <div class="loginbox-textbox">
-            <input name="password" type="text" class="form-control" placeholder="Password" />
+            <input name="password" type="password" class="form-control" placeholder="Password"  required="required" />
         </div>
         <div class="loginbox-forgot">
 
-                <input type="checkbox" name="keep"> Check me out
+                <input type="checkbox" name="keep"> Keep me logged In
 
             &nbsp;&nbsp;&nbsp;<a href="#">Forgot Password?</a>
         </div>

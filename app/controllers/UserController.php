@@ -45,11 +45,9 @@ class UserController extends \BaseController {
                     "firstname"=>Input::get("firstname"),
                     "username"=>Input::get("username"),
                     "lastname"=>Input::get("lastname"),
-                    "phone"=>Input::get("phone"),
+                    "middlename"=>Input::get("middlename"),
                     "email"=>Input::get("email"),
-                    "role_id"=>Input::get("role"),
-                    "region_id"=>(Input::has('region'))?Input::get("region"):0,
-                    "district_id"=>(Input::has('district'))?Input::get("district"):0,
+                    "title"=>Input::get("title"),
                     "password"=>Hash::make(Input::get("password")),
                     "status"=>"active"
                 ));
@@ -105,16 +103,11 @@ class UserController extends \BaseController {
         $user = User::find($id);
         if(User::where('email',Input::get("email"))->where('id','!=',$id)->count() == 0){
             $user->firstname = Input::get("firstname");
+            $user->middlename = Input::get("middlename");
             $user->lastname = Input::get("lastname");
             $user->username = Input::get("username");
-            $user->role_id = Input::get("role");
+            $user->title = Input::get("title");
             $user->email = Input::get("email");
-            if(Input::has("region")){
-                $user->region_id = Input::get("region");
-            }if(Input::has("district")){
-                $user->district_id = Input::get("district");
-            }
-            $user->phone = Input::get("phone");
             $user->save();
             $name = $user->firstname." ".$user->lastname;
 

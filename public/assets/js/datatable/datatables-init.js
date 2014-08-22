@@ -2,7 +2,7 @@ var InitiateSimpleDataTable = function () {
     return {
         init: function () {
             //Datatable Initiating
-            var oTable = $('#simpledatatable').dataTable({
+            var oTable = $('#example2').dataTable({
                 "sDom": "Tflt<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
                 "iDisplayLength": 5,
                 "oTableTools": {
