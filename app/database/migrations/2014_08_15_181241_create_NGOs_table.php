@@ -17,6 +17,7 @@ class CreateNGOsTable extends Migration {
 			$table->increments('id');
 			$table->string('name');
 			$table->string('registation_date');
+			$table->string('registation_type');
 			$table->string('postal_adress');
 			$table->string('region');
 			$table->string('district');
