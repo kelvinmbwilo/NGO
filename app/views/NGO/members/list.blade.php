@@ -1,56 +1,46 @@
 <?php
-$ngos = NGOs::all();
+
 ?>
 <div class="row">
     <div class="panel panel-default">
         <div class="panel-heading">
             <div class="text-muted bootstrap-admin-box-title">
-                NGOs
+                {{ $ngo->name }} Members
                 <button class="btn btn-primary btn-xs pull-left add" id="add"><i class="fa fa-plus"></i> add</button>
             </div>
         </div>
         <div class="bootstrap-admin-panel-content">
-            @if($ngos->count() == 0)
-            <h3>There are no NGOs registered to the system</h3>
+            @if($ngo->NGOsMembers->count() == 0)
+            <h3>There are no members registered to this NGO</h3>
             @else
             <table class="table table-striped table-bordered" id="example2">
                 <thead>
                 <tr>
                     <th> # </th>
                     <th> Name </th>
-                    <th> Registration Date </th>
-                    <th> Registration Type </th>
-                    <th> Region</th>
-                    <th> District</th>
-                    <th> Priority Sector</th>
-                    <th> Phone Number</th>
-                    <th> Email</th>
-                    <th> Postal Address</th>
+                    <th> Position </th>
+                    <th> Gender </th>
+                    <th> Age </th>
+                    <th> Nationality</th>
+                    <th> Year of Admission</th>
                     <th> Action </th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php $i=1; ?>
-                @foreach($ngos as $us)
+                @foreach($ngo->NGOsMembers as $us)
                 <tr>
                     <td>{{ $i++ }}</td>
                     <td style="text-transform: capitalize">{{ $us->name }}</td>
-                    <td>{{ $us->registation_date }}</td>
-                    <td>{{ $us->registation_type }}</td>
-                    <td>{{ Region::find($us->region)->region }}</td>
-                    <td>{{ District::find($us->district)->district }}</td>
-                    <td>{{ $us->priority_sector }}</td>
-                    <td>{{ $us->phone_number }}</td>
-                    <td><a href="mailto:{{ $us->email }}">{{ $us->email }}</a></td>
-                    <td>{{ $us->postal_adress }}</td>
+                    <td>{{ $us->position }}</td>
+                    <td>{{ $us->sex }}</td>
+                    <td>{{ date('Y')-$us->age }}</td>
+                    <td>{{ $us->country->name }}</td>
+                    <td>{{ $us->year_of_admission }}</td>
                     <td id="{{ $us->id }}">
-                        <a href='{{ url("ngo/{$us->id}/member") }}' title="View Members" class="userlog"><i class="fa fa-list text-success"></i> Members</a>&nbsp;&nbsp;&nbsp;
-                        <a href='{{ url("ngo/{$us->id}/bearer") }}' title="View Employee" class="userlog"><i class="fa fa-list text-success"></i> Employee</a>&nbsp;&nbsp;&nbsp;
-                        <a href='{{ url("ngo/{$us->id}/report") }}' title="View Employee" class="userlog"><i class="fa fa-list text-success"></i> Reports</a>&nbsp;&nbsp;&nbsp;
                         <a href="#edit" title="edit User" class="edituser"><i class="fa fa-pencil text-info"></i> edit</a>&nbsp;&nbsp;&nbsp;
                         <a href="#b" title="delete User" class="deleteuser"><i class="fa fa-trash-o text-danger"></i> </a>
-
-                    </td>
+                     </td>
                 </tr>
                 @endforeach
 
@@ -78,7 +68,7 @@ $ngos = NGOs::all();
                     modal+= '<div class="modal-content">';
                     modal+= '<div class="modal-header">';
                     modal+= '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
-                    modal+= '<h2 class="modal-title" id="myModalLabel">Update NGO  Information</h2>';
+                    modal+= '<h2 class="modal-title" id="myModalLabel">Update Member  Information</h2>';
                     modal+= '</div>';
                     modal+= '<div class="modal-body">';
                     modal+= ' </div>';
@@ -88,32 +78,7 @@ $ngos = NGOs::all();
                     $("body").append(modal);
                     $("#myModal").modal("show");
                     $(".modal-body").html("<h3><i class='fa fa-spin fa-spinner '></i><span>loading...</span><h3>");
-                    $(".modal-body").load("<?php echo url("ngo/edit") ?>/"+id1);
-                    $("#myModal").on('hidden.bs.modal',function(){
-                        $("#myModal").remove();
-                    })
-                })
-
-                //display user log
-                $(".userlog").click(function(){
-                    var id = $(this).parent().attr('id');
-                    var id1 = $(this).parent().attr('id');
-                    var modal = '<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">';
-                    modal+= '<div class="modal-dialog">';
-                    modal+= '<div class="modal-content">';
-                    modal+= '<div class="modal-header">';
-                    modal+= '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
-                    modal+= '<h2 class="modal-title" id="myModalLabel">System Usage Log</h2>';
-                    modal+= '</div>';
-                    modal+= '<div class="modal-body">';
-                    modal+= ' </div>';
-                    modal+= '</div>';
-                    modal+= '</div>';
-
-                    $("body").append(modal);
-                    $("#myModal").modal("show");
-                    $(".modal-body").html("<h3><i class='fa fa-spin fa-spinner '></i><span>loading...</span><h3>");
-                    $(".modal-body").load("<?php echo url("user/log") ?>/"+id1);
+                    $(".modal-body").load("<?php echo url("ngo/{$ngo->id}/member/edit") ?>/"+id1);
                     $("#myModal").on('hidden.bs.modal',function(){
                         $("#myModal").remove();
                     })
@@ -130,7 +95,7 @@ $ngos = NGOs::all();
                     });
                     $("#yes").click(function(){
                         $(this).parent().html("<br><i class='fa fa-spinner fa-spin'></i>deleting...");
-                        $.post("<?php echo url('ngo/delete') ?>/"+id1,function(data){
+                        $.post("<?php echo url('ngo/{$ngo->id}/member/delete') ?>/"+id1,function(data){
                             btn.hide("slow").next("hr").hide("slow");
                         });
                     });
@@ -148,7 +113,7 @@ $ngos = NGOs::all();
             modal+= '<div class="modal-content">';
             modal+= '<div class="modal-header">';
             modal+= '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
-            modal+= '<h2 class="modal-title" id="myModalLabel">Add New NGO</h2>';
+            modal+= '<h2 class="modal-title" id="myModalLabel">Add New {{ $ngo->name }} Member</h2>';
             modal+= '</div>';
             modal+= '<div class="modal-body">';
             modal+= ' </div>';
@@ -158,7 +123,7 @@ $ngos = NGOs::all();
             $("body").append(modal);
             $("#myModal").modal("show");
             $(".modal-body").html("<h3><i class='fa fa-spin fa-spinner '></i><span>loading...</span><h3>");
-            $(".modal-body").load("<?php echo url("ngo/add/") ?>");
+            $(".modal-body").load("<?php echo url("ngo/{$ngo->id}/member/add") ?>");
             $("#myModal").on('hidden.bs.modal',function(){
                 $("#myModal").remove();
             })

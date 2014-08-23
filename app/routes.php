@@ -106,7 +106,7 @@ Route::post('ngo/delete/{id}',array('as'=>'deletengo', 'uses'=>'NGOController@de
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //display a form to add new ngo
-Route::get('ngo/report/add',array('as'=>'adduser', 'uses'=>'ReportsController@create'));
+Route::get('ngo/report/add',array('uses'=>'ReportsController@create'));
 
 //display a list of ngos
 Route::get('report/list',array('uses'=>'ReportsController@reportlist'));
@@ -132,3 +132,87 @@ Route::post('ngo/delete/{id}',array('as'=>'deletengo', 'uses'=>'NGOController@de
 //display a system usage log for a ngo
 //Route::get('user/log/{id}',array('as'=>'userlog', 'uses'=>'UserController@show'));
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Managing NGOS Members actions
+ * Directing routes to correct controllers
+ */
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//display a form to add new ngo member
+Route::get('ngo/{id}/member/add',array('uses'=>'MembersController@create'));
+
+//display a list of ngo members
+Route::get('ngo/{id}/member/list',array('uses'=>'MembersController@memberlist'));
+
+//adding new ngo member
+Route::post('ngo/{id}/member/add',array('uses'=>'MembersController@store'));
+
+//viewing list of members of particular ngo
+Route::get('ngo/{id}/member',array('uses'=>'MembersController@index'));
+
+//display a form to edit ngo member information
+Route::get('ngo/{id}/member/edit/{member_id}',array('uses'=>'MembersController@edit'));
+
+//editing ngo member information
+Route::post('ngo/{id}/member/edit/{member_id}',array('uses'=>'MembersController@update'));
+
+//deleting ngo member
+Route::post('ngo/{id}/member/delete/{member_id}',array('uses'=>'MembersController@destroy'));
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Managing NGOS Employee/Bearer actions
+ * Directing routes to correct controllers
+ */
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//display a form to add new ngo member
+Route::get('ngo/{id}/bearer/add',array('uses'=>'EmployeeController@create'));
+
+//display a list of ngo members
+Route::get('ngo/{id}/bearer/list',array('uses'=>'EmployeeController@bearerlist'));
+
+//adding new ngo bearer
+Route::post('ngo/{id}/bearer/add',array('uses'=>'EmployeeController@store'));
+
+//viewing list of bearers of particular ngo
+Route::get('ngo/{id}/bearer',array('uses'=>'EmployeeController@index'));
+
+//display a form to edit ngo bearer information
+Route::get('ngo/{id}/bearer/edit/{bearer_id}',array('uses'=>'EmployeeController@edit'));
+
+//editing ngo bearer information
+Route::post('ngo/{id}/bearer/edit/{bearer_id}',array('uses'=>'EmployeeController@update'));
+
+//deleting ngo bearer
+Route::post('ngo/{id}/bearer/delete/{bearer_id}',array('uses'=>'EmployeeController@destroy'));
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Managing NGOS Yearly Reports actions
+ * Directing routes to correct controllers
+ */
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//display a form to add new ngo member
+Route::get('ngo/{id}/report/add',array('uses'=>'NGOReportController@create'));
+
+//display a list of ngo members
+Route::get('ngo/{id}/report/list',array('uses'=>'NGOReportController@reportlist'));
+
+//adding new ngo report
+Route::post('ngo/{id}/report/add',array('uses'=>'NGOReportController@store'));
+
+//viewing list of reports of particular ngo
+Route::get('ngo/{id}/report',array('uses'=>'NGOReportController@index'));
+
+//display a form to edit ngo report information
+Route::get('ngo/{id}/report/edit/{report_id}',array('uses'=>'NGOReportController@edit'));
+
+//editing ngo report information
+Route::post('ngo/{id}/report/edit/{report_id}',array('uses'=>'NGOReportController@update'));
+
+//deleting ngo report
+Route::post('ngo/{id}/report/delete/{report_id}',array('uses'=>'NGOReportController@destroy'));

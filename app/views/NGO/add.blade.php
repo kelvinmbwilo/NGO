@@ -5,7 +5,7 @@ $district = array();
 ?>
 <div class="panel panel-default">
     <div class="panel-body">
-        {{ Form::open(array("url"=>url('addngo1'),"class"=>"form-horizontal","id"=>'FileUploader')) }}
+        {{ Form::open(array("url"=>url('ngo/add'),"class"=>"form-horizontal","id"=>'FileUploader')) }}
         <div class='form-group'>
 
             <div class='col-sm-6'>

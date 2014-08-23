@@ -124,7 +124,13 @@ class NGOController extends \BaseController {
 	public function destroy($id)
 	{
 		$ngo = NGOs::find($id);
+        $name = $ngo->name;
         $ngo->delete();
+
+        Logs::create(array(
+            "user_id"=>  Auth::user()->id,
+            "action"  =>"Delete NGO nammed ".$name
+        ));
 	}
 
 
