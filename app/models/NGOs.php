@@ -11,7 +11,7 @@ class NGOs extends Eloquent {
     protected $table = 'NGOs';
     protected $guarded = array("id");
 
-    public function AnnualReport(){
+    public function annualReport(){
         return $this->hasMany('AnnualReport', 'NGO_id', 'id');
     }
 
@@ -38,7 +38,7 @@ class NGOs extends Eloquent {
         return $this->hasMany('expenditure', 'NGOs_id', 'id');
     }
 
-    public function get_district(){
+    public function ndistrict(){
         return $this->belongsTo('District','district','id');
     }
     public function nregion(){

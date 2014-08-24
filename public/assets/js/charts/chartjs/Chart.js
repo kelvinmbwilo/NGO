@@ -1297,7 +1297,7 @@ window.Chart = function(context){
             
 	        numberOfSteps = Math.round(graphRange / stepValue);
 	        
-	        //Compare number of steps to the max and min for that size graph, and add in half steps if need be.	        
+	        //Compare number of steps to the max and min for that size graph, and add in half steps if need be.
 	        while(numberOfSteps < minSteps || numberOfSteps > maxSteps) {
 	        	if (numberOfSteps < minSteps){
 			        stepValue /= 2;

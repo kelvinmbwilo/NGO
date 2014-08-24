@@ -17,6 +17,7 @@ class CreateAnnualReportTable extends Migration {
 			$table->increments('id');
 			$table->integer('NGO_id');
 			$table->string('report_date');
+			$table->string('year');
 			$table->string('annual_meeting_date');
 			$table->string('username');
 			$table->timestamps();

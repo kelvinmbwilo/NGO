@@ -16,14 +16,15 @@ $district = array();
             </div>
 
         </div>
-
         <div class='form-group'>
+
             <div class='col-sm-6'>
-                Registration Type <br> {{ Form::text('reg_type','',array('class'=>'form-control','placeholder'=>'Registration Type','required'=>'required')) }}
+                NGO Name <br>  {{ Form::text('name','',array('class'=>'form-control','placeholder'=>'NGO Name','required'=>'required')) }}
             </div>
             <div class='col-sm-6'>
-                Postal Address <br> {{ Form::text('postal','',array('class'=>'form-control','placeholder'=>'Postal Address','required'=>'required')) }}
+                Certificate No<br>{{ Form::text('certificate','',array('class'=>'form-control','placeholder'=>'Certificate No','required'=>'required')) }}
             </div>
+
         </div>
 
         <div class='form-group'>

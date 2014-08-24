@@ -1,15 +1,16 @@
 @extends("layout.master")
 
 @section('breadcrumbs')
-<li class="active">NGOs</li>
+<li><a href="{{ url('ngos') }}">NGOs</a></li>
+<li class="active">Annual Reports</li>
 @stop
 
 @section('header')
-System Users
+{{ $ngo->name }} Annual Reports
 @stop
 
 @section('contents')
 <div class="col-sm-12" id="listuser">
-    @include('NGO.list')
+    @include('NGO.reports.list')
 </div>
 @stop

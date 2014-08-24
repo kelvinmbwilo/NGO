@@ -20,4 +20,9 @@ class EmploymentParticulars extends Eloquent {
         return $this->belongsTo('NGOs','NGOs_id', 'id');
     }
 
+    public function country(){
+        return $this->belongsTo('Country','nationality', 'id');
+    }
+
+
 }
