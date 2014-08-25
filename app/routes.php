@@ -216,3 +216,14 @@ Route::post('ngo/{id}/report/edit/{report_id}',array('uses'=>'NGOReportControlle
 
 //deleting ngo report
 Route::post('ngo/{id}/report/delete/{report_id}',array('uses'=>'NGOReportController@destroy'));
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Managing Statistical reports
+ * Directing routes to correct controllers
+ */
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//display a form to add new ngo member
+Route::get('statistics',array('uses'=>'StatisticsController@index'));
+

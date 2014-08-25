@@ -13,7 +13,7 @@ class RevenueIncome extends Eloquent {
      *
      * @var string
      */
-    protected $table = 'RevenueIncome';
+    protected $table = 'revenue_income';
     protected $guarded = array("id");
 
     public function NGOs(){

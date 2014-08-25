@@ -44,21 +44,85 @@ class NGOReportController extends \BaseController {
      */
     public function store($id)
     {
-        $member = NGOsMembers::create(array(
+        echo "nimefika";
+        $report = AnnualReport::create(array(
             'NGO_id' => $id,
-            'name' => Input::get('name'),
-            'position' => Input::get('position'),
-            'sex' => Input::get('sex'),
-            'age' => Input::get('age'),
-            'nationality' => Input::get('country'),
-            'year_of_admission' => Input::get('admission'),
+            'report_date' => Input::get('reg_date'),
+            'year' => Input::get('report_year'),
+            'annual_meeting_date' => Input::get('meeting_date'),
+            'username' => Auth::user()->username
         ));
-        $name = $member->name;
-        Logs::create(array(
-            "user_id"=>  Auth::user()->id,
-            "action"  =>"Add  new member to ".NGOs::find($id)->name." named ". $name
+
+        //achievements
+        for($i =0 ;$i < Input::get('achieve_count'); $i++ ){
+            $j = $i+1;
+            if(Input::get('achievements'.$j)!= ''){
+                NGOArchivements::create(array(
+                    'NGO_id' => $id,
+                    'report_id' => $report->id,
+                    'description' => Input::get('achievements'.$j)
+
+                ));
+            }
+        }
+
+        //targets
+        for($i =0 ;$i < Input::get('target_count'); $i++ ){
+            $j = $i+1;
+            if(Input::get('target'.$j)!= ''){
+                NGOTargets::create(array(
+                    'NGO_id' => $id,
+                    'report_id' => $report->id,
+                    'description' => Input::get('target'.$j)
+
+                ));
+            }
+        }
+
+        //Challanges
+        NGOChallanges::create(array(
+            'NGO_id' => $id,
+            'report_id' => $report->id,
+            'challanges' => Input::get('challange')
         ));
-        return "<h4 class='text-success'>Member Added Successfull</h4>";
+        //Good Practices
+        NGOPractices::create(array(
+            'NGO_id' => $id,
+            'report_id' => $report->id,
+            'description' => Input::get('goodpractice')
+        ));
+
+        //finacial statement
+        RevenueIncome::create(array(
+            'NGO_id' => $id,
+            'report_id' => $report->id,
+            'amount_from_last_year' => Input::get('amount_forward'),
+            'tax_relief' => Input::get('tax_relief'),
+            'government_subsidies' => Input::get('subsidies'),
+            'members_fee' => Input::get('member_fee'),
+            'economic_investment' => Input::get('investment'),
+            'user_fees' => Input::get('user_fee'),
+            'public_support' => Input::get('public_support'),
+            'local_granting' => Input::get('local_granting'),
+            'private_sector_support' => Input::get('corparate'),
+            'grand_from_foreign' => Input::get('grand'),
+            'other_sources' => Input::get('other_source'),
+            'total' => Input::get('other_source')+Input::get('grand')+Input::get('corparate')+Input::get('local_granting')+Input::get('public_support')+Input::get('user_fee')+Input::get('investment')+Input::get('member_fee')+Input::get('subsidies')+Input::get('tax_relief')+Input::get('amount_forward'),
+        ));
+        //expendture
+        Expendeture::create(array(
+            'NGO_id' => $id,
+            'report_id' => $report->id,
+            'direct_cost' => Input::get('program_cost'),
+            'adminstrative_cost' => Input::get('admin_cost'),
+            'total' => Input::get('admin_cost')+Input::get('program_cost'),
+        ));
+//        $name = $member->name;
+//        Logs::create(array(
+//            "user_id"=>  Auth::user()->id,
+//            "action"  =>"Add  new member to ".NGOs::find($id)->name." named ". $name
+//        ));
+//        return "<h4 class='text-success'>Member Added Successfull</h4>";
     }
 
 

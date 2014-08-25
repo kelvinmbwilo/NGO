@@ -9,12 +9,13 @@
                 <li data-target="#wiredstep4"><span class="step">4</span><span class="title">Challenges&<br>Good practices</span> <span class="chevron"></span></li>
                 <li data-target="#wiredstep5"><span class="step">5</span><span class="title">Financial<br>Statement</span> <span class="chevron"></span></li>
                 <li data-target="#wiredstep6"><span class="step">6</span><span class="title">Expenditure</span> <span class="chevron"></span></li>
-                <li data-target="#wiredstep7"><span class="step">7</span><span class="title">Attachments</span> <span class="chevron"></span></li>
-                <li data-target="#wiredstep8"><span class="step">8</span><span class="title">Summary</span> <span class="chevron"></span></li>
+                <li data-target="#wiredstep7"><span class="step">7</span><span class="title">Summary</span> <span class="chevron"></span></li>
+
             </ul>
 
         </div>
         <div class="step-content" id="WiredWizardsteps">
+            <form method="post" action='{{ url("ngo/{$ngo->id}/report/add") }}' id="reportinfo">
             <div class="step-pane active" id="wiredstep1">
                 @include('NGO.reports.add_files.basic')
             </div>
@@ -34,19 +35,14 @@
                 @include('NGO.reports.add_files.expentiture')
             </div>
             <div class="step-pane" id="wiredstep7">
-                Attach Files<br>
-
-                <input type="file" class="input-xs">
-                <a href="#" class="btn btn-xs btn-primary pull-right">add more</a>
-
-            </div>
-            <div class="step-pane" id="wiredstep8">
                 Summary
-
-                <input type="submit" class="btn btn-primary btn-lg" value="Confirm Submission" />
+                @include('NGO.reports.add_files.summary')
+                <input style="display: none" id="submitreport" type="submit" class="btn btn-primary btn-lg" value="Confirm Submission" />
             </div>
+            </form>
         </div>
         <div class="actions actions-footer" id="WiredWizard-actions">
+            <div id="output"></div>
             <div class="btn-group">
                 <button type="button" class="btn btn-default btn-sm btn-prev"> <i class="fa fa-angle-left"></i>Prev</button>
                 <button type="button" class="btn btn-default btn-sm btn-next" data-last="Finish">Next<i class="fa fa-angle-right"></i></button>
@@ -60,11 +56,25 @@
 
 <script type="text/javascript">
     jQuery(function ($) {
-        $('#simplewizardinwidget').wizard();
-        $('#simplewizard').wizard();
-        $('#tabbedwizard').wizard().on('finished', function (e) {
+        $('#WiredWizard').wizard().on('finished', function (e) {
+            $('#reportinfo').on('submit', function(e) {
+                e.preventDefault();
+                $("#output").html("<h3><i class='fa fa-spin fa-spinner '></i><span>Making changes please wait...</span><h3>");
+                $(this).ajaxSubmit({
+                    target: '#output',
+                    success:  afterSuccess
+                });
+
+            });
+
+            function afterSuccess(){
+                setTimeout(function() {
+                    $("#myModal").modal("hide");
+                }, 3000);
+                $("#listuser").load("<?php echo url("ngo/{$ngo->id}/report/list") ?>")
+            }
+            $('#submitreport').trigger("click");
             Notify('Thank You! All of your information saved successfully.', 'bottom-right', '5000', 'blue', 'fa-check', true);
-        });
-        $('#WiredWizard').wizard();
+        });;
     });
 </script>

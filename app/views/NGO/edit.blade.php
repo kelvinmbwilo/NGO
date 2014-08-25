@@ -45,7 +45,7 @@ $district = array();
 
         <div class='form-group'>
             <div class='col-sm-6'>
-                Priority Sector<br>{{ Form::text('sector',$ngo->priority_sector,array('class'=>'form-control','placeholder'=>'Priority Sector','required'=>'required')) }}
+                Priority Sector<br>{{ Form::select('sector',array('Agriculture'=>'Agriculture','Health'=>'Health','Business'=>'Business'),$ngo->priority_sector,array('class'=>'form-control','required'=>'requiered')) }}
             </div>
             <div class='col-sm-6'>
                 Registration Date <br> {{ Form::text('reg_date',$ngo->registation_date,array('class'=>'dat form-control','placeholder'=>'Registration Date','required'=>'required')) }}

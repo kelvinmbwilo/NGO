@@ -4,7 +4,8 @@
 <div class="navbar-header pull-left">
     <a href="index.html#" class="navbar-brand">
         <small>
-            <img src="{{ asset('assets/img/logo.png') }} " alt="" />
+            <img src="{{ asset('assets/img/logo.jpg') }} " alt="" style="width: 50px"/>
+            NGOs
         </small>
     </a>
 </div>

@@ -5,7 +5,7 @@
  * Date: 8/15/14
  * Time: 9:55 PM
  */
-class Expenditure extends Eloquent {
+class Expendeture extends Eloquent {
 
 
     /**

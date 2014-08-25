@@ -24,13 +24,13 @@
                 </thead>
                 <tbody>
                 <?php $i=1; ?>
-                @foreach($ngo->NGOsMembers as $us)
+                @foreach($ngo->annualReport as $us)
                 <tr>
                     <td>{{ $i++ }}</td>
                     <td>{{ $us->year }}</td>
                     <td>{{ $us->report_date }}</td>
                     <td id="{{ $us->id }}">
-                        <a href="#edit" title="edit User" class="edituser"><i class="fa fa-pencil text-info"></i> edit</a>&nbsp;&nbsp;&nbsp;
+<!--                        <a href="#edit" title="edit User" class="edituser"><i class="fa fa-pencil text-info"></i> edit</a>&nbsp;&nbsp;&nbsp;-->
                         <a href="#b" title="delete User" class="deleteuser"><i class="fa fa-trash-o text-danger"></i> </a>
                      </td>
                 </tr>
@@ -87,7 +87,7 @@
                     });
                     $("#yes").click(function(){
                         $(this).parent().html("<br><i class='fa fa-spinner fa-spin'></i>deleting...");
-                        $.post("<?php echo url('ngo/{$ngo->id}/member/delete') ?>/"+id1,function(data){
+                        $.post("<?php echo url('ngo/{$ngo->id}/report/delete/') ?>/"+id1,function(data){
                             btn.hide("slow").next("hr").hide("slow");
                         });
                     });

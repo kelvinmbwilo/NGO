@@ -28,38 +28,13 @@
         <span class="menu-text"> Yearly Reports </span>
     </a>
 </li>
-<!--UI Elements-->
 <li>
-    <a href="index.html#" class="menu-dropdown">
-        <i class="menu-icon fa fa-desktop"></i>
+    <a href="{{ url('statistics') }}">
+        <i class="menu-icon fa fa-th"></i>
         <span class="menu-text"> Statistics </span>
-
-        <b class="menu-expand"></b>
     </a>
-
-    <ul class="submenu">
-        <li>
-            <a href="#">
-                <span class="menu-text">Reports</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <span class="menu-text">Annual Report Summary</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <span class="menu-text">Financial Statement Summary</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <span class="menu-text">Employment Summary</span>
-            </a>
-        </li>
-    </ul>
 </li>
+<!--UI Elements-->
 
 <!--Profile-->
 <li>

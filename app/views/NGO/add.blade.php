@@ -19,11 +19,25 @@ $district = array();
         <div class='form-group'>
 
             <div class='col-sm-6'>
-                NGO Name <br>  {{ Form::text('name','',array('class'=>'form-control','placeholder'=>'NGO Name','required'=>'required')) }}
+                Registration Type <br>  {{ Form::text('reg_type','',array('class'=>'form-control','placeholder'=>'NGO Name','required'=>'required')) }}
             </div>
             <div class='col-sm-6'>
-                Certificate No<br>{{ Form::text('certificate','',array('class'=>'form-control','placeholder'=>'Certificate No','required'=>'required')) }}
+                Level Of Operation<br>{{ Form::select('operation',array('International'=>'International','National'=>'National','Regional'=>'Regional','District'=>'District'),'',array('class'=>'form-control','required'=>'requiered')) }}
             </div>
+
+        </div>
+        <div class='form-group'>
+            <div class='col-sm-6'>
+                Priority Sector<br>{{ Form::select('sector',array('Agriculture'=>'Agriculture','Health'=>'Health','Business'=>'Business'),'',array('class'=>'form-control','required'=>'requiered')) }}
+            </div>
+            <div class='col-sm-6'>
+                Registration Date <br> {{ Form::text('reg_date','',array('class'=>'dat form-control','placeholder'=>'Registration Date','required'=>'required')) }}
+            </div>
+            <script>
+                $(".dat").datepicker({
+                    dateFormat:"yy-mm-dd"
+                });
+            </script>
 
         </div>
 
@@ -46,19 +60,12 @@ $district = array();
         </div>
 
         <div class='form-group'>
-            <div class='col-sm-6'>
-                Priority Sector<br>{{ Form::text('sector','',array('class'=>'form-control','placeholder'=>'Priority Sector','required'=>'required')) }}
-            </div>
-            <div class='col-sm-6'>
-                Registration Date <br> {{ Form::text('reg_date','',array('class'=>'dat form-control','placeholder'=>'Registration Date','required'=>'required')) }}
-            </div>
-            <script>
-                $(".dat").datepicker({
-                    dateFormat:"yy-mm-dd"
-                });
-            </script>
 
+            <div class='col-sm-12'>
+                Postal Address <br> {{ Form::text('postal','',array('class'=>'form-control','placeholder'=>'Postal Address','required'=>'required')) }}
+            </div>
         </div>
+
         <div id="output"></div>
         <div class='col-sm-12 form-group text-center'>
             {{ Form::submit('Submit',array('class'=>'btn btn-primary','id'=>'submitqn')) }}
@@ -89,9 +96,10 @@ $district = array();
         })
 
         function afterSuccess(){
+            //Notify('Thank You! All of your information saved successfully.', 'bottom-right', '5000', 'blue', 'fa-check', true);
             setTimeout(function() {
                 $("#myModal").modal("hide");
-            }, 3000);
+            }, 2000);
             $("#listuser").load("<?php echo url("ngo/list") ?>")
         }
     });

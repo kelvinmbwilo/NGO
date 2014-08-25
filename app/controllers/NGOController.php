@@ -46,6 +46,7 @@ class NGOController extends \BaseController {
            'registation_date' => Input::get('reg_date'),
            'certificate_no' => Input::get('certificate'),
            'registation_type' => Input::get('reg_type'),
+           'operation_level' => Input::get('operation'),
            'postal_adress' => Input::get('postal'),
            'region' => Input::get('region'),
            'district' => Input::get('district'),
