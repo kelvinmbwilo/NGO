@@ -45,7 +45,26 @@ $district = array();
 
         <div class='form-group'>
             <div class='col-sm-6'>
-                Priority Sector<br>{{ Form::select('sector',array('Agriculture'=>'Agriculture','Health'=>'Health','Business'=>'Business'),$ngo->priority_sector,array('class'=>'form-control','required'=>'requiered')) }}
+                <?php
+                $sector = array(
+                    "Agriculture and Food Security"=>"Agriculture and Food Security",
+                    "Education and Training"=>"Education and Training",
+                    "Health and HIV/AIDS"=>"Health and HIV/AIDS",
+                    "Tourism and Wildlife"=>"Tourism and Wildlife",
+                    "Social Security and Social Protection"=>"Social Security and Social Protection",
+                    "Legal and Human Rights"=>"Legal and Human Rights",
+                    "Good Governance"=>"Good Governance",
+                    "Gender and Women Empowerment"=>"Gender and Women Empowerment",
+                    "Water and Sanitation"=>"Water and Sanitation",
+                    "Environment and Climate Change"=>"Environment and Climate Change",
+                    "Labor and Employment"=>"Labor and Employment",
+                    "Finance"=>"Finance",
+                    " Mineral and Energy "=>"Mineral and Energy ",
+                    "Sports and Culture"=>"Sports and Culture",
+                    "Transport and Infrastructure"=>"Transport and Infrastructure",
+                )
+                ?>
+                Priority Sector<br>{{ Form::select('sector',$sector,$ngo->priority_sector,array('class'=>'form-control','required'=>'requiered')) }}
             </div>
             <div class='col-sm-6'>
                 Registration Date <br> {{ Form::text('reg_date',$ngo->registation_date,array('class'=>'dat form-control','placeholder'=>'Registration Date','required'=>'required')) }}

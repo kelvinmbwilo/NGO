@@ -30,8 +30,8 @@
                     <td>{{ $us->year }}</td>
                     <td>{{ $us->report_date }}</td>
                     <td id="{{ $us->id }}">
-<!--                        <a href="#edit" title="edit User" class="edituser"><i class="fa fa-pencil text-info"></i> edit</a>&nbsp;&nbsp;&nbsp;-->
-                        <a href="#b" title="delete User" class="deleteuser"><i class="fa fa-trash-o text-danger"></i> </a>
+                        <a href="#edit" title="view Info" class="edituser"><i class="fa fa-info-circle text-info"></i> details</a>&nbsp;&nbsp;&nbsp;
+                        <a href="#b" title="delete User" class="deleteuser"><i class="fa fa-trash-o text-danger"></i> delete</a>
                      </td>
                 </tr>
                 @endforeach
@@ -56,11 +56,11 @@
                     var id1 = $(this).parent().attr('id');
                     var id1 = $(this).parent().attr('id');
                     var modal = '<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">';
-                    modal+= '<div class="modal-dialog">';
+                    modal+= '<div class="modal-dialog" style="margin-left: 10%;margin-right: 10%;width:80%">';
                     modal+= '<div class="modal-content">';
                     modal+= '<div class="modal-header">';
                     modal+= '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
-                    modal+= '<h2 class="modal-title" id="myModalLabel">Update Member  Information</h2>';
+                    modal+= '<h2 class="modal-title" id="myModalLabel">Yearly Report Info</h2>';
                     modal+= '</div>';
                     modal+= '<div class="modal-body">';
                     modal+= ' </div>';
@@ -70,7 +70,7 @@
                     $("body").append(modal);
                     $("#myModal").modal("show");
                     $(".modal-body").html("<h3><i class='fa fa-spin fa-spinner '></i><span>loading...</span><h3>");
-                    $(".modal-body").load("<?php echo url("ngo/{$ngo->id}/member/edit") ?>/"+id1);
+                    $(".modal-body").load("<?php echo url("ngo/report") ?>/"+id1);
                     $("#myModal").on('hidden.bs.modal',function(){
                         $("#myModal").remove();
                     })
@@ -87,7 +87,7 @@
                     });
                     $("#yes").click(function(){
                         $(this).parent().html("<br><i class='fa fa-spinner fa-spin'></i>deleting...");
-                        $.post("<?php echo url('ngo/{$ngo->id}/report/delete/') ?>/"+id1,function(data){
+                        $.post("<?php echo url('ngo/report/delete/') ?>/"+id1,function(data){
                             btn.hide("slow").next("hr").hide("slow");
                         });
                     });

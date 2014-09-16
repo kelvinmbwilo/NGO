@@ -17,11 +17,14 @@ class AnnualReport extends Eloquent {
     protected $guarded = array("id");
 
     public function NGOs(){
-        return $this->belongsTo('NGOs','NGOs_id', 'id');
+        return $this->belongsTo('NGOs','NGO_id', 'id');
     }
 
-     public function NGOArchivements(){
-        return $this->hasMany('NGO_archivements','annual_report_id', 'id');
+     public function archivements(){
+        return $this->hasMany('NGOArchivements','report_id', 'id');
+    }
+    public function targets(){
+        return $this->hasMany('NGOTargets','report_id', 'id');
     }
 
     public function NGOChallanges(){
@@ -32,7 +35,10 @@ class AnnualReport extends Eloquent {
         return $this->hasMany('NGO_practices','annual_report_id', 'id');
     }
 
-    public function RevenueIncome(){
-        return $this->hasMany('RevenueIncome','annual_report_id', 'id');
+    public function revenueIncome(){
+        return $this->hasOne('RevenueIncome','report_id', 'id');
+    }
+    public function expenditure(){
+        return $this->hasOne('Expendeture','report_id', 'id');
     }
 }

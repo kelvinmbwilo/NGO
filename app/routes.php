@@ -199,14 +199,18 @@ Route::post('ngo/{id}/bearer/delete/{bearer_id}',array('uses'=>'EmployeeControll
 //display a form to add new ngo member
 Route::get('ngo/{id}/report/add',array('uses'=>'NGOReportController@create'));
 
-//display a list of ngo members
+//display a list of ngo reports
 Route::get('ngo/{id}/report/list',array('uses'=>'NGOReportController@reportlist'));
+
 
 //adding new ngo report
 Route::post('ngo/{id}/report/add',array('uses'=>'NGOReportController@store'));
 
 //viewing list of reports of particular ngo
 Route::get('ngo/{id}/report',array('uses'=>'NGOReportController@index'));
+
+//viewing list of reports of particular ngo
+Route::get('ngo/report/{id}',array('uses'=>'NGOReportController@show'));
 
 //display a form to edit ngo report information
 Route::get('ngo/{id}/report/edit/{report_id}',array('uses'=>'NGOReportController@edit'));
@@ -215,7 +219,10 @@ Route::get('ngo/{id}/report/edit/{report_id}',array('uses'=>'NGOReportController
 Route::post('ngo/{id}/report/edit/{report_id}',array('uses'=>'NGOReportController@update'));
 
 //deleting ngo report
-Route::post('ngo/{id}/report/delete/{report_id}',array('uses'=>'NGOReportController@destroy'));
+Route::post('ngo/report/delete/{report_id}',array('uses'=>'NGOReportController@destroy'));
+
+//deleting ngo report
+Route::post('getreport',array('uses'=>'NGOStastisticController@index'));
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**

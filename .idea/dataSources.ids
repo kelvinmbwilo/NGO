@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
   <data-source source="LOCAL" name="MySQL - NGO@localhost" uuid="7194c5e9-051c-4349-83e3-e579d1625213">
-    <database-info product="MySQL" version="5.5.38-0ubuntu0.14.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.29 ( Revision: alexander.soklakov@oracle.com-20140120140810-s44574olh90i6i4l )">
+    <database-info product="MySQL" version="5.5.38-0ubuntu0.14.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.31 ( Revision: alexander.soklakov@oracle.com-20140520065950-groqzzbvxprqdmnz )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
@@ -73,6 +73,7 @@
       <column name="certificate_no" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="registation_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="registation_type" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="operation_level" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="postal_adress" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="region" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="district" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>

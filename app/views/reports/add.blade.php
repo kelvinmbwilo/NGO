@@ -9,7 +9,7 @@
                 <li data-target="#wiredstep4"><span class="step">4</span><span class="title">Challenges&<br>Good practices</span> <span class="chevron"></span></li>
                 <li data-target="#wiredstep5"><span class="step">5</span><span class="title">Financial<br>Statement</span> <span class="chevron"></span></li>
                 <li data-target="#wiredstep6"><span class="step">6</span><span class="title">Expenditure</span> <span class="chevron"></span></li>
-                <li data-target="#wiredstep7"><span class="step">7</span><span class="title">Attachments</span> <span class="chevron"></span></li>
+<!--                <li data-target="#wiredstep7"><span class="step">7</span><span class="title">Attachments</span> <span class="chevron"></span></li>-->
                 <li data-target="#wiredstep8"><span class="step">8</span><span class="title">Summary</span> <span class="chevron"></span></li>
             </ul>
 
@@ -87,13 +87,7 @@
                 <input type="text" class="form-control input-xs">
 
             </div>
-            <div class="step-pane" id="wiredstep7">
-                Attach Files<br>
 
-                <input type="file" class="input-xs">
-                <a href="#" class="btn btn-xs btn-primary pull-right">add more</a>
-
-            </div>
             <div class="step-pane" id="wiredstep8">
                 Summary
 

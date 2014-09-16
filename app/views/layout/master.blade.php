@@ -30,6 +30,8 @@ Author: kelvin mbwilo
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300" rel="stylesheet" type="text/css">
 
     <!--Beyond styles-->
+    <link href="{{ asset('jquery.multiselect.css') }} " rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('jquery.multiselect.filter.css') }} " rel="stylesheet" type="text/css"/>
     <link href="{{ asset('assets/css/beyond.css') }} " rel="stylesheet" type="text/css"/>
     <link href="{{ asset('assets/css/demo.min.css') }} " rel="stylesheet" />
     <link href="{{ asset('assets/css/typicons.min.css') }} " rel="stylesheet" />
@@ -71,6 +73,9 @@ Author: kelvin mbwilo
 <!--  /Loading Container -->
 <!-- Navbar -->
 <div class="navbar">
+
+
+    <!-- Branding -->
 @include('layout.top_bar')
 </div>
 <!-- /Navbar -->
@@ -158,6 +163,11 @@ Author: kelvin mbwilo
 <script src="{{ asset('assets/js/datatable/dataTables.tableTools.min.js') }}"></script>
 <script src="{{ asset('assets/js/datatable/dataTables.bootstrap.min.js') }}"></script>
 <script src="{{ asset('assets/js/datatable/datatables-init.js') }}"></script>
+<script src="{{ asset('jquery.multiselect.js') }}"></script>
+<script src="{{ asset('jquery.multiselect.filter.js') }}"></script>
+<script type="text/javascript" src="{{ asset('Highcharts/js/highcharts.js') }}"></script>
+<script type="text/javascript" src="{{ asset('Highcharts/js/modules/exporting.js') }}"></script>
+<script type="text/javascript" src="{{ asset('Highcharts/js/themes/sand-signika.js') }}"></script>
 </body>
 <!--  /Body -->
 </html>

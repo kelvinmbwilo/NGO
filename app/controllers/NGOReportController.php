@@ -134,7 +134,8 @@ class NGOReportController extends \BaseController {
      */
     public function show($id)
     {
-        //
+        $report = AnnualReport::find($id);
+        return View::make("NGO.reports.reportinfo",compact("report"));
     }
 
 
@@ -182,18 +183,17 @@ class NGOReportController extends \BaseController {
 
     /**
      * Remove the specified resource from storage.
-     * @param  int  $member_id
-     * @param  int  $id
+     * @param  int  $report_id
      * @return Response
      */
-    public function destroy($id,$member_id)
+    public function destroy($report_id)
     {
-        $member = NGOsMembers::find($member_id);
-        $name = $member->name;
+        $member = AnnualReport::find($report_id);
+        $name = $member->year;
         $member->delete();
         Logs::create(array(
             "user_id"=>  Auth::user()->id,
-            "action"  =>"Delete member  named ". $name
+            "action"  =>"Delete reoport for year  ". $name
         ));
     }
 

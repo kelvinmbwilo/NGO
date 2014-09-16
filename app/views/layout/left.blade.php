@@ -30,7 +30,7 @@
 </li>
 <li>
     <a href="{{ url('statistics') }}">
-        <i class="menu-icon fa fa-th"></i>
+        <i class="menu-icon fa fa-bar-chart-o"></i>
         <span class="menu-text"> Statistics </span>
     </a>
 </li>
@@ -39,7 +39,7 @@
 <!--Profile-->
 <li>
     <a href="{{ url('users') }}">
-        <i class="menu-icon fa fa-picture-o"></i>
+        <i class="menu-icon fa fa-user"></i>
         <span class="menu-text">Users</span>
     </a>
 </li>

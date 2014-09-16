@@ -3,53 +3,50 @@
         <table>
             <tr>
                 <td>Reporting Date</td>
-                <td></td>
+                <td id="reporting_date"></td>
             </tr>
             <tr>
                 <td>NGO Name</td>
-                <td></td>
+                <td id="report_name"></td>
             </tr>
             <tr>
                 <td>Registration number</td>
-                <td></td>
+                <td id="reg_no"></td>
             </tr>
             <tr>
                 <td>Operation Level</td>
-                <td></td>
+                <td id="operation"></td>
             </tr>
             <tr>
                 <td>Category</td>
-                <td></td>
+                <td id="category"></td>
             </tr>
             <tr>
                 <td>Address</td>
-                <td></td>
+                <td id="address"></td>
             </tr>
             <tr>
                 <td>Region</td>
-                <td></td>
+                <td id="region"></td>
             </tr>
         </table>
     </div>
     <div class="col-sm-3">
-        Bussness Telephone: <br>
-        Email Address:
+        Bussness Telephone: <span id="phone"></span><br>
+        Email Address: <span id="email"></span>
         <br>
-        Targets:<br><br>
+        Targets: <span id="targets"></span><br><br>
 
-        Achievements:<br><br>
+        Achievements: <span id="archive"></span><br><br>
     </div>
     <div class="col-sm-5">
         <table>
             <tr>
-                <th>Name</th>
-                <th>Title</th>
-                <th>Address</th>
-            </tr>
-            <tr>
-                <td>fname juma ally</td>
-                <td>chairperson</td>
-                <td>Box 450 Dar</td>
+                <th>Name</th><td>{{ Auth::user()->firstname }} {{ Auth::user()->middename }} {{ Auth::user()->lastname }} </td>
+            </tr><tr>
+                <th>Title</th><td>{{ Auth::user()->title }}</td>
+            </tr><tr>
+                <th>Address</th><td></td>
             </tr>
         </table>
     </div>

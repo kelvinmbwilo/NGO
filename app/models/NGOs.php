@@ -42,6 +42,6 @@ class NGOs extends Eloquent {
         return $this->belongsTo('District','district','id');
     }
     public function nregion(){
-        return $this->belongsTo('Region', 'region_id', 'id');
+        return $this->belongsTo('Region', 'region', 'id');
     }
 }
