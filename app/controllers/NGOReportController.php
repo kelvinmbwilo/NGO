@@ -44,7 +44,7 @@ class NGOReportController extends \BaseController {
      */
     public function store($id)
     {
-        echo "nimefika";
+        echo "<h4 class='text-success'>Report Added Successful</h4>";
         $report = AnnualReport::create(array(
             'NGO_id' => $id,
             'report_date' => Input::get('reg_date'),

@@ -18,7 +18,7 @@ Reports
     </div>
     <div class="col-sm-3  col-sm-offset-1 ngo" >
         District<br>
-        <span id="">{{ Form::select('district[]',District::all()->lists('district','id'),'',array('class'=>'form-control multi','required'=>'requiered')) }}</span>
+        <span id="">{{ Form::select('district[]',District::all()->lists('district','id'),'',array('multiple'=>"multiple",'class'=>'form-control multi')) }}</span>
     </div>
     <div class="col-sm-3 col-sm-offset-1  ngo">
         Operation Level<br>
@@ -58,6 +58,8 @@ Reports
         <select class="form-control input-sm" name="operate">
             <option value="level">Operational Level</option>
             <option value="sector">Priority Sectors</option>
+            <option value="Regions">Regions</option>
+            <option value="Districts">Districts</option>
         </select>
     </div>
 
@@ -74,21 +76,14 @@ Reports
 </div>
 
 <div class="col-md-12 chat_types" style="margin-top: 10px">
-    <button type="submit" id="records" class="btn btn-info btn-xs col-sm-2">Records</button>
-    <button type="submit" id="table" class="btn btn-info btn-xs col-sm-2" style="margin-left: 30px">Table</button>
-    <button type="submit" id="bar" class="btn btn-info btn-xs col-sm-2" style="margin-left: 30px">Bar Chat</button>
-    <button type="submit" id="line" class="btn btn-info btn-xs col-sm-2" style="margin-left: 30px">Line Chat</button>
-    <button type="submit" id="combined" class="btn btn-info btn-xs col-sm-2" style="margin-left: 30px">Combined Chat</button>
-    <div class="btn-group">
-    <button id="export"  style="margin-left: 30px" class="btn btn-info btn-xs col-sm-12 dropdown-toggle" data-toggle="dropdown">
-        export <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" role="menu">
-        <li><a href="#">Excel</a></li>
-        <li><a href="#">Pdf</a></li>
-        <li><a href="#">XML</a></li>
-    </ul>
-        </div>
+    <button type="button" id="records" class="btn btn-info btn-xs col-sm-1 ss">Records</button>
+    <button type="button" id="table" class="btn btn-info btn-xs col-sm-1 ss" >Table</button>
+    <button type="button" id="bar" class="btn btn-info btn-xs col-sm-1 ss" >Bar Chat</button>
+    <button type="button" id="line" class="btn btn-info btn-xs col-sm-1 ss" >Line Chat</button>
+    <button type="button" id="pie" class="btn btn-info btn-xs col-sm-1 ss" >Pie Chat</button>
+    <button type="button" id="combined" class="btn btn-info btn-xs col-sm-1 ss" >Combined Chat</button>
+    <button type="submit" name="excel" id="excel" class="btn btn-info btn-xs col-sm-1" >Excel</button>
+
 </div>
 </form>
 
@@ -117,39 +112,26 @@ Reports
                 $( "#from" ).datepicker( "option", "maxDate", selectedDate );
             }
         });
-        $(".chat_types").find('button').unbind('click').click(function(){
+        $('.ss').unbind('click').click(function(){
+            $('#visits').html("")
             var id = $(this).attr('id');
             $('#reportform').find('input[name=chart]').remove();
             $('#reportform').append("<input type='hidden' name='chart' value='"+id+"'>")
             $(".chat_types").find('button').removeClass('btn-warning').addClass('btn-info');
             $(this).removeClass('btn-info').addClass('btn-warning');
 //            $('#container').html("<i class='fa fa-spin fa-spinner fa-3x'></i>Fetching report please wait ");
-            $('#reportform').on('submit', function(e) {
-                e.preventDefault();
-                $('#container').html("<i class='fa fa-spin fa-spinner fa-3x'></i>Fetching report please wait ");
-                $(this).ajaxSubmit({
+            $('#reportform').ajaxSubmit({
                     target: '#container',
                     success:  afterSuccess
                 });
 
             });
-            function afterSuccess(){
-<!--                //Notify('Thank You! All of your information saved successfully.', 'bottom-right', '5000', 'blue', 'fa-check', true);-->
-<!--                setTimeout(function() {-->
-<!--                    $("#myModal").modal("hide");-->
-<!--                }, 2000);-->
-<!--                $("#listuser").load("--><?php //echo url("ngo/list") ?><!--")-->
-            }
 
-        })
-        var dis = $("#disarea").html();
 
-        $("select[name=region]").change(function(){
-            $("#district-area").html("<i class='fa fa-spinner fa-spin'></i> Wait... ")
-            $.post("<?php echo url('user/region_check') ?>/"+$(this).val(),function(dat){
-                $("#district-area").html(dat);
-            })
-        })
+        $("#table").trigger('click');
+        function afterSuccess(){
+
+        }
 
         //submiting the report form
 

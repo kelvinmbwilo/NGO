@@ -44,9 +44,9 @@ $ngos = NGOs::all();
                     <td><a href="mailto:{{ $us->email }}">{{ $us->email }}</a></td>
                     <td>{{ $us->postal_adress }}</td>
                     <td id="{{ $us->id }}">
-                        <a href='{{ url("ngo/{$us->id}/member") }}' title="View Members" class="userlog"><i class="fa fa-list text-success"></i> Members</a>&nbsp;&nbsp;&nbsp;
-                        <a href='{{ url("ngo/{$us->id}/bearer") }}' title="View Employee" class="userlog"><i class="fa fa-list text-success"></i> Employee</a>&nbsp;&nbsp;&nbsp;
-                        <a href='{{ url("ngo/{$us->id}/report") }}' title="View Employee" class="userlog"><i class="fa fa-list text-success"></i> Reports</a>&nbsp;&nbsp;&nbsp;
+                        <a href='{{ url("ngo/{$us->id}/member") }}' title="View Members" ><i class="fa fa-list text-success"></i> Members</a>&nbsp;&nbsp;&nbsp;
+                        <a href='{{ url("ngo/{$us->id}/bearer") }}' title="View Employee" ><i class="fa fa-th-large text-warning"></i> Employee</a>&nbsp;&nbsp;&nbsp;
+                        <a href='{{ url("ngo/{$us->id}/report") }}' title="View Employee" ><i class="fa fa-briefcase text-primary"></i> Reports</a>&nbsp;&nbsp;&nbsp;
                         <a href="#edit" title="edit User" class="edituser"><i class="fa fa-pencil text-info"></i> edit</a>&nbsp;&nbsp;&nbsp;
                         <a href="#b" title="delete User" class="deleteuser"><i class="fa fa-trash-o text-danger"></i> </a>
 
