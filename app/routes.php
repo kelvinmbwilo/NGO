@@ -234,3 +234,6 @@ Route::post('getreport',array('uses'=>'NGOStastisticController@index'));
 //display a form to add new ngo member
 Route::get('statistics',array('uses'=>'StatisticsController@index'));
 
+//display a best practices
+Route::get('practices',array('uses'=>'StatisticsController@show'));
+

@@ -117,6 +117,29 @@
 
         </div>
     </div>
+</div><div class="box-tabbs">
+    <div class="tabbable">
+        <ul class="nav nav-tabs tabs-flat  nav-justified" id="myTab11">
+            <li class="active">
+                <a data-toggle="tab" href="index.html#visits">
+
+                </a>
+            </li>
+
+        </ul>
+        <div class="tab-content tabs-flat no-padding">
+            <div id="visits22" class="tab-pane active animated fadeInUp">
+                <div class="row">
+                    <div class="col-lg-12 chart-container">
+                        <div id="practices" class="chart chart-lg" style="height: 500px"></div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
 </div>
 
 </div>
@@ -175,6 +198,7 @@ $sector = array(
 
 ?>
     $(function () {
+        $("#practices").load("<?php echo url('practices') ?>");
         $('#visits').highcharts({
             title: {
                 text: 'NGO Sectoral Distribution'

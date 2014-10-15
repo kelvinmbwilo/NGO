@@ -2,11 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b290b2f2-359b-4642-913d-8257f327a6e4" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/practices.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/transfer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/NGOController.php" afterPath="$PROJECT_DIR$/app/controllers/NGOController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/NGOPractices.php" afterPath="$PROJECT_DIR$/app/models/NGOPractices.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/NGOReportController.php" afterPath="$PROJECT_DIR$/app/controllers/NGOReportController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/NGOStastisticController.php" afterPath="$PROJECT_DIR$/app/controllers/NGOStastisticController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/statistics/index.blade.php" afterPath="$PROJECT_DIR$/app/views/statistics/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/StatisticsController.php" afterPath="$PROJECT_DIR$/app/controllers/StatisticsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/UserController.php" afterPath="$PROJECT_DIR$/app/controllers/UserController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/NGO/add.blade.php" afterPath="$PROJECT_DIR$/app/views/NGO/add.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dashboard.blade.php" afterPath="$PROJECT_DIR$/app/views/dashboard.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/NGO/edit.blade.php" afterPath="$PROJECT_DIR$/app/views/NGO/edit.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/NGO/reports/add_files/expentiture.blade.php" afterPath="$PROJECT_DIR$/app/views/NGO/reports/add_files/expentiture.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/NGO/list.blade.php" afterPath="$PROJECT_DIR$/app/views/NGO/list.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/NGO/reports/reportinfo.blade.php" afterPath="$PROJECT_DIR$/app/views/NGO/reports/reportinfo.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="NGO.iws" />
@@ -30,72 +41,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="224" column="13" selection-start="8297" selection-end="8297" vertical-scroll-proportion="-12.555555" vertical-offset="3531" max-vertical-offset="4194">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NGOStastisticController.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="NGOStastisticController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/NGOStastisticController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="253" column="24" selection-start="9910" selection-end="9910" vertical-scroll-proportion="0.47916666" vertical-offset="2645" max-vertical-offset="15498">
-              <folding>
-                <element signature="n#records#0;n#NGOStastisticController#0;n#!!top" expanded="false" />
-                <element signature="e#5118#5152#0" expanded="true" />
-                <element signature="e#15091#17849#0" expanded="false" />
-                <element signature="e#16536#17077#0" expanded="false" />
-                <element signature="e#17086#17454#0" expanded="false" />
-                <element signature="e#17463#17849#0" expanded="false" />
-                <marker date="1412568815359" expanded="true" signature="13968:14014" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/NGO/list.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="116" selection-start="2375" selection-end="2375" vertical-scroll-proportion="-6.814815" vertical-offset="680" max-vertical-offset="3150">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/NGO/edit.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="67" selection-start="3563" selection-end="3563" vertical-scroll-proportion="-10.925926" vertical-offset="893" max-vertical-offset="2160">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="master.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layout/master.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="7" selection-start="2108" selection-end="2108" vertical-scroll-proportion="0.0" vertical-offset="1507" max-vertical-offset="3222">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/statistics/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="85" selection-start="3855" selection-end="3855" vertical-scroll-proportion="-5.2222223" vertical-offset="1371" max-vertical-offset="2646">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StatisticsController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/StatisticsController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="46" selection-start="203" selection-end="203" vertical-scroll-proportion="0.0" vertical-offset="831" max-vertical-offset="1656">
+            <state line="437" column="45" selection-start="17195" selection-end="17200" vertical-scroll-proportion="-3.090909" vertical-offset="7696" max-vertical-offset="18324">
               <folding />
             </state>
           </provider>
@@ -104,25 +53,81 @@
       <file leaf-file-name="add.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/NGO/add.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="173" selection-start="1016" selection-end="1116" vertical-scroll-proportion="43.77778" vertical-offset="1614" max-vertical-offset="2358">
+            <state line="45" column="39" selection-start="2348" selection-end="2348" vertical-scroll-proportion="-5.890909" vertical-offset="486" max-vertical-offset="2376">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NGOController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/NGOController.php">
+      <file leaf-file-name="edit.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/NGO/edit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="34" selection-start="880" selection-end="881" vertical-scroll-proportion="-3.1090908" vertical-offset="693" max-vertical-offset="2592">
+            <state line="47" column="39" selection-start="2658" selection-end="2658" vertical-scroll-proportion="-11.333333" vertical-offset="540" max-vertical-offset="2394">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NGOReportController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/NGOReportController.php">
+      <file leaf-file-name="practices.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/practices.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="37" selection-start="972" selection-end="972" vertical-scroll-proportion="-3.0181818" vertical-offset="662" max-vertical-offset="3708">
+            <state line="76" column="34" selection-start="3859" selection-end="3859" vertical-scroll-proportion="-11.111111" vertical-offset="1068" max-vertical-offset="1872">
+              <folding>
+                <element signature="e#6#88#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dashboard.blade.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/dashboard.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="129" column="8" selection-start="6160" selection-end="6160" vertical-scroll-proportion="0.38372093" vertical-offset="2124" max-vertical-offset="5310">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReportsController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/ReportsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="20.88889" vertical-offset="564" max-vertical-offset="1656">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NGOPractices.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/NGOPractices.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="43" selection-start="364" selection-end="364" vertical-scroll-proportion="-10.444445" vertical-offset="60" max-vertical-offset="612">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Expendeture.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/Expendeture.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="17" selection-start="93" selection-end="104" vertical-scroll-proportion="-2.7777777" vertical-offset="51" max-vertical-offset="630">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StatisticsController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/StatisticsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="44" column="39" selection-start="587" selection-end="587" vertical-scroll-proportion="-13.333333" vertical-offset="432" max-vertical-offset="1656">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="master.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layout/master.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="46" column="7" selection-start="2108" selection-end="2108" vertical-scroll-proportion="48.703705" vertical-offset="2143" max-vertical-offset="3222">
               <folding />
             </state>
           </provider>
@@ -142,10 +147,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/ReportsController.php" />
-        <option value="$PROJECT_DIR$/app/views/reports/index.blade.php" />
-        <option value="$PROJECT_DIR$/public/assets/css/beyond.css" />
-        <option value="$PROJECT_DIR$/app/views/NGO/members/add.blade.php" />
         <option value="$PROJECT_DIR$/app/models/NGOsMembers.php" />
         <option value="$PROJECT_DIR$/app/views/NGO/members/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/views/NGO/members/list.blade.php" />
@@ -162,37 +163,41 @@
         <option value="$PROJECT_DIR$/app/views/NGO/employee/list.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/MembersController.php" />
         <option value="$PROJECT_DIR$/app/views/NGO/reports/add_files/challane.blade.php" />
-        <option value="$PROJECT_DIR$/app/controllers/NGOController.php" />
         <option value="$PROJECT_DIR$/app/views/NGO/reports/add_files/basic.blade.php" />
         <option value="$PROJECT_DIR$/app/views/NGO/reports/add_files/achivement.blade.php" />
         <option value="$PROJECT_DIR$/app/views/NGO/reports/add_files/targets.blade.php" />
         <option value="$PROJECT_DIR$/app/models/NGOArchivements.php" />
-        <option value="$PROJECT_DIR$/app/views/NGO/reports/add_files/expentiture.blade.php" />
         <option value="$PROJECT_DIR$/app/models/RevenueIncome.php" />
         <option value="$PROJECT_DIR$/app/models/Expendeture.php" />
         <option value="$PROJECT_DIR$/app/views/NGO/reports/summary.blade.php" />
         <option value="$PROJECT_DIR$/app/views/NGO/reports/add.blade.php" />
-        <option value="$PROJECT_DIR$/app/controllers/StatisticsController.php" />
         <option value="$PROJECT_DIR$/app/views/reports/add.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/NGO/add.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/NGO/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/views/NGO/reports/add_files/financial.blade.php" />
         <option value="$PROJECT_DIR$/app/views/NGO/reports/add_files/summary.blade.php" />
         <option value="$PROJECT_DIR$/app/models/NGOs.php" />
         <option value="$PROJECT_DIR$/app/models/AnnualReport.php" />
         <option value="$PROJECT_DIR$/app/views/NGO/reports/list.blade.php" />
         <option value="$PROJECT_DIR$/app/views/reports/list.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/NGO/reports/reportinfo.blade.php" />
         <option value="$PROJECT_DIR$/app/views/layout/top_bar.blade.php" />
         <option value="$PROJECT_DIR$/app/views/layout/left.blade.php" />
         <option value="$PROJECT_DIR$/app/views/layout/master.blade.php" />
         <option value="$PROJECT_DIR$/public/assets/js/skins.min.js" />
-        <option value="$PROJECT_DIR$/app/routes.php" />
-        <option value="$PROJECT_DIR$/app/views/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/app/views/statistics/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/NGO/list.blade.php" />
-        <option value="$PROJECT_DIR$/app/controllers/NGOReportController.php" />
         <option value="$PROJECT_DIR$/app/controllers/NGOStastisticController.php" />
+        <option value="$PROJECT_DIR$/public/transfer.php" />
+        <option value="$PROJECT_DIR$/app/controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/app/controllers/NGOController.php" />
+        <option value="$PROJECT_DIR$/app/controllers/NGOReportController.php" />
+        <option value="$PROJECT_DIR$/app/views/NGO/reports/add_files/expentiture.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/NGO/list.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/NGO/reports/reportinfo.blade.php" />
+        <option value="$PROJECT_DIR$/app/routes.php" />
+        <option value="$PROJECT_DIR$/app/controllers/StatisticsController.php" />
+        <option value="$PROJECT_DIR$/app/views/NGO/add.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/NGO/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/models/NGOPractices.php" />
+        <option value="$PROJECT_DIR$/app/views/practices.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/dashboard.blade.php" />
       </list>
     </option>
   </component>
@@ -229,7 +234,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -272,46 +276,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NGO" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NGO" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NGO" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NGO" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -352,7 +316,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="statistics" />
+              <option name="myItemId" value="reports" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -375,6 +339,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="NGO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NGO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NGO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -416,6 +402,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -466,14 +453,14 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22079588" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22593068" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19383825" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15661104" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16464238" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14979757" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -522,21 +509,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/NGO/members/list.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="125" column="76" selection-start="5956" selection-end="5981" vertical-scroll-proportion="-4.3703704" vertical-offset="2132" max-vertical-offset="2520" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/NGO/reports/add_files/attachment.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="290" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/NGO/reports/add_files/employee.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="267" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/NGO/reports/add_files/legalmember.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="267" />
@@ -577,50 +549,24 @@
         <state line="7" column="88" selection-start="559" selection-end="571" vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="252" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/basic.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="5" selection-start="0" selection-end="113" vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="324" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/NGO/reports/summary.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="557" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/ReportsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1656" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/NGO/reports/add_files/expentiture.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="65" selection-start="175" selection-end="185" vertical-scroll-proportion="-2.0" vertical-offset="0" max-vertical-offset="216">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/NGO/reports/add_files/financial.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="50" selection-start="2012" selection-end="2012" vertical-scroll-proportion="-14.666667" vertical-offset="0" max-vertical-offset="540">
-          <folding />
-        </state>
+        <state line="22" column="50" selection-start="2012" selection-end="2012" vertical-scroll-proportion="-14.666667" vertical-offset="0" max-vertical-offset="540" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/reports/add.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="20" selection-start="1427" selection-end="1427" vertical-scroll-proportion="-0.22736841" vertical-offset="324" max-vertical-offset="2106">
-          <folding />
-        </state>
+        <state line="12" column="20" selection-start="1427" selection-end="1427" vertical-scroll-proportion="-0.22736841" vertical-offset="324" max-vertical-offset="2106" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/NGO/reports/add.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="73" column="79" selection-start="4048" selection-end="4048" vertical-scroll-proportion="-36.666668" vertical-offset="324" max-vertical-offset="1530" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/NGO/reports/add_files/summary.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="53" selection-start="0" selection-end="2563" vertical-scroll-proportion="-30.666666" vertical-offset="0" max-vertical-offset="1674" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/NGOTargets.php">
@@ -635,26 +581,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/NGOs.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="42" selection-start="757" selection-end="778" vertical-scroll-proportion="-8.740741" vertical-offset="304" max-vertical-offset="954">
-          <folding />
-        </state>
+        <state line="30" column="42" selection-start="757" selection-end="778" vertical-scroll-proportion="-8.740741" vertical-offset="304" max-vertical-offset="954" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/NGO/employee/add.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="122" selection-start="1889" selection-end="1897" vertical-scroll-proportion="-4.0" vertical-offset="540" max-vertical-offset="1584">
-          <folding />
-        </state>
+        <state line="36" column="122" selection-start="1889" selection-end="1897" vertical-scroll-proportion="-4.0" vertical-offset="540" max-vertical-offset="1584" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/RevenueIncome.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="19" selection-start="93" selection-end="106" vertical-scroll-proportion="0.018518519" vertical-offset="117" max-vertical-offset="630" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Expendeture.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="17" selection-start="93" selection-end="104" vertical-scroll-proportion="-0.33333334" vertical-offset="117" max-vertical-offset="630" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/AnnualReport.php">
@@ -669,26 +606,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/NGOPractices.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="18" selection-start="93" selection-end="105" vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="612" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/reports/list.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="31" selection-start="234" selection-end="234" vertical-scroll-proportion="-6.6666665" vertical-offset="0" max-vertical-offset="2052">
-          <folding />
-        </state>
+        <state line="10" column="31" selection-start="234" selection-end="234" vertical-scroll-proportion="-6.6666665" vertical-offset="0" max-vertical-offset="2052" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/reports/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="515" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/NGO/reports/reportinfo.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="86" selection-start="729" selection-end="729" vertical-scroll-proportion="71.92593" vertical-offset="2248" max-vertical-offset="2898" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/jquery.multiselect.css">
@@ -723,9 +648,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/EmploymentParticulars.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="27" selection-start="93" selection-end="114" vertical-scroll-proportion="0.0" vertical-offset="99" max-vertical-offset="612">
-          <folding />
-        </state>
+        <state line="7" column="27" selection-start="93" selection-end="114" vertical-scroll-proportion="0.0" vertical-offset="99" max-vertical-offset="612" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/NGOsMembers.php">
@@ -733,96 +656,168 @@
         <state line="2" column="17" selection-start="13" selection-end="24" vertical-scroll-proportion="0.074074075" vertical-offset="0" max-vertical-offset="504" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/dashboard.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="263" column="0" selection-start="5930" selection-end="11266" vertical-scroll-proportion="0.0" vertical-offset="4734" max-vertical-offset="4878">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layout/master.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="7" selection-start="2108" selection-end="2108" vertical-scroll-proportion="0.0" vertical-offset="1507" max-vertical-offset="3222">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/StatisticsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="46" selection-start="203" selection-end="203" vertical-scroll-proportion="0.0" vertical-offset="831" max-vertical-offset="1656">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/afcdf6e1/7194c5e9-051c-4349-83e3-e579d1625213/NGO..NGOs">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108" />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="224" column="13" selection-start="8297" selection-end="8297" vertical-scroll-proportion="-12.555555" vertical-offset="3531" max-vertical-offset="4194">
-          <folding />
-        </state>
+      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/statistics/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="85" selection-start="3855" selection-end="3855" vertical-scroll-proportion="-5.2222223" vertical-offset="1371" max-vertical-offset="2646">
+        <state line="84" column="85" selection-start="3855" selection-end="3855" vertical-scroll-proportion="0.0" vertical-offset="1512" max-vertical-offset="2646">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/NGO/list.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/transfer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="116" selection-start="2375" selection-end="2375" vertical-scroll-proportion="-6.814815" vertical-offset="680" max-vertical-offset="3150">
+        <state line="40" column="9" selection-start="1382" selection-end="1382" vertical-scroll-proportion="-26.666666" vertical-offset="0" max-vertical-offset="882">
+          <folding>
+            <element signature="e#6#88#0" expanded="true" />
+            <marker date="1413349132316" expanded="true" signature="-1:-1" placeholder="select * fro..." />
+            <marker date="1413349132316" expanded="true" signature="-1:-1" placeholder="select * fro..NGOs..." />
+            <marker date="1413349132316" expanded="true" signature="-1:-1" placeholder="select * fro..NGOs..." />
+            <marker date="1413349132316" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/NGO/reports/add_files/summary.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="29" selection-start="1105" selection-end="1105" vertical-scroll-proportion="-3.1111112" vertical-offset="618" max-vertical-offset="1674">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/NGO/edit.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="67" selection-start="3563" selection-end="3563" vertical-scroll-proportion="-10.925926" vertical-offset="893" max-vertical-offset="2160">
+        <state line="209" column="72" selection-start="6100" selection-end="6100" vertical-scroll-proportion="-7.148148" vertical-offset="3569" max-vertical-offset="4140">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/NGO/add.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/views/NGO/reports/add_files/expentiture.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="173" selection-start="1016" selection-end="1116" vertical-scroll-proportion="43.77778" vertical-offset="1614" max-vertical-offset="2358">
+        <state line="5" column="66" selection-start="284" selection-end="284" vertical-scroll-proportion="-3.3333333" vertical-offset="0" max-vertical-offset="288">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/NGOController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="34" selection-start="880" selection-end="881" vertical-scroll-proportion="-3.1090908" vertical-offset="693" max-vertical-offset="2592">
+        <state line="101" column="53" selection-start="2103" selection-end="2111" vertical-scroll-proportion="-2.9629629" vertical-offset="1738" max-vertical-offset="2628">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/NGOReportController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="37" selection-start="972" selection-end="972" vertical-scroll-proportion="-3.0181818" vertical-offset="662" max-vertical-offset="3708">
+        <state line="118" column="19" selection-start="3908" selection-end="3914" vertical-scroll-proportion="-14.0" vertical-offset="1746" max-vertical-offset="3744">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/NGO/list.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="27" selection-start="678" selection-end="678" vertical-scroll-proportion="-0.0" vertical-offset="324" max-vertical-offset="3042">
+          <folding>
+            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/NGO/reports/reportinfo.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="72" selection-start="3005" selection-end="3018" vertical-scroll-proportion="-12.666667" vertical-offset="1080" max-vertical-offset="2898">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/basic.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="85" selection-end="85" vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="324">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="237" column="21" selection-start="8813" selection-end="8822" vertical-scroll-proportion="-14.259259" vertical-offset="3719" max-vertical-offset="4248">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/NGO/add.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="39" selection-start="2348" selection-end="2348" vertical-scroll-proportion="-5.890909" vertical-offset="486" max-vertical-offset="2376">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/NGO/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="39" selection-start="2658" selection-end="2658" vertical-scroll-proportion="-11.333333" vertical-offset="540" max-vertical-offset="2394">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layout/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="7" selection-start="2108" selection-end="2108" vertical-scroll-proportion="48.703705" vertical-offset="2143" max-vertical-offset="3222">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/StatisticsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="39" selection-start="587" selection-end="587" vertical-scroll-proportion="-13.333333" vertical-offset="432" max-vertical-offset="1656">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Expendeture.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="17" selection-start="93" selection-end="104" vertical-scroll-proportion="-2.7777777" vertical-offset="51" max-vertical-offset="630">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/NGOPractices.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="43" selection-start="364" selection-end="364" vertical-scroll-proportion="-10.444445" vertical-offset="60" max-vertical-offset="612">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/ReportsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="20.88889" vertical-offset="564" max-vertical-offset="1656">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/NGOStastisticController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="253" column="24" selection-start="9910" selection-end="9910" vertical-scroll-proportion="0.47916666" vertical-offset="2645" max-vertical-offset="15498">
+        <state line="437" column="45" selection-start="17195" selection-end="17200" vertical-scroll-proportion="-3.090909" vertical-offset="7696" max-vertical-offset="18324">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/practices.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="34" selection-start="3859" selection-end="3859" vertical-scroll-proportion="-11.111111" vertical-offset="1068" max-vertical-offset="1872">
           <folding>
-            <element signature="n#records#0;n#NGOStastisticController#0;n#!!top" expanded="false" />
-            <element signature="e#5118#5152#0" expanded="true" />
-            <element signature="e#15091#17849#0" expanded="false" />
-            <element signature="e#16536#17077#0" expanded="false" />
-            <element signature="e#17086#17454#0" expanded="false" />
-            <element signature="e#17463#17849#0" expanded="false" />
-            <marker date="1412568815359" expanded="true" signature="13968:14014" placeholder="..." />
+            <element signature="e#6#88#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/dashboard.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="129" column="8" selection-start="6160" selection-end="6160" vertical-scroll-proportion="0.38372093" vertical-offset="2124" max-vertical-offset="5310">
+          <folding />
         </state>
       </provider>
     </entry>

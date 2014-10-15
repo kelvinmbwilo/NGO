@@ -71,10 +71,12 @@
       <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="name" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="certificate_no" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="company_no" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="registation_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="registation_type" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="operation_level" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="postal_adress" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="phisycal_add" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="region" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="district" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="phone_number" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
@@ -95,12 +97,35 @@
       <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>
+    <table name="comments" schema="" catalog="NGO" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="content" sqlType="VARCHAR" length="2000" precision="0" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="job_id" sqlType="VARCHAR" length="50" precision="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
     <table name="countries" schema="" catalog="NGO" type="TABLE">
       <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="country_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="name" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="craeted_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" version="true"/>
       <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="cvtable" schema="" catalog="NGO" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="email" sqlType="VARCHAR" length="50" precision="0" nullable="false" jdbcType="12"/>
+      <column name="cvName" sqlType="VARCHAR" length="50" precision="0" nullable="false" jdbcType="12"/>
+      <column name="dateOfBirth" sqlType="DATE" length="10" precision="0" nullable="false" jdbcType="91"/>
+      <column name="nationality" sqlType="VARCHAR" length="50" precision="0" nullable="false" jdbcType="12"/>
+      <column name="regions" sqlType="VARCHAR" length="50" precision="0" nullable="false" jdbcType="12"/>
+      <column name="categories" sqlType="VARCHAR" length="500" precision="0" nullable="false" jdbcType="12"/>
+      <column name="maritalStatus" sqlType="VARCHAR" length="20" precision="0" nullable="false" jdbcType="12"/>
+      <column name="language" sqlType="VARCHAR" length="100" precision="0" nullable="false" jdbcType="12"/>
+      <column name="educationLevel" sqlType="VARCHAR" length="50" precision="0" nullable="false" jdbcType="12"/>
+      <column name="selfDescription" sqlType="VARCHAR" length="2000" precision="0" nullable="false" jdbcType="12"/>
+      <column name="datePosted" sqlType="DATE" length="10" precision="0" nullable="false" jdbcType="91"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>
     <table name="districts" schema="" catalog="NGO" type="TABLE">
@@ -136,6 +161,8 @@
       <column name="report_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="direct_cost" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="adminstrative_cost" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="liabilities" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="assets" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="total" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="balance" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>

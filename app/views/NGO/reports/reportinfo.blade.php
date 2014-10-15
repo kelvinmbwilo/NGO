@@ -77,7 +77,7 @@
             </tr><tr>
                 <th>Title</th><td>{{ Auth::user()->title }}</td>
             </tr><tr>
-                <th>Address</th><td></td>
+                <th>Address</th><td>@if($report->NGOs){{ $report->NGOs->postal_adress }}@endif</td>
             </tr>
         </table>
     </div>
@@ -130,11 +130,11 @@
         <div class="col-md-6">
             <table class="table">
                 <tr>
-                    <td>Total Liabilities</td><td></td>
+                    <td>Total Liabilities</td><td>{{ $report->expenditure->liabilities }}</td>
                 </tr><tr>
-                    <td>Total value of Assets</td><td></td>
+                    <td>Total value of Assets</td><td>{{ $report->expenditure->assets }}</td>
                 </tr><tr>
-                    <td>net Worth(Asset less Liabilities)</td><td></td>
+                    <td>net Worth(Asset less Liabilities)</td><td>{{{ $report->expenditure->liabilities - $report->expenditure->assets }}}</td>
                 </tr>
             </table>
         </div>

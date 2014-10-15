@@ -16,16 +16,13 @@ $ngos = NGOs::all();
             <table class="table table-striped table-bordered" id="example2">
                 <thead>
                 <tr>
-                    <th> # </th>
+                    <th> SN </th>
                     <th> Name </th>
+                    <th> Registration No </th>
                     <th> Registration Date </th>
                     <th> Registration Type </th>
-                    <th> Region</th>
-                    <th> District</th>
+                    <th> Level Of Operation</th>
                     <th> Priority Sector</th>
-                    <th> Phone Number</th>
-                    <th> Email</th>
-                    <th> Postal Address</th>
                     <th> Action </th>
                 </tr>
                 </thead>
@@ -35,14 +32,11 @@ $ngos = NGOs::all();
                 <tr>
                     <td>{{ $i++ }}</td>
                     <td style="text-transform: capitalize">{{ $us->name }}</td>
+                    <td>{{ $us->certificate_no }}</td>
                     <td>{{ $us->registation_date }}</td>
                     <td>{{ $us->registation_type }}</td>
-                    <td>{{ Region::find($us->region)->region }}</td>
-                    <td>{{ District::find($us->district)->district }}</td>
+                    <td>{{ $us->operation_level }}</td>
                     <td>{{ $us->priority_sector }}</td>
-                    <td>{{ $us->phone_number }}</td>
-                    <td><a href="mailto:{{ $us->email }}">{{ $us->email }}</a></td>
-                    <td>{{ $us->postal_adress }}</td>
                     <td id="{{ $us->id }}">
                         <a href='{{ url("ngo/{$us->id}/member") }}' title="View Members" ><i class="fa fa-list text-success"></i> Members</a>&nbsp;&nbsp;&nbsp;
                         <a href='{{ url("ngo/{$us->id}/bearer") }}' title="View Employee" ><i class="fa fa-th-large text-warning"></i> Employee</a>&nbsp;&nbsp;&nbsp;

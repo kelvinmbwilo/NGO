@@ -1,7 +1,11 @@
 <?php
 $region = array();
 $district = array();
-
+if($ngo->region == '0'){
+    $district = array('0'=>'-Select District-')+District::all()->lists('district','id');
+}else{
+    $district = array('0'=>'-Select District-') + Region::find($ngo->region)->district()->lists('district','id');
+}
 ?>
 <div class="panel panel-default">
     <div class="panel-body">
@@ -18,35 +22,17 @@ $district = array();
 
         <div class='form-group'>
             <div class='col-sm-6'>
-                Registration Type <br> {{ Form::text('reg_type',$ngo->registation_type,array('class'=>'form-control','placeholder'=>'Registration Type','required'=>'required')) }}
+                Registration Type <br>  {{ Form::select('reg_type',array(''=>'-Select-','Registered'=>'Registered','Compliance'=>'Compliance'),$ngo->registation_type,array('class'=>'form-control','required'=>'requiered')) }}
             </div>
             <div class='col-sm-6'>
-                Postal Address <br> {{ Form::text('postal',$ngo->postal_adress,array('class'=>'form-control','placeholder'=>'Postal Address','required'=>'required')) }}
+                Level Of Operation<br>{{ Form::select('operation',array('International'=>'International','National'=>'National','Regional'=>'Regional','District'=>'District'),$ngo->operation_level,array('class'=>'form-control','required'=>'requiered')) }}
             </div>
         </div>
-
-        <div class='form-group'>
-            <div class='col-sm-6'>
-                Email<br>{{ Form::email('email',$ngo->email,array('class'=>'form-control','placeholder'=>'Email','required'=>'required')) }}
-            </div>
-            <div class='col-sm-6'>
-                Phone Number<br>{{ Form::text('phone',$ngo->phone_number,array('class'=>'form-control','placeholder'=>'Phone Number','required'=>'required')) }}
-            </div>
-        </div>
-
-        <div class='form-group' id="area">
-            <div class='col-sm-6' id="regarea">
-                Region<br>{{ Form::select('region',Region::all()->lists('region','id'),$ngo->region,array('class'=>'form-control','required'=>'requiered')) }}
-            </div>
-            <div class='col-sm-6' id="disarea">
-                District<br><span id="district-area">{{ Form::select('district',Region::find($ngo->region)->district()->lists('district','id'),$ngo->district,array('class'=>'form-control','required'=>'requiered')) }}</span>
-            </div>
-        </div>
-
         <div class='form-group'>
             <div class='col-sm-6'>
                 <?php
                 $sector = array(
+                    ""=>"-Select Sector-",
                     "Agriculture and Food Security"=>"Agriculture and Food Security",
                     "Education and Training"=>"Education and Training",
                     "Health and HIV/AIDS"=>"Health and HIV/AIDS",
@@ -59,12 +45,12 @@ $district = array();
                     "Environment and Climate Change"=>"Environment and Climate Change",
                     "Labor and Employment"=>"Labor and Employment",
                     "Finance"=>"Finance",
-                    " Mineral and Energy "=>"Mineral and Energy ",
+                    "Mineral and Energy"=>"Mineral and Energy ",
                     "Sports and Culture"=>"Sports and Culture",
                     "Transport and Infrastructure"=>"Transport and Infrastructure",
                 )
                 ?>
-                Priority Sector<br>{{ Form::select('sector',$sector,$ngo->priority_sector,array('class'=>'form-control','required'=>'requiered')) }}
+                Priority Sector<br>{{ Form::select('sector',$sector,$ngo->priority_sector,array('class'=>'form-control')) }}
             </div>
             <div class='col-sm-6'>
                 Registration Date <br> {{ Form::text('reg_date',$ngo->registation_date,array('class'=>'dat form-control','placeholder'=>'Registration Date','required'=>'required')) }}
@@ -75,6 +61,33 @@ $district = array();
                 });
             </script>
         </div>
+
+        <div class='form-group'>
+            <div class='col-sm-6'>
+                Email<br>{{ Form::email('email',$ngo->email,array('class'=>'form-control','placeholder'=>'Email')) }}
+            </div>
+            <div class='col-sm-6'>
+                Phone Number<br>{{ Form::text('phone',$ngo->phone_number,array('class'=>'form-control','placeholder'=>'Phone Number')) }}
+            </div>
+        </div>
+
+        <div class='form-group' id="area">
+            <div class='col-sm-6' id="regarea">
+                Region<br>{{ Form::select('region',array('0'=>'-Select Region-')+Region::all()->lists('region','id'),$ngo->region,array('class'=>'form-control')) }}
+            </div>
+            <div class='col-sm-6' id="disarea">
+                District<br><span id="district-area">{{ Form::select('district',Region::find($ngo->region)->district()->lists('district','id'),$ngo->district,array('class'=>'form-control')) }}</span>
+            </div>
+        </div>
+
+        <div class='form-group'>
+
+            <div class='col-sm-12'>
+                Postal Address <br> {{ Form::text('postal',$ngo->postal_adress,array('class'=>'form-control','placeholder'=>'Postal Address')) }}
+            </div>
+
+        </div>
+
         <div id="output"></div>
         <div class='col-sm-12 form-group text-center'>
             {{ Form::submit('Submit',array('class'=>'btn btn-primary','id'=>'submitqn')) }}

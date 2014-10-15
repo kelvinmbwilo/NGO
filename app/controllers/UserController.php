@@ -206,16 +206,16 @@ class UserController extends \BaseController {
     }
 
     public function check_region($id){
-        if($id == "all"){
-            return Form::select('district',array('all'=>'all')+District::lists('district','id'),'',array('class'=>'form-control','required'=>'requiered'));
+        if($id == "0"){
+            return Form::select('district',array('0'=>'-Select District-')+District::lists('district','id'),'',array('class'=>'form-control','required'=>'requiered'));
 
         }else{
-            return Form::select('district',Region::find($id)->district()->lists('district','id'),'',array('class'=>'form-control','required'=>'requiered'));
+            return Form::select('district',array("0"=>"-Select District-")+Region::find($id)->district()->lists('district','id'),'',array('class'=>'form-control','required'=>'requiered'));
         }
     }
 
     public function check_region1($id){
-        if($id == "all"){
+        if($id == "0"){
             return Form::select('district',array('all'=>'all')+District::lists('district','id'),'',array('class'=>'form-control','required'=>'requiered'));
 
         }else{

@@ -38,12 +38,12 @@ class StatisticsController extends \BaseController {
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show()
 	{
-		//
+        return View::make("practices");
+
 	}
 
 

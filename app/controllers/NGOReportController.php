@@ -115,6 +115,8 @@ class NGOReportController extends \BaseController {
             'report_id' => $report->id,
             'direct_cost' => Input::get('program_cost'),
             'adminstrative_cost' => Input::get('admin_cost'),
+            'liabilities' => Input::get('liabilities'),
+            'assets' => Input::get('assets'),
             'total' => Input::get('admin_cost')+Input::get('program_cost'),
         ));
 //        $name = $member->name;

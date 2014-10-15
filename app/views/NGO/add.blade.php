@@ -12,14 +12,14 @@ $district = array();
                 NGO Name <br>  {{ Form::text('name','',array('class'=>'form-control','placeholder'=>'NGO Name','required'=>'required')) }}
             </div>
             <div class='col-sm-6'>
-                Certificate No<br>{{ Form::text('certificate','',array('class'=>'form-control','placeholder'=>'Certificate No','required'=>'required')) }}
+                Registration No<br>{{ Form::text('certificate','',array('class'=>'form-control','placeholder'=>'Certificate No','required'=>'required')) }}
             </div>
 
         </div>
         <div class='form-group'>
 
             <div class='col-sm-6'>
-                Registration Type <br>  {{ Form::text('reg_type','',array('class'=>'form-control','placeholder'=>'NGO Name','required'=>'required')) }}
+                Registration Type <br>  {{ Form::select('reg_type',array(''=>'-Select-','Registered'=>'Registered','Compliance'=>'Compliance'),'',array('class'=>'form-control','required'=>'requiered')) }}
             </div>
             <div class='col-sm-6'>
                 Level Of Operation<br>{{ Form::select('operation',array('International'=>'International','National'=>'National','Regional'=>'Regional','District'=>'District'),'',array('class'=>'form-control','required'=>'requiered')) }}
@@ -30,6 +30,7 @@ $district = array();
             <div class='col-sm-6'>
                 <?php
                 $sector = array(
+                    ""=>"-Select Sector-",
                     "Agriculture and Food Security"=>"Agriculture and Food Security",
                     "Education and Training"=>"Education and Training",
                     "Health and HIV/AIDS"=>"Health and HIV/AIDS",
@@ -42,12 +43,12 @@ $district = array();
                     "Environment and Climate Change"=>"Environment and Climate Change",
                     "Labor and Employment"=>"Labor and Employment",
                     "Finance"=>"Finance",
-                    " Mineral and Energy "=>"Mineral and Energy ",
+                    "Mineral and Energy"=>"Mineral and Energy ",
                     "Sports and Culture"=>"Sports and Culture",
                     "Transport and Infrastructure"=>"Transport and Infrastructure",
                 )
                 ?>
-                Priority Sector<br>{{ Form::select('sector',$sector,'',array('class'=>'form-control','required'=>'requiered')) }}
+                Priority Sector<br>{{ Form::select('sector',$sector,'',array('class'=>'form-control')) }}
             </div>
             <div class='col-sm-6'>
                 Registration Date <br> {{ Form::text('reg_date','',array('class'=>'dat form-control','placeholder'=>'Registration Date','required'=>'required')) }}
@@ -62,26 +63,26 @@ $district = array();
 
         <div class='form-group'>
             <div class='col-sm-6'>
-                Email<br>{{ Form::email('email','',array('class'=>'form-control','placeholder'=>'Email','required'=>'required')) }}
+                Email<br>{{ Form::email('email','',array('class'=>'form-control','placeholder'=>'Email')) }}
             </div>
             <div class='col-sm-6'>
-                Phone Number<br>{{ Form::text('phone','',array('class'=>'form-control','placeholder'=>'Phone Number','required'=>'required')) }}
+                Phone Number<br>{{ Form::text('phone','',array('class'=>'form-control','placeholder'=>'Phone Number')) }}
             </div>
         </div>
 
         <div class='form-group' id="area">
             <div class='col-sm-6' id="regarea">
-                Region<br>{{ Form::select('region',Region::all()->lists('region','id'),'',array('class'=>'form-control','required'=>'requiered')) }}
+                Region<br>{{ Form::select('region',array('0'=>'-Select Region-')+Region::all()->lists('region','id'),'',array('class'=>'form-control')) }}
             </div>
             <div class='col-sm-6' id="disarea">
-                District<br><span id="district-area">{{ Form::select('district',$district,'',array('class'=>'form-control','required'=>'requiered')) }}</span>
+                District<br><span id="district-area">{{ Form::select('district',array('0'=>'-Select District-')+District::all()->lists('district','id'),'',array('class'=>'form-control')) }}</span>
             </div>
         </div>
 
         <div class='form-group'>
 
             <div class='col-sm-12'>
-                Postal Address <br> {{ Form::text('postal','',array('class'=>'form-control','placeholder'=>'Postal Address','required'=>'required')) }}
+                Postal Address <br> {{ Form::text('postal','',array('class'=>'form-control','placeholder'=>'Postal Address')) }}
             </div>
         </div>
 

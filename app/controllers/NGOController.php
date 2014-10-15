@@ -101,11 +101,13 @@ class NGOController extends \BaseController {
         $ngo->registation_date = Input::get('reg_date');
         $ngo->registation_type = Input::get('reg_type');
         $ngo->postal_adress = Input::get('postal');
+        $ngo->certificate_no = Input::get('certificate');
         $ngo->region = Input::get('region');
         $ngo->district = Input::get('district');
         $ngo->phone_number = Input::get('phone');
         $ngo->email = Input::get('email');
         $ngo->priority_sector = Input::get('sector');
+        $ngo->operation_level = Input::get('operation');
         $ngo->save();
         $name = $ngo->name;
         Logs::create(array(
