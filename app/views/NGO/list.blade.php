@@ -74,11 +74,14 @@
                             e.preventDefault();
                             var recordId = $(this).parent("td").attr("id");
                             var page = $(this).attr("href");
-                            window.location.replace('{{ url("ngo/'+recordId+'/'+page+'") }}');
+
+                            if(page!="#edit" && page!="#b"){
+                                window.location.replace('{{ url("ngo/'+recordId+'/'+page+'") }}');
+                            }
+
                         });
                         //editing a room
                         $(".edituser").click(function(){
-                            var id1 = $(this).parent().attr('id');
                             var id1 = $(this).parent().attr('id');
                             var modal = '<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">';
                             modal+= '<div class="modal-dialog">';
