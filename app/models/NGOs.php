@@ -26,7 +26,7 @@ class NGOs extends Eloquent {
         return $this->hasMany('NGO_challanges', 'NGO_id', 'id');
     }
      public function NGOPractices(){
-        return $this->hasMany('NGO_practices', 'NGOs_id', 'id');
+        return $this->hasMany('NGOPractices', 'NGO_id', 'id');
     }
      public function employmentparticulars(){
         return $this->hasMany('EmploymentParticulars','NGO_id', 'id');

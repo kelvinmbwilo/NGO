@@ -9,14 +9,29 @@ class NGOStastisticController extends \BaseController {
 	 */
 	public function index()
 	{
-		$condition = "";
+		$condition = Input::get('registration');
         $ngo = DB::table('NGOs');
+
 
         $operate = Input::get('operate');
         $chart = Input::get('chart');
-        $title = "NGOs ";
+        $title = " ";
+
+        if($condition == 'all'){
+            $title .= " All NGOs ";
+        }elseif($condition == 'registered'){
+            $title .= " Registered NGOs ";
+            $ngo->where('registation_type','Registered');
+        }elseif($condition == 'compliance'){
+            $title .= " Compliance NGOs ";
+            $ngo->where('registation_type','Compliance');
+        }
+        if(Input::get('from') != "" && Input::get('to') != ""){
+            $ngo->whereBetween('registation_date',array(Input::get('from'),Input::get('to')));
+            $title .= " Between ".Input::get('from')." And ".Input::get('to');
+        }
         if(count(Input::get('region')) != 0){
-            $ngo->whereIn('region',Input::get('region')+array('0'));
+//            $ngo->whereIn('region',Input::get('region')+array('0'));
             $i = 0;
 //            $title .= " From  ";
             foreach(Input::get('region') as $region){
@@ -26,7 +41,7 @@ class NGOStastisticController extends \BaseController {
 //                $title .= " Regions ";
         }
         if(count(Input::get('district')) != 0){
-            $ngo->whereIn('district',Input::get('district')+array('0'));
+//            $ngo->whereIn('district',Input::get('district')+array('0'));
             $i = 0;
 //            $title .= " From  ";
             foreach(Input::get('district') as $region){
@@ -35,53 +50,34 @@ class NGOStastisticController extends \BaseController {
             }
 //            $title .= " Districts ";
         }
-        if(count(Input::get('sector')) != 0){
-            $ngo->whereIn('priority_sector',Input::get('sector')+array('0'));
-            $i = 0;
-//            $title .= " With  ";
-            foreach(Input::get('sector') as $region){
-                $i++;
-//                $title .= (count(Input::get('sector')) == $i)?$region:$region.", ";
-            }
-//            $title .= " Priority Sectors ";
-        }
-        if(count(Input::get('operation')) != 0){
-            $ngo->whereIn('operation_level',Input::get('operation')+array('0'));
-            $i = 0;
-//            $title .= " Operation Levels ";
-            foreach(Input::get('operation') as $region){
-                $i++;
-//                $title .= (count(Input::get('operation')) == $i)?$region:$region.", ";
-            }
-        }
-        if(Input::get('from') != "" && Input::get('to') != ""){
-            $ngo->whereBetween('registation_date',array(Input::get('from'),Input::get('to')));
-            $title .= " Registered Between ".Input::get('from')." And ".Input::get('to');
-        }
+
+
+
+
 //        echo count($ngo->where('id','!=','0')->get());exit;
         if($chart =="records"){
-            $this->records($ngo,Input::get('region'),Input::get('district'),Input::get('sector'),Input::get('operation'),$title,$operate);
+            $this->records($ngo,Input::get('region'),Input::get('district'),Input::get('sector'),Input::get('operation'),$title,$operate,$condition);
         }elseif($chart =="bar"){
-            $this->bar($ngo,Input::get('region'),Input::get('district'),Input::get('sector'),Input::get('operation'),$title,$operate);
+            $this->bar($ngo,Input::get('region'),Input::get('district'),Input::get('sector'),Input::get('operation'),$title,$operate,$condition);
         }elseif($chart =="table"){
-            $this->table($ngo,Input::get('region'),Input::get('district'),Input::get('sector'),Input::get('operation'),$title,$operate);
+            $this->table($ngo,Input::get('region'),Input::get('district'),Input::get('sector'),Input::get('operation'),$title,$operate,$condition);
         }elseif($chart == "line"){
-            $this->line($ngo,Input::get('region'),Input::get('district'),Input::get('sector'),Input::get('operation'),$title,$operate);
+            $this->line($ngo,Input::get('region'),Input::get('district'),Input::get('sector'),Input::get('operation'),$title,$operate,$condition);
         }elseif($chart == "combined"){
-            $this->combined($ngo,Input::get('region'),Input::get('district'),Input::get('sector'),Input::get('operation'),$title,$operate);
+            $this->combined($ngo,Input::get('region'),Input::get('district'),Input::get('sector'),Input::get('operation'),$title,$operate,$condition);
         }elseif($chart == "pie"){
-            $this->pie($ngo,Input::get('region'),Input::get('district'),Input::get('sector'),Input::get('operation'),$title,$operate);
+            $this->pie($ngo,Input::get('region'),Input::get('district'),Input::get('sector'),Input::get('operation'),$title,$operate,$condition);
         }elseif($chart == "column"){
-            $this->column($ngo,Input::get('region'),Input::get('district'),Input::get('sector'),Input::get('operation'),$title,$operate);
+            $this->column($ngo,Input::get('region'),Input::get('district'),Input::get('sector'),Input::get('operation'),$title,$operate,$condition);
         }
         if(isset($_POST['excel'])){
-            $this->excelDownload1($ngo,Input::get('region'),Input::get('district'),Input::get('sector'),Input::get('operation'),$title,$operate);
+            $this->excelDownload1($ngo,Input::get('region'),Input::get('district'),Input::get('sector'),Input::get('operation'),$title,$operate,$condition);
         }
 
 	}
 
 
-	public function records($ngo,$region,$district,$sector,$operation,$title){
+	public function records($ngo,$region,$district,$sector,$operation,$title,$condition){
         ?>
 <div class="row">
     <div class="panel panel-default">
@@ -92,7 +88,8 @@ class NGOStastisticController extends \BaseController {
             </div>
         </div>
         <div class="bootstrap-admin-panel-content">
-            <?php if(count($ngo->where('id','!=','0')->get()) == 0){ ?>
+            <?php
+            if(count($ngo->where('id','!=','0')->get()) == 0){ ?>
             <h3>There are no NGOs registered to the system</h3>
 <?php }else{ ?>
             <table class="table table-striped table-bordered" id="example2">
@@ -100,10 +97,9 @@ class NGOStastisticController extends \BaseController {
                 <tr>
                     <th> # </th>
                     <th> Name </th>
+                    <th> Registration No </th>
                     <th> Registration Date </th>
                     <th> Registration Type </th>
-                    <th> Region</th>
-                    <th> District</th>
                     <th> Priority Sector</th>
                     <th> Phone Number</th>
                     <th> Email</th>
@@ -116,10 +112,9 @@ class NGOStastisticController extends \BaseController {
 <tr>
     <td><?php echo $i++ ?></td>
     <td style="text-transform: capitalize"><?php echo $us->name ?></td>
+    <td><?php echo $us->certificate_no ?></td>
     <td><?php echo $us->registation_date ?></td>
     <td><?php echo $us->registation_type ?></td>
-    <td><?php echo Region::find($us->region)->region ?></td>
-    <td><?php echo District::find($us->district)->district ?></td>
     <td><?php echo $us->priority_sector ?></td>
     <td><?php echo $us->phone_number ?></td>
     <td><a href="mailto:<?php $us->email ?>"><?php echo $us->email ?></a></td>
@@ -175,7 +170,7 @@ class NGOStastisticController extends \BaseController {
 <?php
     }
 
-    public function table($ngo,$region,$district,$sector,$operation,$title,$operate){
+    public function table($ngo,$region,$district,$sector,$operation,$title,$operate,$condition){
         $array = array();
         $columnss = "";
         $tabletitle = "";
@@ -263,14 +258,19 @@ elseif($operate == "Districts"){
         echo "<tr>";
         echo "<td>".$i."</td>";
         echo "<td>".$value."</td>";
-        echo "<td>".count(NGOs::where($columnss,$key)->get())."</td>";
+        if($condition == "all"){
+            echo "<td>".count(NGOs::where("$columnss",$key)->get())."</td>";
+        }else{
+            echo "<td>".count(NGOs::where("$columnss",$key)->where('registation_type',$condition)->get())."</td>";
+        }
+
         echo "</tr>";
     }
 
     echo "</table>";
 
 }
-    public function bar($ngo,$region,$district,$sector,$operation,$title,$operate){
+    public function bar($ngo,$region,$district,$sector,$operation,$title,$operate,$condition){
         $array = array();
         $columnss = "";
         $tabletitle = "";
@@ -289,7 +289,7 @@ elseif($operate == "Districts"){
                     "Environment and Climate Change"=>"Environment and Climate Change",
                     "Labor and Employment"=>"Labor and Employment",
                     "Finance"=>"Finance",
-                    " Mineral and Energy "=>"Mineral and Energy ",
+                    "Mineral and Energy"=>"Mineral and Energy ",
                     "Sports and Culture"=>"Sports and Culture",
                     "Transport and Infrastructure"=>"Transport and Infrastructure",
                 );
@@ -349,9 +349,15 @@ elseif($operate == "Districts"){
                 $pie1 = "";
                 foreach($array as $key=>$value){
                     $k++;
-                    $category1 .= (count($array) == $k)?"'$value'":"'$value',";
-                    $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->get()):count(NGOs::where($columnss,$key)->get()).",";
-                    $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."},";
+                    if($condition == "all"){
+                        $category1 .= (count($array) == $k)?"'$value'":"'$value',";
+                        $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->get()):count(NGOs::where($columnss,$key)->get()).",";
+                        $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."},";
+                    }else{
+                        $category1 .= (count($array) == $k)?"'$value'":"'$value',";
+                        $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get()):count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get()).",";
+                        $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."},";
+                    }
 
                 }
         ?>
@@ -384,7 +390,7 @@ elseif($operate == "Districts"){
         </script>
     <?php
 }
-public function column($ngo,$region,$district,$sector,$operation,$title,$operate){
+public function column($ngo,$region,$district,$sector,$operation,$title,$operate,$condition){
         $array = array();
         $columnss = "";
         $tabletitle = "";
@@ -463,10 +469,15 @@ public function column($ngo,$region,$district,$sector,$operation,$title,$operate
                 $pie1 = "";
                 foreach($array as $key=>$value){
                     $k++;
-                    $category1 .= (count($array) == $k)?"'$value'":"'$value',";
-                    $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->get()):count(NGOs::where($columnss,$key)->get()).",";
-                    $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."},";
-
+                    if($condition == "all"){
+                        $category1 .= (count($array) == $k)?"'$value'":"'$value',";
+                        $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->get()):count(NGOs::where($columnss,$key)->get()).",";
+                        $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."},";
+                    }else{
+                        $category1 .= (count($array) == $k)?"'$value'":"'$value',";
+                        $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get()):count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get()).",";
+                        $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."},";
+                    }
                 }
         ?>
         <script>
@@ -499,7 +510,7 @@ public function column($ngo,$region,$district,$sector,$operation,$title,$operate
     <?php
 }
 
-    public function line($ngo,$region,$district,$sector,$operation,$title,$operate){
+    public function line($ngo,$region,$district,$sector,$operation,$title,$operate,$condition){
         $array = array();
         $columnss = "";
         $tabletitle = "";
@@ -578,10 +589,15 @@ public function column($ngo,$region,$district,$sector,$operation,$title,$operate
         $pie1 = "";
         foreach($array as $key=>$value){
             $k++;
-            $category1 .= (count($array) == $k)?"'$value'":"'$value',";
-            $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->get()):count(NGOs::where($columnss,$key)->get()).",";
-            $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."},";
-
+            if($condition == "all"){
+                $category1 .= (count($array) == $k)?"'$value'":"'$value',";
+                $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->get()):count(NGOs::where($columnss,$key)->get()).",";
+                $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."},";
+            }else{
+                $category1 .= (count($array) == $k)?"'$value'":"'$value',";
+                $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get()):count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get()).",";
+                $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."},";
+            }
         }
 
             ?>
@@ -615,7 +631,7 @@ public function column($ngo,$region,$district,$sector,$operation,$title,$operate
         <?php
     }
 
-    public function combined($ngo,$region,$district,$sector,$operation,$title,$operate){
+    public function combined($ngo,$region,$district,$sector,$operation,$title,$operate,$condition){
         $array = array();
         $columnss = "";
         $tabletitle = "";
@@ -694,10 +710,15 @@ public function column($ngo,$region,$district,$sector,$operation,$title,$operate
         $pie1 = "";
         foreach($array as $key=>$value){
             $k++;
-            $category1 .= (count($array) == $k)?"'$value'":"'$value',";
-            $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->get()):count(NGOs::where($columnss,$key)->get()).",";
-            $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."},";
-
+            if($condition == "all"){
+                $category1 .= (count($array) == $k)?"'$value'":"'$value',";
+                $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->get()):count(NGOs::where($columnss,$key)->get()).",";
+                $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."},";
+            }else{
+                $category1 .= (count($array) == $k)?"'$value'":"'$value',";
+                $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get()):count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get()).",";
+                $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."},";
+            }
         }
             ?>
             <script>
@@ -749,7 +770,7 @@ public function column($ngo,$region,$district,$sector,$operation,$title,$operate
 
 
     }
-public function pie($ngo,$region,$district,$sector,$operation,$title,$operate){
+public function pie($ngo,$region,$district,$sector,$operation,$title,$operate,$condition){
         $array = array();
         $columnss = "";
         $tabletitle = "";
@@ -828,7 +849,11 @@ public function pie($ngo,$region,$district,$sector,$operation,$title,$operate){
         $pie1 = "";
         foreach($array as $key=>$value){
             $k++;
-            $pie1 .= (count($array) == $k)?"['".$value."', ".count(NGOs::where($columnss,$key)->get())."]":"['".$value."', ".count(NGOs::where($columnss,$key)->get())."],";
+            if($condition == "all"){
+                $pie1 .= (count($array) == $k)?"['".$value."', ".count(NGOs::where($columnss,$key)->get())."]":"['".$value."', ".count(NGOs::where($columnss,$key)->get())."],";
+            }else{
+                $pie1 .= (count($array) == $k)?"['".$value."', ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."]":"['".$value."', ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."],";
+            }
 
         }
             ?>
@@ -874,7 +899,7 @@ public function pie($ngo,$region,$district,$sector,$operation,$title,$operate){
     /**
      * a function to export data to excel
      */
-    public function excelDownload1($ngo,$region,$district,$sector,$operation,$title,$operate){
+    public function excelDownload1($ngo,$region,$district,$sector,$operation,$title,$operate,$condition){
         $array = array();
         $columnss = "";
         $tabletitle = "";
@@ -953,10 +978,15 @@ public function pie($ngo,$region,$district,$sector,$operation,$title,$operate){
         $pie1 = "";
         foreach($array as $key=>$value){
             $k++;
-            $category1 .= (count($array) == $k)?"'$value'":"'$value',";
-            $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->get()):count(NGOs::where($columnss,$key)->get()).",";
-            $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."},";
-
+            if($condition == "all"){
+                $category1 .= (count($array) == $k)?"'$value'":"'$value',";
+                $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->get()):count(NGOs::where($columnss,$key)->get()).",";
+                $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."},";
+            }else{
+                $category1 .= (count($array) == $k)?"'$value'":"'$value',";
+                $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get()):count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get()).",";
+                $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."},";
+            }
         }
         require_once dirname(__FILE__) . '/Classes/PHPExcel.php';
 

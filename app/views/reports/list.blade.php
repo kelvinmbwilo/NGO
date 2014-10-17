@@ -8,7 +8,7 @@ $ngos = AnnualReport::all();
     <div class="panel panel-default">
         <div class="panel-heading">
             <div class="text-muted bootstrap-admin-box-title">
-                 Annual Reports
+                Annual Reports
             </div>
         </div>
         <div class="bootstrap-admin-panel-content">
@@ -105,4 +105,3 @@ $ngos = AnnualReport::all();
 
     } );
 </script>
-

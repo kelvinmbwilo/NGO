@@ -3,8 +3,6 @@
 Name: {{ $ngo->name }}<br>
 Registratin Date: {{ $ngo->registation_date }}<br>
 Phone Number: {{ $ngo->phone_number }}<br>
-Region: {{ $ngo->ndistrict->district }}<br><br>
-
 @else
 Select NGO<br>{{ Form::select('region',NGOs::all()->lists('name','id'),'',array('class'=>'form-control','required'=>'requiered')) }}
 @endif
