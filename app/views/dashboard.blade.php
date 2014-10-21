@@ -91,21 +91,13 @@
     <div class="tabbable">
         <ul class="nav nav-tabs tabs-flat  nav-justified" id="myTab11">
             <li class="active">
-                <a data-toggle="tab" href="index.html#visits">
+                <a data-toggle="tab" href="#visits">
 
                 </a>
             </li>
 
         </ul>
         <div class="tab-content tabs-flat no-padding">
-            <div id="visits" class="tab-pane active animated fadeInUp">
-                <div class="row">
-                    <div class="col-lg-12 chart-container">
-                        <div id="dashboard-chart-visits" class="chart chart-lg" style="height: 500px"></div>
-                    </div>
-                </div>
-
-            </div>
             <div id="visits1" class="tab-pane active animated fadeInUp">
                 <div class="row">
                     <div class="col-lg-12 chart-container">
@@ -114,6 +106,15 @@
                 </div>
 
             </div>
+            <div id="visits" class="tab-pane active animated fadeInUp">
+                <div class="row">
+                    <div class="col-lg-12 chart-container">
+                        <div id="dashboard-chart-visits" class="chart chart-lg" style="height: 500px"></div>
+                    </div>
+                </div>
+
+            </div>
+
 
         </div>
     </div>

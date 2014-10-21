@@ -11,16 +11,16 @@ Reports
 @section('contents')
 <div class="row filters">
 <form method="post" action="{{ url('getreport') }}" id="reportform">
-    <div class="col-sm-3 ngo">
+    <div class="col-sm-2 ngo">
         Region<br>
         {{ Form::select('region[]',Region::all()->lists('region','id'),'',array('multiple'=>"multiple",'class'=>'form-control multi','id'=>'regions')) }}
 
     </div>
-    <div class="col-sm-3  col-sm-offset-1 ngo" >
+    <div class="col-sm-2  col-sm-offset-1 ngo" >
         District<br>
         <span id="">{{ Form::select('district[]',District::all()->lists('district','id'),'',array('multiple'=>"multiple",'class'=>'form-control multi')) }}</span>
     </div>
-    <div class="col-sm-3 col-sm-offset-1  ngo">
+    <div class="col-sm-2 col-sm-offset-1  ngo">
         Operation Level<br>
         <select name="operation[]" class="form-control multi" multiple="multiple">
             <option value="international">International</option>
@@ -29,7 +29,7 @@ Reports
             <option value="region">District</option>
         </select>
     </div>
-    <div class="col-sm-3 ngo">
+    <div class="col-sm-2 col-sm-offset-1 ngo">
         Priority Sector<br>
         <?php
         $sector = array(
@@ -52,6 +52,14 @@ Reports
         ?>
         {{ Form::select('sector[]',$sector,'',array('multiple'=>"multiple",'class'=>'form-control multi')) }}
 
+    </div>
+    <div class="col-sm-3 ">
+        Registration Type<br>
+        <select class="form-control input-sm" name="registration">
+            <option value="all">All</option>
+            <option value="registered">Registered</option>
+            <option value="compliance">Compliance</option>
+        </select>
     </div>
     <div class="col-sm-3 col-sm-offset-1">
         Report by<br>
@@ -118,6 +126,7 @@ Reports
             $('#reportform').find('input[name=chart]').remove();
             $('#reportform').append("<input type='hidden' name='chart' value='"+id+"'>")
             $(".chat_types").find('button').removeClass('btn-warning').addClass('btn-info');
+            $('#container').html("<i class='fa fa-spin fa-spinner'></i> Loading... ")
             $(this).removeClass('btn-info').addClass('btn-warning');
 //            $('#container').html("<i class='fa fa-spin fa-spinner fa-3x'></i>Fetching report please wait ");
             $('#reportform').ajaxSubmit({

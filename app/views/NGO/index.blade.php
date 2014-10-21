@@ -5,7 +5,7 @@
 @stop
 
 @section('header')
-System Users
+NGOs Management
 @stop
 
 @section('contents')

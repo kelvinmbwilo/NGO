@@ -4,7 +4,7 @@ $district = array();
 if($ngo->region == '0'){
     $district = array('0'=>'-Select District-')+District::all()->lists('district','id');
 }else{
-    $district = array('0'=>'-Select District-') + Region::find($ngo->region)->district()->lists('district','id');
+    $district = array('0'=>'-Select District-') + Region::find($ngo->region)->ndistrict()->lists('district','id');
 }
 ?>
 <div class="panel panel-default">
@@ -76,7 +76,7 @@ if($ngo->region == '0'){
                 Region<br>{{ Form::select('region',array('0'=>'-Select Region-')+Region::all()->lists('region','id'),$ngo->region,array('class'=>'form-control')) }}
             </div>
             <div class='col-sm-6' id="disarea">
-                District<br><span id="district-area">{{ Form::select('district',Region::find($ngo->region)->district()->lists('district','id'),$ngo->district,array('class'=>'form-control')) }}</span>
+                District<br><span id="district-area">{{ Form::select('district',$district,$ngo->district,array('class'=>'form-control')) }}</span>
             </div>
         </div>
 
