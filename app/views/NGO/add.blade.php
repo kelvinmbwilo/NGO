@@ -43,6 +43,7 @@ $district = array();
                     "Environment and Climate Change"=>"Environment and Climate Change",
                     "Labor and Employment"=>"Labor and Employment",
                     "Finance"=>"Finance",
+                    "Women Lively Hood"=>"Women Lively Hood",
                     "Mineral and Energy"=>"Mineral and Energy ",
                     "Sports and Culture"=>"Sports and Culture",
                     "Transport and Infrastructure"=>"Transport and Infrastructure",
