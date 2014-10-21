@@ -82,6 +82,7 @@ Route::post('ngo/add',array('as'=>'addngo1', 'uses'=>'NGOController@store'));
 
 //viewing list of ngos
 Route::get('ngos',array('as'=>'listngo', 'uses'=>'NGOController@index'));
+Route::get('ngoJson',array('as'=>'json', 'uses'=>'NGOController@ngoJson'));
 
 //display a form to edit ngo information
 Route::get('ngo/edit/{id}',array('as'=>'editngo', 'uses'=>'NGOController@edit'));

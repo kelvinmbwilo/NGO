@@ -9,7 +9,15 @@ class NGOController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('NGO.index');
+        $ngos = NGOs::all();
+        return View::make("NGO.index",compact("ngos"));
+
+	}
+    public function ngoJson()
+	{
+        $ngos = NGOs::all();
+        return Response::json($ngos);
+
 	}
 
 

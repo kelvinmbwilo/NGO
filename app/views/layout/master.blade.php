@@ -27,7 +27,7 @@ Author: kelvin mbwilo
     <link href="{{ asset('assets/css/weather-icons.min.css') }} " rel="stylesheet" />
 
     <!--Fonts-->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/css/googlecss.css') }}" rel="stylesheet" type="text/css">
 
     <!--Beyond styles-->
     <link href="{{ asset('jquery.multiselect.css') }} " rel="stylesheet" type="text/css"/>
