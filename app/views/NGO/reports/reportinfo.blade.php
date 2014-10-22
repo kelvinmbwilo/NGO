@@ -27,7 +27,6 @@
             </tr>
             <tr>
                 <td>Region</td>
-<!--                <td id="region">@if($report->NGOs)@if($report->NGOs->nregion){{ $report->NGOs->nregion->region }}@endif@endif</td>-->
             </tr>
         </table>
     </div>
