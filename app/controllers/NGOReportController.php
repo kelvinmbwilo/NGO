@@ -199,5 +199,10 @@ class NGOReportController extends \BaseController {
         ));
     }
 
+    public function summary($id){
+        $ngo = NGOs::find($id);
+        return View::make('NGO.summary',compact('ngo'));
+    }
+
 
 }

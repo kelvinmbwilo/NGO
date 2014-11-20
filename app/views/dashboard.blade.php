@@ -36,11 +36,11 @@
                         </div>
                     </div>
                     <div class="databox-right">
-                        <span class="databox-number themethirdcolor">{{ count(NGOsMembers::all()) }}</span>
-                        <div class="databox-text darkgray">NGOs Members</div>
-                        <div class="databox-stat themethirdcolor radius-bordered">
-                            <i class="stat-icon fa fa-check"></i>
-                        </div>
+                        <span class="databox-number themethirdcolor col-xs-4" style="padding: 2px;font-size: 11px">All {{ count(NGOsMembers::all()) }}</span>
+                        <span class="databox-number themethirdcolor  col-xs-4" style="padding: 2px;font-size: 11px"> <i class="fa fa-male"></i> {{ count(NGOsMembers::where('sex','Male')->get()) }}</span>
+                        <span class="databox-number themethirdcolor  col-xs-4" style="padding: 2px;font-size: 11px"> <i class="fa fa-female"></i> {{ count(NGOsMembers::where('sex','Female')->get()) }}</span>
+                        <div class="databox-text darkgray col-xs-11">NGOs Members</div>
+
                     </div>
                 </div>
             </div>
@@ -52,11 +52,11 @@
                         </div>
                     </div>
                     <div class="databox-right">
-                        <span class="databox-number themeprimary">{{ count(EmploymentParticulars::where('employement_status','Employee')->get()) }}</span>
-                        <div class="databox-text darkgray">EMPLOYEES</div>
-                        <div class="databox-state bg-themeprimary">
-                            <i class="fa fa-check"></i>
-                        </div>
+                        <span class="databox-number themeprimary  col-xs-4" style="padding: 2px;font-size: 11px">All {{ count(EmploymentParticulars::where('employement_status','Employee')->get()) }}</span>
+                        <span class="databox-number themeprimary  col-xs-4" style="padding: 2px;font-size: 11px"> <i class="fa fa-male"></i> {{ count(EmploymentParticulars::where('employement_status','Employee')->where('gender','Male')->get()) }}</span>
+                        <span class="databox-number themeprimary  col-xs-4" style="padding: 2px;font-size: 11px"> <i class="fa fa-female"></i> {{ count(EmploymentParticulars::where('employement_status','Employee')->where('gender','Female')->get()) }}</span>
+                        <div class="databox-text darkgray  col-xs-11">EMPLOYEES</div>
+
                     </div>
                 </div>
             </div>
@@ -68,11 +68,11 @@
                         </div>
                     </div>
                     <div class="databox-right">
-                        <span class="databox-number themeprimary">{{ count(EmploymentParticulars::where('employement_status','Volunteer')->get()) }}</span>
-                        <div class="databox-text darkgray">VOLUNTEER</div>
-                        <div class="databox-state bg-themeprimary">
-                            <i class="fa fa-check"></i>
-                        </div>
+                        <span class="databox-number themeprimary  col-xs-4" style="padding: 2px;font-size: 11px">All {{ count(EmploymentParticulars::where('employement_status','Volunteer')->get()) }}</span>
+                        <span class="databox-number themeprimary  col-xs-4" style="padding: 2px;font-size: 11px"> <i class="fa fa-male"></i> {{ count(EmploymentParticulars::where('employement_status','Volunteer')->where('gender','Male')->get()) }}</span>
+                        <span class="databox-number themeprimary  col-xs-4" style="padding: 2px;font-size: 11px"> <i class="fa fa-female"></i> {{ count(EmploymentParticulars::where('employement_status','Volunteer')->where('gender','Female')->get()) }}</span>
+                        <div class="databox-text darkgray col-xs-11">VOLUNTEER</div>
+
                     </div>
                 </div>
             </div>

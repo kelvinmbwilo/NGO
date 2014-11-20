@@ -3620,7 +3620,7 @@ a:focus, a:active {
     display: block;
     font-size: 17px;
     line-height: 26px;
-    margin: 2px;
+    /*margin: 2px;*/
     position: relative;
     font-family: 'Lucida Sans', 'trebuchet MS', Arial, Helvetica;
     font-weight: 700;
@@ -3853,7 +3853,7 @@ a:focus, a:active {
     vertical-align: top;
     text-align: center;
     margin: 0;
-    width: 65px;
+    width: 35px;
     height: 65px;
     padding: 10px;
     color: #2dc3e8;

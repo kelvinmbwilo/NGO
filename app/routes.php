@@ -211,6 +211,10 @@ Route::post('ngo/{id}/report/add',array('uses'=>'NGOReportController@store'));
 Route::get('ngo/{id}/report',array('uses'=>'NGOReportController@index'));
 
 //viewing list of reports of particular ngo
+Route::get('ngo/{id}/summary',array('uses'=>'NGOReportController@summary'));
+
+
+//viewing list of reports of particular ngo
 Route::get('ngo/report/{id}',array('uses'=>'NGOReportController@show'));
 
 //display a form to edit ngo report information

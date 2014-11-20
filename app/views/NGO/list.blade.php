@@ -58,7 +58,8 @@
                 ngoDataTable += '<a href="member" title="View Members" ><i class="fa fa-list text-success"></i> Members</a>&nbsp;&nbsp;&nbsp';
                 ngoDataTable += '<a href="bearer" title="View Employee" ><i class="fa fa-th-large text-warning"></i> Employee</a>&nbsp;&nbsp;&nbsp;';
                 ngoDataTable += '<a href="report" title="View Report" ><i class="fa fa-briefcase text-primary"></i> Reports</a>&nbsp;&nbsp;&nbsp;';
-                ngoDataTable += '<a href="#edit" title="edit User" class="edituser"><i class="fa fa-pencil text-info"></i> edit</a>&nbsp;&nbsp;&nbsp;';
+                ngoDataTable += '<a href="#edit" title="edit NGO" class="edituser"><i class="fa fa-pencil text-info"></i> edit</a>&nbsp;&nbsp;';
+                ngoDataTable += '<a href="summary" title="View NGO Summary" class="summary"><i class="fa fa-user text-info"></i> Summary</a>&nbsp;&nbsp;';
                 ngoDataTable += '<a href="#b" title="delete User" class="deleteuser"><i class="fa fa-trash-o text-danger"></i> </a>';
                 ngoDataTable += '</td>';
                 ngoDataTable += '</tr>';
@@ -82,6 +83,30 @@
                         });
                         //editing a room
                         $(".edituser").click(function(){
+                            var id1 = $(this).parent().attr('id');
+                            var modal = '<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">';
+                            modal+= '<div class="modal-dialog">';
+                            modal+= '<div class="modal-content">';
+                            modal+= '<div class="modal-header">';
+                            modal+= '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
+                            modal+= '<h2 class="modal-title" id="myModalLabel">Update NGO  Information</h2>';
+                            modal+= '</div>';
+                            modal+= '<div class="modal-body">';
+                            modal+= ' </div>';
+                            modal+= '</div>';
+                            modal+= '</div>';
+
+                            $("body").append(modal);
+                            $("#myModal").modal("show");
+                            $(".modal-body").html("<h3><i class='fa fa-spin fa-spinner '></i><span>loading...</span><h3>");
+                            $(".modal-body").load("<?php echo url("ngo/edit") ?>/"+id1);
+                            $("#myModal").on('hidden.bs.modal',function(){
+                                $("#myModal").remove();
+                            })
+                        })
+
+                        //editing a room
+                        $(".summary").click(function(){
                             var id1 = $(this).parent().attr('id');
                             var modal = '<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">';
                             modal+= '<div class="modal-dialog">';

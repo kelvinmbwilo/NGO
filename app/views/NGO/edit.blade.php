@@ -4,7 +4,7 @@ $district = array();
 if($ngo->region == '0'){
     $district = array('0'=>'-Select District-')+District::all()->lists('district','id');
 }else{
-    $district = array('0'=>'-Select District-') + Region::find($ngo->region)->ndistrict()->lists('district','id');
+    $district = array('0'=>'-Select District-') + Region::find($ngo->region)->district()->lists('district','id');
 }
 ?>
 <div class="panel panel-default">
