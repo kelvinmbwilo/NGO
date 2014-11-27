@@ -19,7 +19,12 @@ class NGOs extends Eloquent {
         return $this->hasMany('NGOsMembers', 'NGO_id', 'id');
     }
 
-    public function NGOArchivements(){
+
+    public function Sectors(){
+        return $this->hasMany('Sector');
+    }
+
+     public function NGOArchivements(){
         return $this->hasMany('NGO_archivements', 'NGOs_id', 'id');
     }
      public function NGOChallenges(){

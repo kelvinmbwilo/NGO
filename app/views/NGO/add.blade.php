@@ -29,28 +29,20 @@ $district = array();
         <div class='form-group'>
             <div class='col-sm-6'>
                 <?php
-                $sector = array(
-                    ""=>"-Select Sector-",
-                    "Agriculture and Food Security"=>"Agriculture and Food Security",
-                    "Education and Training"=>"Education and Training",
-                    "Health and HIV/AIDS"=>"Health and HIV/AIDS",
-                    "Tourism and Wildlife"=>"Tourism and Wildlife",
-                    "Social Security and Social Protection"=>"Social Security and Social Protection",
-                    "Legal and Human Rights"=>"Legal and Human Rights",
-                    "Good Governance"=>"Good Governance",
-                    "Gender and Women Empowerment"=>"Gender and Women Empowerment",
-                    "Water and Sanitation"=>"Water and Sanitation",
-                    "Environment and Climate Change"=>"Environment and Climate Change",
-                    "Labor and Employment"=>"Labor and Employment",
-                    "Finance"=>"Finance",
-                    "Women Lively Hood"=>"Women Lively Hood",
-                    "Mineral and Energy"=>"Mineral and Energy ",
-                    "Sports and Culture"=>"Sports and Culture",
-                    "Transport and Infrastructure"=>"Transport and Infrastructure",
-                )
+                $sectors = array();
                 ?>
-                Priority Sector<br>{{ Form::select('sector',$sector,'',array('class'=>'form-control')) }}
-            </div>
+                @foreach(Sector::all() as $sector)
+                <?php
+                    $sectors[$sector->id] = $sector->sector_name;
+                ?>
+                @endforeach
+                Priority Sector<br>
+                <select name="sector[]" class="form-control" multiple>
+                 @foreach(Sector::all() as $sector)
+                    <option value="{{ $sector->id }}">{{ $sector->sector_name }}</option>
+                 @endforeach
+                </select>
+               </div>
             <div class='col-sm-6'>
                 Registration Date <br> {{ Form::text('reg_date','',array('class'=>'dat form-control','placeholder'=>'Registration Date','required'=>'required')) }}
             </div>
@@ -97,6 +89,19 @@ $district = array();
 </div>
 <script>
     $(document).ready(function (){
+
+//    $(".multiselect").multiselect(
+//                         {   header: "Select an option",
+//                             noneSelectedText: "Select an Option",
+//                             selectedList: 1,
+//                             click: function(event, ui){
+//                                if(ui.checked){
+//                                     console.log(ui);
+//                                }
+//                                }
+//
+//                         }).multiselectfilter();
+
         $('#FileUploader').on('submit', function(e) {
             e.preventDefault();
             $("#output").html("<h3><i class='fa fa-spin fa-spinner '></i><span>Making changes please wait...</span><h3>");
@@ -117,11 +122,7 @@ $district = array();
         })
 
         function afterSuccess(){
-            //Notify('Thank You! All of your information saved successfully.', 'bottom-right', '5000', 'blue', 'fa-check', true);
-            setTimeout(function() {
-                $("#myModal").modal("hide");
-            }, 2000);
-            $("#listuser").load("<?php echo url("ngo/list") ?>")
+
         }
     });
 </script>

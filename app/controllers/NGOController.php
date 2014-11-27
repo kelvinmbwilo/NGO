@@ -13,9 +13,27 @@ class NGOController extends \BaseController {
         return View::make("NGO.index",compact("ngos"));
 
 	}
-    public function ngoJson()
+    public function ngoJsonAll()
 	{
         $ngos = NGOs::all();
+        return Response::json($ngos);
+
+	}
+    public function ngoJsonMult()
+	{
+        $ng0_ids = DB::table('NGOs_Sector')->select('n_gos_id')->having(DB::raw('count(*) as sector, sector_id'),">",1)->get();
+
+        $ngos = DB::table('NGOs')
+            ->whereNotIn('id', $ng0_ids)->get();
+        return Response::json($ngos);
+
+	}
+    public function ngoJsonSingle()
+	{
+
+       print_r($ng0_ids = DB::table('NGOs_Sector')->select('n_gos_id')->having(DB::raw('count(sector_id)'),"=",1)->get());
+        $ngos = DB::table('NGOs')
+            ->whereIn('id', $ng0_ids)->get();
         return Response::json($ngos);
 
 	}
@@ -30,7 +48,6 @@ class NGOController extends \BaseController {
 	{
 		return View::make('NGO.add');
 	}
-
     /**
 	 * Show the form for creating a new resource.
 	 *
@@ -39,6 +56,21 @@ class NGOController extends \BaseController {
 	public function ngolist()
 	{
 		return View::make('NGO.list');
+	}
+    /**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return Response
+	 */
+	public function listPrioritySectors($id)
+	{
+        $sectors = DB::table('NGOs')
+            ->where('NGOs.id', '=', $id)
+            ->join('NGOs_Sector', 'NGOs.id', '=', 'NGOs_Sector.n_gos_id')
+            ->join('sectors', 'NGOs_Sector.sector_id', '=', 'sectors.id')
+            ->get();
+        $ngo = NGOs::find($id);
+        return View::make('NGO.sectors.index',compact(array("sectors","ngo")));
 	}
 
 
@@ -60,9 +92,21 @@ class NGOController extends \BaseController {
            'district' => Input::get('district'),
            'phone_number' => Input::get('phone'),
            'email' => Input::get('email'),
-           'priority_sector' => Input::get('sector'),
         ));
+
         $name = $ngo->name;
+        foreach(Input::get('sector') as $sector_id){
+            $ngo_sector = NGOSector::create(array(
+                "sector_id" => $sector_id,
+                "n_gos_id" => $ngo->id
+            ));
+            $sector = Sector::find($sector_id);
+            Logs::create(array(
+                "user_id"=>  Auth::user()->id,
+                "action"  =>"Add Sector ".$sector['sector_name']." to NGO nammed ".$name
+            ));
+        }
+
         Logs::create(array(
             "user_id"=>  Auth::user()->id,
             "action"  =>"Add NGO nammed ".$name
@@ -114,10 +158,26 @@ class NGOController extends \BaseController {
         $ngo->district = Input::get('district');
         $ngo->phone_number = Input::get('phone');
         $ngo->email = Input::get('email');
-        $ngo->priority_sector = Input::get('sector');
         $ngo->operation_level = Input::get('operation');
         $ngo->save();
         $name = $ngo->name;
+
+        $name = $ngo->name;
+        foreach($_POST['sector'] as $sector_id){
+
+            DB::table('NGOs_Sector')->insert(
+                array('sector_id' => $sector_id, 'NGO_id' =>$id)
+            );
+
+            Logs::create(array(
+                "user_id"=>  Auth::user()->id,
+                "action"  =>"Add Sector ".Sector::find($sector_id)->sector_name." to NGO nammed ".$name
+            ));
+
+
+        }
+
+
         Logs::create(array(
             "user_id"=>  Auth::user()->id,
             "action"  =>"Update NGO nammed ".$name

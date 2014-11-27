@@ -82,13 +82,16 @@ Route::post('ngo/add',array('as'=>'addngo1', 'uses'=>'NGOController@store'));
 
 //viewing list of ngos
 Route::get('ngos',array('as'=>'listngo', 'uses'=>'NGOController@index'));
-Route::get('ngoJson',array('as'=>'json', 'uses'=>'NGOController@ngoJson'));
+Route::get('ngoJsonAll',array('as'=>'json', 'uses'=>'NGOController@ngoJsonAll'));
+Route::get('ngoJsonMult',array('as'=>'json', 'uses'=>'NGOController@ngoJsonMult'));
+Route::get('ngoJsonSingle',array('as'=>'json', 'uses'=>'NGOController@ngoJsonSingle'));
 
 //display a form to edit ngo information
 Route::get('ngo/edit/{id}',array('as'=>'editngo', 'uses'=>'NGOController@edit'));
 
 //display
 Route::get('ngo/members/{id}',array('as'=>'o', 'uses'=>'NGOController@listmembers'));
+Route::get('ngo/{id}/prioritysectors',array('as'=>'o', 'uses'=>'NGOController@listPrioritySectors'));
 
 //editng ngo information
 Route::post('ngo/edit/{id}',array('as'=>'editngo1', 'uses'=>'NGOController@update'));
@@ -242,3 +245,16 @@ Route::get('statistics',array('uses'=>'StatisticsController@index'));
 //display a best practices
 Route::get('practices',array('uses'=>'StatisticsController@show'));
 
+
+/**
+ * Managing Sectors
+ */
+
+Route::get('addSector',array('as'=>'addSector', 'uses'=>'SECTORController@create'));
+Route::get('sectorJson',array('as'=>'sectorJson', 'uses'=>'SECTORController@sectorJson'));
+Route::post('sector/add',array('as'=>'sectorAdd', 'uses'=>'SECTORController@store'));
+Route::get('sector/edit/{id}',array('as'=>'sectorEdit', 'uses'=>'SECTORController@edit'));
+Route::post('sector/edit/{id}',array('as'=>'sectorEdit', 'uses'=>'SECTORController@update'));
+Route::get('sectors',array('as'=>'sectorlist', 'uses'=>'SECTORController@sectorlist'));
+Route::post('sector/delete/{id}',array('as'=>'sectorDelete', 'uses'=>'SECTORController@destroy'));
+Route::get('sector/{id}/goodpractises/{nid}',array('as'=>'sectorGoodpractises', 'uses'=>'SECTORController@goodpractises'));
