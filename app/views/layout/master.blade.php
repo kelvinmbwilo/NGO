@@ -49,7 +49,7 @@ Author: kelvin mbwilo
 <!-- Body -->
 <body>
 <!-- Loading Container -->
-<div class="loading-container">
+<!--div class="loading-container">
     <div class="loading-progress">
         <div class="rotator">
             <div class="rotator">
@@ -69,7 +69,7 @@ Author: kelvin mbwilo
         </div>
         <div class="rotator"></div>
     </div>
-</div>
+</div-->
 <!--  /Loading Container -->
 <!-- Navbar -->
 <div class="navbar">

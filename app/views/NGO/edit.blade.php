@@ -7,6 +7,7 @@ if($ngo->region == '0'){
     $district = array('0'=>'-Select District-') + Region::find($ngo->region)->district()->lists('district','id');
 }
 ?>
+
 <div class="panel panel-default">
     <div class="panel-body">
         {{ Form::open(array("url"=>url("ngo/edit/{$ngo->id}"),"class"=>"form-horizontal","id"=>'FileUploader')) }}
@@ -51,7 +52,7 @@ if($ngo->region == '0'){
                     "Transport and Infrastructure"=>"Transport and Infrastructure",
                 )
                 ?>
-                Priority Sector<br>{{ Form::select('sector',$sector,$ngo->priority_sector,array('class'=>'form-control')) }}
+                Priority Sector<br>{{ Form::select('sector',$sector,$ngo->priority_sector,array('class'=>'form-control multiselect')) }}
             </div>
             <div class='col-sm-6'>
                 Registration Date <br> {{ Form::text('reg_date',$ngo->registation_date,array('class'=>'dat form-control','placeholder'=>'Registration Date','required'=>'required')) }}
@@ -99,6 +100,19 @@ if($ngo->region == '0'){
 </div>
 <script>
     $(document).ready(function (){
+
+    $(".multiselect").multiselect(
+                     {   header: "Select an option",
+                         noneSelectedText: "Select an Option",
+                         selectedList: 1,
+                         click: function(event, ui){
+                            if(ui.checked){
+                                 console.log(ui);
+                            }
+                            }
+
+                     }).multiselectfilter();
+
         $('#FileUploader').on('submit', function(e) {
             e.preventDefault();
             $("#output").html("<h3><i class='fa fa-spin fa-spinner '></i><span>Making changes please wait...</span><h3>");

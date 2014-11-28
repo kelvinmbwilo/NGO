@@ -75,6 +75,7 @@
                 @foreach(NGOPractices::all() as $practice)
                     <h4 class="media-heading">@if($practice->NGOs){{ $practice->NGOs->name }}@endif</h4>
                     <p>{{ $practice->description }}</p>
+
                 @endforeach
             </div>
     </div>
