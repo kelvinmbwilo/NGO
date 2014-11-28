@@ -40,6 +40,18 @@ class SECTORController extends \BaseController {
 	{
 		return View::make('SECTOR.list');
 	}
+
+    /**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return Response
+	 */
+	public function sectorReport($id,$nid)
+	{
+        $ngo = NGOs::find($nid);
+        $sector = Sector::find($id);
+		return View::make('NGO.sectors.reports.index',compact(array("ngo","sector")));
+	}
     /**
 	 * Show the form for creating a new resource.
 	 *

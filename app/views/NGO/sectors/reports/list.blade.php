@@ -6,12 +6,12 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <div class="text-muted bootstrap-admin-box-title">
-                {{ $ngo->name }} Annual Reports
+                {{ $sector->sector_name }} Annual Reports
                 <button class="btn btn-primary btn-xs pull-left add" id="add"><i class="fa fa-plus"></i> add</button>
             </div>
-        </div>
+        </div>{{ $sector->archivements }}
         <div class="bootstrap-admin-panel-content">
-            @if($ngo->annualReport->count() == 0)
+            @if($sector->archivements)
             <h3>There are no Annual Reports Submitted Yet</h3>
             @else
             <table class="table table-striped table-bordered" id="example2">
@@ -25,7 +25,7 @@
                 </thead>
                 <tbody>
                 <?php $i=1; ?>
-                @foreach($ngo->annualReport as $us)
+                @foreach($sector->sectorAnnualReport as $us)
                 <tr>
                     <td>{{ $i++ }}</td>
                     <td>{{ $us->year }}</td>
@@ -71,7 +71,7 @@
                     $("body").append(modal);
                     $("#myModal").modal("show");
                     $(".modal-body").html("<h3><i class='fa fa-spin fa-spinner '></i><span>loading...</span><h3>");
-                    $(".modal-body").load("<?php echo url("ngo/report") ?>/"+id1);
+                    $(".modal-body").load("<?php echo url("ngo/sector/report") ?>/"+id1);
                     $("#myModal").on('hidden.bs.modal',function(){
                         $("#myModal").remove();
                     })
@@ -88,7 +88,7 @@
                     });
                     $("#yes").click(function(){
                         $(this).parent().html("<br><i class='fa fa-spinner fa-spin'></i>deleting...");
-                        $.post("<?php echo url('ngo/report/delete/') ?>/"+id1,function(data){
+                        $.post("<?php echo url('ngo/sector/report/delete/') ?>/"+id1,function(data){
                             btn.hide("slow").next("hr").hide("slow");
                         });
                     });
@@ -116,7 +116,7 @@
             $("body").append(modal);
             $("#myModal").modal("show");
             $(".modal-body").html("<h3><i class='fa fa-spin fa-spinner '></i><span>loading...</span><h3>");
-            $(".modal-body").load("<?php echo url("ngo/{$ngo->id}/report/add") ?>");
+            $(".modal-body").load("<?php echo url("sector/{$sector->id}/report/{$ngo->id}/add") ?>");
             $("#myModal").on('hidden.bs.modal',function(){
                 $("#myModal").remove();
             })

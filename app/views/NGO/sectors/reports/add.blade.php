@@ -15,28 +15,28 @@
 
         </div>
         <div class="step-content" id="WiredWizardsteps">
-            <form method="post" action='{{ url("ngo/{$ngo->id}/report/add") }}' id="reportinfo">
+            <form method="post" action='{{ url("sector/{$sector->id}/report/{$ngo->id}/sum") }}' id="reportinfo">
             <div class="step-pane active" id="wiredstep1">
-                @include('NGO.reports.add_files.basic')
+                @include('NGO.sectors.reports.add_files.basic')
             </div>
             <div class="step-pane" id="wiredstep2">
-                @include('NGO.reports.add_files.targets')
+                @include('NGO.sectors.reports.add_files.targets')
             </div>
             <div class="step-pane" id="wiredstep3">
-                @include('NGO.reports.add_files.achivement')
+                @include('NGO.sectors.reports.add_files.achivement')
             </div>
             <div class="step-pane" id="wiredstep4">
-                @include('NGO.reports.add_files.challane')
+                @include('NGO.sectors.reports.add_files.challane')
             </div>
             <div class="step-pane" id="wiredstep5">
-                @include('NGO.reports.add_files.financial')
+                @include('NGO.sectors.reports.add_files.financial')
             </div>
             <div class="step-pane" id="wiredstep6">
-                @include('NGO.reports.add_files.expentiture')
+                @include('NGO.sectors.reports.add_files.expentiture')
             </div>
             <div class="step-pane" id="wiredstep7">
                 Summary
-                @include('NGO.reports.add_files.summary')
+                @include('NGO.sectors.reports.add_files.summary')
                 <input style="display: none" id="submitreport" type="submit" class="btn btn-primary btn-lg" value="Confirm Submission" />
             </div>
             </form>
@@ -57,8 +57,24 @@
 <script type="text/javascript">
     jQuery(function ($) {
         $('#WiredWizard').wizard().on('finished', function (e) {
+         var achieves = 0;
+         var targets = 0;
+         $(".achieve").each(function(){
+                 achieves++;
+         });
+         var achieves = 0;
+         $(".target").each(function(){
+                     targets++;
+         });
+            $("#reportinfo").append("<input type='hidden' name='target_count' value='"+targets+"'> ")
+
+            $("#reportinfo").append("<input type='hidden' name='achieve_count' value='"+achieves+"'> ")
+
             $('#reportinfo').on('submit', function(e) {
+            var formval = $(this).serialize();
                 e.preventDefault();
+
+alert(formval);
                 $("#output").html("<h3><i class='fa fa-spin fa-spinner '></i><span>Making changes please wait...</span><h3>");
                 $(this).ajaxSubmit({
                     target: '#output',
@@ -71,7 +87,7 @@
                 setTimeout(function() {
                     $("#myModal").modal("hide");
                 }, 3000);
-                $("#listuser").load("<?php echo url("ngo/{$ngo->id}/report/list") ?>")
+                $("#listuser").load("<?php echo url("ngo/{$ngo->id}/sector/{$sector->id}/report/list") ?>")
             }
             $('#submitreport').trigger("click");
             Notify('Thank You! All of your information saved successfully.', 'bottom-right', '5000', 'blue', 'fa-check', true);

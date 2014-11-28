@@ -2,16 +2,8 @@
 <div class="col-md-6" style="z-index: 10000">
 Amount carried forward from previous financial year<br>
                 <input type="text" pattern="\d*" class="form-control input-xs" value="0" name="amount_forward">
-</div><div class="col-md-6"  style="z-index: 10000">Tax Relief<br>
-                <input type="text" pattern="\d*" class="form-control input-xs" name="tax_relief">
-</div><div class="col-md-6" style="z-index: 10000">Subsidies from Government<br>
+</div><div class="col-md-6" style="z-index: 10000">Subsidies from NGO<br>
                 <input type="text" pattern="\d*" class="form-control input-xs" name="subsidies">
-</div><div class="col-md-6" style="z-index: 10000">Members’ fees and Contributions<br>
-                <input type="text" pattern="\d*" class="form-control input-xs" name="member_fee">
-</div><div class="col-md-6" style="z-index: 10000">Economic investment ( Income Generating Activities)<br>
-                <input type="text" pattern="\d*" class="form-control input-xs" name="investment">
-</div><div class="col-md-6" style="z-index: 10000">User fees<br>
-                <input type="text" pattern="\d*" class="form-control input-xs" name="user_fee">
 </div><div class="col-md-6" style="z-index: 10000">Community and Public Support<br>
                 <input type="text" pattern="\d*" class="form-control input-xs" name="public_support">
 </div><div class="col-md-6" style="z-index: 10000">Local Granting  Organizations ( Local Faundations)<br>

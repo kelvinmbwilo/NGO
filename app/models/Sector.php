@@ -11,16 +11,20 @@ class Sector extends Eloquent {
     protected $table = 'sectors';
     protected $guarded = array("id");
 
+    public function sectorAnnualReport(){
+        return $this->hasMany('SectorAnnualReport', 'sector_id', 'id');
+    }
+
     public function NGOsSector(){
         return $this->hasMany('NGOSector', 'sector_id', 'id');
     }
 
     public function SectorArchivements(){
-        return $this->hasMany('sector_archivements', 'sector_id', 'id');
+        return $this->hasMany('SectorArchivements', 'sector_id', 'id');
     }
 
     public function SectorChallenges(){
-        return $this->hasMany('sector_challanges', 'sector_id', 'id');
+        return $this->hasMany('SectorChallanges', 'sector_id', 'id');
     }
 
     public function SectorPractices(){
@@ -28,11 +32,11 @@ class Sector extends Eloquent {
     }
 
     public function SectorRevenueIncome(){
-        return $this->hasMany('revenue_income', 'sector_id', 'id');
+        return $this->hasMany('SectorRevenueIncome', 'sector_id', 'id');
     }
 
     public function Expendeture(){
-        return $this->hasMany('expenditure', 'sector_id', 'id');
+        return $this->hasMany('SectorExpenditure', 'sector_id', 'id');
     }
 
 }

@@ -3,7 +3,8 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSectorChallangesTable extends Migration {
+class CreateSectorAnnualReportTable extends Migration {
+
 
     /**
      * Run the migrations.
@@ -12,13 +13,15 @@ class CreateSectorChallangesTable extends Migration {
      */
     public function up()
     {
-        Schema::create('Sector_challanges', function(Blueprint $table)
+        Schema::create('sector_annual_report', function(Blueprint $table)
         {
             $table->increments('id');
-            $table->integer('Sector_id');
-            $table->integer('report_id');
+            $table->integer('sector_id');
             $table->integer('NGO_id');
-            $table->string('challanges');
+            $table->string('report_date');
+            $table->string('year');
+            $table->string('annual_meeting_date');
+            $table->string('username');
             $table->timestamps();
         });
     }
@@ -30,7 +33,7 @@ class CreateSectorChallangesTable extends Migration {
      */
     public function down()
     {
-        Schema::drop('Sector_challanges');
+        Schema::drop('sector_annual_report');
     }
 
 }

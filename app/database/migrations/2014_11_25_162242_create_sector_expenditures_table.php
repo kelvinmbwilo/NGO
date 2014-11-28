@@ -15,9 +15,12 @@ class CreateSectorExpendituresTable extends Migration {
         Schema::create('sector_expenditures', function(Blueprint $table)
         {
             $table->increments('id');
-            $table->integer('sector_id');
+            $table->integer('Sector_id');
+            $table->integer('NGO_id');
             $table->integer('report_id');
-            $table->string('expenditures');
+            $table->string('direct_cost');
+            $table->string('total');
+            $table->string('balance');
             $table->timestamps();
         });
 	}

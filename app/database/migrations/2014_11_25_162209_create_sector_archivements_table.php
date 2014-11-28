@@ -15,7 +15,8 @@ class CreateSectorArchivementsTable extends Migration {
         Schema::create('sector_archivements', function(Blueprint $table)
         {
             $table->increments('id');
-            $table->integer('sector_id');
+            $table->integer('Sector_id');
+            $table->integer('NGO_id');
             $table->integer('report_id');
             $table->string('archivements');
             $table->timestamps();
@@ -29,7 +30,7 @@ class CreateSectorArchivementsTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+        Schema::drop('sector_archivements');
 	}
 
 }

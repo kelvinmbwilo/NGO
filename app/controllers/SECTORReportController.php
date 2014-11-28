@@ -1,16 +1,17 @@
 <?php
 
-class NGOReportController extends \BaseController {
+class SECTORReportController extends \BaseController {
 
     /**
      * Display a listing of the resource.
      * @param $id
      * @return Response
      */
-    public function index($id)
+    public function index($id,$nid)
     {
-        $ngo = NGOs::find($id);
-        return View::make('NGO.reports.index',compact('ngo'));
+        $sector = Sector::find($id);
+        $ngo = NGOs::find($nid);
+        return View::make('NGO.sectors.reports.index',compact('ngo','sector'));
     }
 
     /**
@@ -30,10 +31,11 @@ class NGOReportController extends \BaseController {
      * @param $id
      * @return Response
      */
-    public function create($id)
+    public function create($id,$nid)
     {
-        $ngo = NGOs::find($id);
-        return View::make('NGO.reports.add',compact('ngo'));
+        $sector = Sector::find($id);
+        $ngo = NGOs::find($nid);
+        return View::make('NGO.sectors.reports.add',compact(array('ngo','sector')));
     }
 
 
@@ -42,35 +44,37 @@ class NGOReportController extends \BaseController {
      * @param $id
      * @return Response
      */
-    public function store($id)
+    public function store($id,$nid)
     {
         echo "<h4 class='text-success'>Report Added Successful</h4>";
-        $report = AnnualReport::create(array(
-            'NGO_id' => $id,
+        $report = SectorAnnualReport::create(array(
+            'sector_id' => $id,
+            'NGO_id' => $nid,
             'report_date' => Input::get('reg_date'),
             'year' => Input::get('report_year'),
             'annual_meeting_date' => Input::get('meeting_date'),
             'username' => Auth::user()->username
         ));
-
         //achievements
-        for($i =0 ;$i < Input::get('achieve_count'); $i++ ){
-            $j = $i+1;
-            if(Input::get('achievements'.$j)!= ''){
-                NGOArchivements::create(array(
-                    'NGO_id' => $id,
-                    'report_id' => $report->id,
-                    'description' => Input::get('achievements'.$j)
-
-                ));
-            }
-        }
+//        for($i =0 ;$i < Input::get('achieve_count'); $i++ ){
+//            $j = $i+1;
+//            if(Input::get('achievements'.$j)!= ''){
+//                SectorArchivements::create(array(
+//                    'sector_id' => $id,
+//                    'NGO_id' => $nid,
+//                    'report_id' => $report->id,
+//                    'archivements' => Input::get('achievements'.$j)
+//
+//                ));
+//            }
+//        }
 
         //targets
         for($i =0 ;$i < Input::get('target_count'); $i++ ){
             $j = $i+1;
             if(Input::get('target'.$j)!= ''){
-                NGOTargets::create(array(
+                SectorTargets::create(array(
+                    'sector_id' => $id,
                     'NGO_id' => $id,
                     'report_id' => $report->id,
                     'description' => Input::get('target'.$j)
@@ -80,51 +84,42 @@ class NGOReportController extends \BaseController {
         }
 
         //Challanges
-        NGOChallanges::create(array(
+        SectorChallanges::create(array(
+            'sector_id' => $id,
             'NGO_id' => $id,
             'report_id' => $report->id,
             'challanges' => Input::get('challange')
         ));
         //Good Practices
-        NGOPractices::create(array(
+        SectorPractices::create(array(
+            'sector_id' => $id,
             'NGO_id' => $id,
             'report_id' => $report->id,
-            'description' => Input::get('goodpractice')
+            'practices' => Input::get('goodpractice')
         ));
 
         //finacial statement
-        RevenueIncome::create(array(
+        SectorRevenueIncome::create(array(
+            'sector_id' => $id,
             'NGO_id' => $id,
             'report_id' => $report->id,
             'amount_from_last_year' => Input::get('amount_forward'),
-            'tax_relief' => Input::get('tax_relief'),
-            'government_subsidies' => Input::get('subsidies'),
-            'members_fee' => Input::get('member_fee'),
-            'economic_investment' => Input::get('investment'),
-            'user_fees' => Input::get('user_fee'),
             'public_support' => Input::get('public_support'),
+            'ngo_subsides' => Input::get('subsidies'),
             'local_granting' => Input::get('local_granting'),
             'private_sector_support' => Input::get('corparate'),
-            'grand_from_foreign' => Input::get('grand'),
+            'grant_from_foreign' => Input::get('grand'),
             'other_sources' => Input::get('other_source'),
-            'total' => Input::get('other_source')+Input::get('grand')+Input::get('corparate')+Input::get('local_granting')+Input::get('public_support')+Input::get('user_fee')+Input::get('investment')+Input::get('member_fee')+Input::get('subsidies')+Input::get('tax_relief')+Input::get('amount_forward'),
+            'total' => Input::get('other_source')+Input::get('grand')+Input::get('corparate')+Input::get('local_granting')+Input::get('public_support')+Input::get('subsidies')+Input::get('amount_forward'),
         ));
         //expendture
-        Expendeture::create(array(
+        SectorExpendeture::create(array(
+            'sector_id' => $id,
             'NGO_id' => $id,
             'report_id' => $report->id,
             'direct_cost' => Input::get('program_cost'),
-            'adminstrative_cost' => Input::get('admin_cost'),
-            'liabilities' => Input::get('liabilities'),
-            'assets' => Input::get('assets'),
-            'total' => Input::get('admin_cost')+Input::get('program_cost'),
+            'total' => Input::get('program_cost'),
         ));
-//        $name = $member->name;
-//        Logs::create(array(
-//            "user_id"=>  Auth::user()->id,
-//            "action"  =>"Add  new member to ".NGOs::find($id)->name." named ". $name
-//        ));
-//        return "<h4 class='text-success'>Member Added Successfull</h4>";
     }
 
 
@@ -136,8 +131,8 @@ class NGOReportController extends \BaseController {
      */
     public function show($id)
     {
-        $report = AnnualReport::find($id);
-        return View::make("NGO.reports.reportinfo",compact("report"));
+        $report = SectorAnnualReport::find($id);
+        return View::make("NGO.sectors.reports.reportinfosector",compact("report"));
     }
 
 
@@ -190,12 +185,12 @@ class NGOReportController extends \BaseController {
      */
     public function destroy($report_id)
     {
-        $member = AnnualReport::find($report_id);
+        $member = SectorAnnualReport::find($report_id);
         $name = $member->year;
         $member->delete();
         Logs::create(array(
             "user_id"=>  Auth::user()->id,
-            "action"  =>"Delete reoport for year  ". $name
+            "action"  =>"Delete report for year  ". $name
         ));
     }
 

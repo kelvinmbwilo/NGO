@@ -13,7 +13,7 @@ class SectorArchivements extends Eloquent {
      *
      * @var string
      */
-    protected $table = 'Sector_archivements';
+    protected $table = 'sector_archivements';
     protected $guarded = array("id");
 
     public function Sector(){

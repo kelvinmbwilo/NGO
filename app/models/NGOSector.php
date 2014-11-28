@@ -12,10 +12,10 @@ class NGOSector extends Eloquent {
     protected $guarded = array("id");
 
     public function NGOs(){
-        return $this->hasMany('NGOs', 'NGO_id', 'id');
+        return $this->belongsTo('NGOs', 'NGO_id', 'id');
     }
     public function Sectors(){
-        return $this->hasMany('Sector', 'sector_id', 'id');
+        return $this->belongsTo('Sector', 'sector_id', 'id');
     }
 
 

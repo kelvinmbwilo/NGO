@@ -13,7 +13,7 @@ class SectorExpendeture extends Eloquent {
      *
      * @var string
      */
-    protected $table = 'Sector_expenditure';
+    protected $table = 'sector_expenditures';
     protected $guarded = array("id");
 
     public function Sector(){

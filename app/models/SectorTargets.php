@@ -5,7 +5,7 @@
  * Date: 8/15/14
  * Time: 9:43 PM
  */
-class NGOTargets extends Eloquent {
+class SectorTargets extends Eloquent {
 
 
     /**
@@ -13,11 +13,11 @@ class NGOTargets extends Eloquent {
      *
      * @var string
      */
-    protected $table = 'NGO_targets';
+    protected $table = 'sector_targets';
     protected $guarded = array("id");
 
-    public function NGOs(){
-        return $this->belongsTo('NGOs','NGOs_id', 'id');
+    public function Sector(){
+        return $this->belongsTo('Sector','sector_id', 'id');
     }
 
     public function AnnualReport(){

@@ -300,7 +300,7 @@ $(document).ready(function(){
                                 var page = $(this).attr("href");
 
                                 if(page!="#edit" && page!="#b"){
-                                    window.location.replace('{{ url("ngo/'+recordId+'/'+page+'") }}');
+                                    window.location.replace('{{ url("ngo/'+recordId+'/sector/'+page+'") }}');
                                 }
 
                             });
@@ -413,7 +413,7 @@ $(document).ready(function(){
                                 });
                                 $("#yes").click(function(){
                                     $(this).parent().html("<br><i class='fa fa-spinner fa-spin'></i>deleting...");
-                                    $.post("<?php echo url('ngo/delete') ?>/"+id1,function(data){
+                                    $.post("<?php echo url('ngo/sector/delete') ?>/"+id1,function(data){
                                         btn.hide("slow").next("hr").hide("slow");
                                     });
                                     btn.hide("slow").next("hr").hide("slow");

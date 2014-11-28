@@ -6,6 +6,7 @@ Achievement1<br>
 Achievement2<br>
 <textarea rows="2" placeholder="Achievement2"  class="form-control achieve" name="achievements2"></textarea>
 <br>
+
 <span id="addedachievements"></span>
 <a id="addachievements" href="#as" class="btn btn-xs btn-primary">add more</a>
 
@@ -17,6 +18,8 @@ Achievement2<br>
             var new_target = 'Achievement'+counter+'<br>';
             new_target += '<textarea name="achievement'+counter+'" rows="2" placeholder="Achievement'+counter+'"  class="form-control achieve"></textarea><br>'
             $("#addedachievements").append(new_target);
+
+
         })
     })
 </script>

@@ -5,7 +5,7 @@
  * Date: 8/15/14
  * Time: 9:39 PM
  */
-class AnnualReport extends Eloquent {
+class SectorAnnualReport extends Eloquent {
 
 
     /**
@@ -13,26 +13,26 @@ class AnnualReport extends Eloquent {
      *
      * @var string
      */
-    protected $table = 'annual_report';
+    protected $table = 'sector_annual_report';
     protected $guarded = array("id");
 
-    public function NGOs(){
-        return $this->belongsTo('NGOs','NGO_id', 'id');
+    public function sector(){
+        return $this->belongsTo('Sector','sector_id', 'id');
     }
 
      public function archivements(){
-        return $this->hasMany('NGOArchivements','report_id', 'id');
+        return $this->hasMany('SectorArchivements','report_id', 'id');
     }
     public function targets(){
-        return $this->hasMany('NGOTargets','report_id', 'id');
+        return $this->hasMany('SectorTargets','report_id', 'id');
     }
 
-    public function NGOChallanges(){
-        return $this->hasMany('NGO_challanges','annual_report_id', 'id');
+    public function SectorChallanges(){
+        return $this->hasMany('SectorChallanges','annual_report_id', 'id');
     }
 
-    public function NGOPractices(){
-        return $this->hasMany('NGO_practices','annual_report_id', 'id');
+    public function SectorPractices(){
+        return $this->hasMany('Sector_practices','annual_report_id', 'id');
     }
 
     public function revenueIncome(){

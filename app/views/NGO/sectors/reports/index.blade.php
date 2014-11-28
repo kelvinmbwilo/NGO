@@ -6,11 +6,11 @@
 @stop
 
 @section('header')
-{{ $ngo->name }} Annual Reports
+<b>{{ $sector->sector_name }}</b> Annual Reports for NGO <b>{{ $ngo->name }}</b>
 @stop
 
 @section('contents')
 <div class="col-sm-12" id="listuser">
-    @include('NGO.reports.list')
+    @include('NGO.sectors.reports.list')
 </div>
 @stop

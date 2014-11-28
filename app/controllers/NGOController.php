@@ -21,19 +21,34 @@ class NGOController extends \BaseController {
 	}
     public function ngoJsonMult()
 	{
-        $ng0_ids = DB::table('NGOs_Sector')->select('n_gos_id')->having(DB::raw('count(*) as sector, sector_id'),">",1)->get();
+        $ngos = array();
+        foreach(NGOs::all() as $ngo){
+            if($ngo->Sectors){
+                if(count($ngo->Sectors()->get()) != 1 && count($ngo->Sectors()->get()) != 0 ){
+                    $ngos[]=$ngo;
+                }
+            }
 
-        $ngos = DB::table('NGOs')
-            ->whereNotIn('id', $ng0_ids)->get();
+        }
+
+//        $ng0_ids = DB::table('NGOs_Sector')->select('n_gos_id')->having(DB::raw('count(*) as sector, sector_id'),">",1)->get();
+//
+//        $ngos = DB::table('NGOs')
+//            ->whereNotIn('id', $ng0_ids)->get();
         return Response::json($ngos);
 
 	}
     public function ngoJsonSingle()
 	{
 
-       print_r($ng0_ids = DB::table('NGOs_Sector')->select('n_gos_id')->having(DB::raw('count(sector_id)'),"=",1)->get());
-        $ngos = DB::table('NGOs')
-            ->whereIn('id', $ng0_ids)->get();
+        $ngos = array();
+        foreach(NGOs::all() as $ngo){
+            if($ngo->Sectors){
+                if(count($ngo->Sectors()->get()) == 1 ){
+                    $ngos[]=$ngo;
+                }
+            }
+        }
         return Response::json($ngos);
 
 	}
