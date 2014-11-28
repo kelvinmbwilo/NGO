@@ -19,7 +19,7 @@ $district = array();
         <div class='form-group'>
 
             <div class='col-sm-6'>
-                Registration Type <br>  {{ Form::select('reg_type',array(''=>'-Select-','Registered'=>'Registered','Compliance'=>'Compliance'),'',array('class'=>'form-control','required'=>'requiered')) }}
+                Registration Type <br>  {{ Form::select('reg_type',array(''=>'-Select-','Registered'=>'Normal','Compliance'=>'Compliance'),'',array('class'=>'form-control','required'=>'requiered')) }}
             </div>
             <div class='col-sm-6'>
                 Level Of Operation<br>{{ Form::select('operation',array('International'=>'International','National'=>'National','Regional'=>'Regional','District'=>'District'),'',array('class'=>'form-control','required'=>'requiered')) }}
@@ -37,7 +37,7 @@ $district = array();
                 ?>
                 @endforeach
                 Priority Sector<br>
-                <select name="sector[]" class="form-control" multiple>
+                <select name="sector[]" class="form-control multiselect" multiple="multiple" >
                  @foreach(Sector::all() as $sector)
                     <option value="{{ $sector->id }}">{{ $sector->sector_name }}</option>
                  @endforeach
@@ -90,17 +90,17 @@ $district = array();
 <script>
     $(document).ready(function (){
 
-//    $(".multiselect").multiselect(
-//                         {   header: "Select an option",
-//                             noneSelectedText: "Select an Option",
-//                             selectedList: 1,
-//                             click: function(event, ui){
-//                                if(ui.checked){
-//                                     console.log(ui);
-//                                }
-//                                }
-//
-//                         }).multiselectfilter();
+    $(".multiselect").multiselect(
+                         {   header: "Select an option",
+                             noneSelectedText: "Select an Option",
+                             selectedList: 1,
+                             click: function(event, ui){
+                                if(ui.checked){
+                                     console.log(ui);
+                                }
+                                }
+
+                         }).multiselectfilter();
 
         $('#FileUploader').on('submit', function(e) {
             e.preventDefault();

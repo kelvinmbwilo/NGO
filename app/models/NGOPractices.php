@@ -21,7 +21,7 @@ class NGOPractices extends Eloquent {
     }
 
     public function AnnualReport(){
-        return $this->belongsTo('NGOs','report_id', 'id');
+        return $this->belongsTo('AnnualReport','report_id', 'id');
     }
 
 

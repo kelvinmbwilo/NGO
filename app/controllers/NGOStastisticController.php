@@ -20,7 +20,7 @@ class NGOStastisticController extends \BaseController {
         if($condition == 'all'){
             $title .= " All NGOs ";
         }elseif($condition == 'registered'){
-            $title .= " Registered NGOs ";
+            $title .= " Normal NGOs ";
             $ngo->where('registation_type','Registered');
         }elseif($condition == 'compliance'){
             $title .= " Compliance NGOs ";
@@ -1046,4 +1046,8 @@ public function pie($ngo,$region,$district,$sector,$operation,$title,$operate,$c
         exit;
     }
 
+
+    public function financial(){
+        return View::make('statistics.financial');
+    }
 }

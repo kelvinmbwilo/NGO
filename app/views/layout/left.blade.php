@@ -34,6 +34,12 @@
         <span class="menu-text"> Statistics </span>
     </a>
 </li>
+    <li>
+    <a href="{{ url('financial') }}">
+        <i class="menu-icon fa fa-money"></i>
+        <span class="menu-text"> Financial </span>
+    </a>
+</li>
 <!--UI Elements-->
 
 <!--Profile-->

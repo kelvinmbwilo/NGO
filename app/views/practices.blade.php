@@ -189,9 +189,36 @@
                 @endif
                 @foreach(NGOPractices::whereIn('NGO_id',NGOs::where('operation_level',"District")->lists('id')+array(0))->get() as $practice)
                 <h4 class="media-heading">@if($practice->NGOs){{ $practice->NGOs->name }}@endif</h4>
-                <p>{{ $practice->description }}</p>
+                <p>{{ $practice->description }}
                 @endforeach
             </div>
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function(){
+        $(".summ").click(function(){
+            var id1 = $(this).parent().attr('id');
+            var modal = '<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">';
+            modal+= '<div class="modal-dialog">';
+            modal+= '<div class="modal-content">';
+            modal+= '<div class="modal-header">';
+            modal+= '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
+            modal+= '<h2 class="modal-title" id="myModalLabel">Update NGO  Information</h2>';
+            modal+= '</div>';
+            modal+= '<div class="modal-body">';
+            modal+= ' </div>';
+            modal+= '</div>';
+            modal+= '</div>';
+
+            $("body").append(modal);
+            $("#myModal").modal("show");
+            $(".modal-body").html("<h3><i class='fa fa-spin fa-spinner '></i><span>loading...</span><h3>");
+            $(".modal-body").load("<?php echo url("ngo/edit") ?>/"+id1);
+            $("#myModal").on('hidden.bs.modal',function(){
+                $("#myModal").remove();
+            })
+        })
+    })
+
+</script>
