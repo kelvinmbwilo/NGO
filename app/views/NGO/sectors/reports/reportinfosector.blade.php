@@ -45,6 +45,34 @@
                            @endif
                        </td>
                    </tr>
+                   <tr>
+                       <td>Challenges:</td>
+                       <td>
+                           @if($report->SectorChallanges)
+                           <ul style="padding-left: 20px">
+                               @foreach($report->SectorChallanges as $value)
+                               <li>{{ $value->challanges }}</li>
+                               @endforeach
+                           </ul>
+                           @else
+                           No targets defined
+                           @endif
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>Good Practises:</td>
+                       <td>
+                           @if($report->SectorPractices)
+                           <ul style="padding-left: 20px">
+                               @foreach($report->SectorPractices as $value)
+                               <li>{{ $value->description }}</li>
+                               @endforeach
+                           </ul>
+                           @else
+                           No targets defined
+                           @endif
+                       </td>
+                   </tr>
 
                </table>
            </div>

@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b290b2f2-359b-4642-913d-8257f327a6e4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dashboard.blade.php" afterPath="$PROJECT_DIR$/app/views/dashboard.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/database.php" afterPath="$PROJECT_DIR$/app/config/database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layout/left.blade.php" afterPath="$PROJECT_DIR$/app/views/layout/left.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/NGO/sectors/reports/list.blade.php" afterPath="$PROJECT_DIR$/app/views/NGO/sectors/reports/list.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/NGO/sectors/reports/reportinfosector.blade.php" afterPath="$PROJECT_DIR$/app/views/NGO/sectors/reports/reportinfosector.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layout/top_bar.blade.php" afterPath="$PROJECT_DIR$/app/views/layout/top_bar.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="NGO.iws" />
@@ -65,6 +59,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="reportinfo.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/NGO/reports/reportinfo.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.2222223" vertical-offset="1596" max-vertical-offset="8784">
+              <caret line="98" column="24" selection-start-line="98" selection-start-column="24" selection-end-line="126" selection-end-column="24" />
+              <folding>
+                <element signature="n#style#0;n#ul#0;n#td#1;n#tr#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#td#1;n#tr#1;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -98,7 +105,7 @@
       <file leaf-file-name="reportinfo.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/NGO/sectors/reports/reportinfo.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.2222223" vertical-offset="462" max-vertical-offset="8856">
+            <state vertical-scroll-proportion="-19.333334" vertical-offset="0" max-vertical-offset="8856">
               <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
               <folding />
             </state>
@@ -121,9 +128,14 @@
       <file leaf-file-name="reportinfosector.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/NGO/sectors/reports/reportinfosector.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.58733207" vertical-offset="0" max-vertical-offset="1872">
-              <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-              <folding />
+            <state vertical-scroll-proportion="0.24776119" vertical-offset="1105" max-vertical-offset="2376">
+              <caret line="66" column="47" selection-start-line="66" selection-start-column="47" selection-end-line="66" selection-end-column="47" />
+              <folding>
+                <element signature="n#style#0;n#ul#0;n#td#1;n#tr#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#td#1;n#tr#1;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#td#1;n#tr#2;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#td#1;n#tr#3;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -193,7 +205,6 @@
         <option value="$PROJECT_DIR$/app/database/migrations/2014_11_25_160547_create_Sector_challanges_table.php" />
         <option value="$PROJECT_DIR$/app/models/SectorChallanges.php" />
         <option value="$PROJECT_DIR$/app/models/SectorAnnualReport.php" />
-        <option value="$PROJECT_DIR$/app/views/NGO/reports/reportinfo.blade.php" />
         <option value="$PROJECT_DIR$/app/models/AnnualReport.php" />
         <option value="$PROJECT_DIR$/app/views/NGO/list.blade.php" />
         <option value="$PROJECT_DIR$/app/config/database.php" />
@@ -202,6 +213,7 @@
         <option value="$PROJECT_DIR$/app/views/layout/top_bar.blade.php" />
         <option value="$PROJECT_DIR$/app/views/layout/left.blade.php" />
         <option value="$PROJECT_DIR$/app/views/NGO/sectors/reports/list.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/NGO/reports/reportinfo.blade.php" />
         <option value="$PROJECT_DIR$/app/views/NGO/sectors/reports/reportinfosector.blade.php" />
       </list>
     </option>
@@ -603,7 +615,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.61576355" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30541873" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.8243671" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -980,17 +992,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/NGO/reports/reportinfo.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.111111" vertical-offset="861" max-vertical-offset="6876">
-          <caret line="54" column="7" selection-start-line="54" selection-start-column="7" selection-end-line="164" selection-end-column="13" />
-          <folding>
-            <element signature="tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#div#0" expanded="false" />
-            <element signature="tag#div#1;tag#div#0;tag#div#0;tag#div#0;tag#div#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/NGO/reports/list.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-48.666668" vertical-offset="0" max-vertical-offset="2376">
@@ -1055,17 +1056,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/NGO/sectors/reports/reportinfo.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.2222223" vertical-offset="462" max-vertical-offset="8856">
+        <state vertical-scroll-proportion="-19.333334" vertical-offset="0" max-vertical-offset="8856">
           <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/NGO/reports/reportinfo.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.2222223" vertical-offset="1596" max-vertical-offset="8784">
+          <caret line="98" column="24" selection-start-line="98" selection-start-column="24" selection-end-line="126" selection-end-column="24" />
+          <folding>
+            <element signature="n#style#0;n#ul#0;n#td#1;n#tr#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#td#1;n#tr#1;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/NGO/sectors/reports/reportinfosector.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58733207" vertical-offset="0" max-vertical-offset="1872">
-          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-          <folding />
+        <state vertical-scroll-proportion="0.24776119" vertical-offset="1105" max-vertical-offset="2376">
+          <caret line="66" column="47" selection-start-line="66" selection-start-column="47" selection-end-line="66" selection-end-column="47" />
+          <folding>
+            <element signature="n#style#0;n#ul#0;n#td#1;n#tr#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#td#1;n#tr#1;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#td#1;n#tr#2;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#td#1;n#tr#3;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
