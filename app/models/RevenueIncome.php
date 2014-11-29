@@ -17,7 +17,7 @@ class RevenueIncome extends Eloquent {
     protected $guarded = array("id");
 
     public function NGOs(){
-        return $this->belongsTo('NGOs','NGOs_id', 'id');
+        return $this->belongsTo('NGOs','NGO_id', 'id');
     }
 
     public function AnnualReport(){

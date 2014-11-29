@@ -58,7 +58,7 @@ Reports
         Registration Type<br>
         <select class="form-control input-sm" name="registration">
             <option value="all">All</option>
-            <option value="registered">Registered</option>
+            <option value="registered">Normal</option>
             <option value="compliance">Compliance</option>
         </select>
     </div>
