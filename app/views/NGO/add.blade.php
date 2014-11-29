@@ -90,17 +90,6 @@ $district = array();
 <script>
     $(document).ready(function (){
 
-//    $(".multiselect").multiselect(
-//                         {   header: "Select an option",
-//                             noneSelectedText: "Select an Option",
-//                             selectedList: 1,
-//                             click: function(event, ui){
-//                                if(ui.checked){
-//                                     console.log(ui);
-//                                }
-//                                }
-//
-//                         }).multiselectfilter();
 
         $('#FileUploader').on('submit', function(e) {
             e.preventDefault();

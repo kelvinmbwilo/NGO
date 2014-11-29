@@ -9,9 +9,19 @@ class SECTORReportController extends \BaseController {
      */
     public function index($id,$nid)
     {
-        $sector = Sector::find($id);
-        $ngo = NGOs::find($nid);
-        return View::make('NGO.sectors.reports.index',compact('ngo','sector'));
+        if($nid == 'a'){
+            $ngo = NGOs::find($id);
+            return View::make('NGO.reports.index',compact('ngo'));
+        }
+
+        if($nid!='a'){
+
+            $ngo = NGOs::find($id);
+            $sector = Sector::find($nid);
+            return View::make('NGO.sectors.reports.index',compact('ngo','sector'));
+        }
+
+
     }
 
     /**
@@ -129,10 +139,11 @@ class SECTORReportController extends \BaseController {
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show($nid,$id)
     {
         $report = SectorAnnualReport::find($id);
-        return View::make("NGO.sectors.reports.reportinfosector",compact("report"));
+        $NGOs = NGOs::find($nid);
+        return View::make("NGO.sectors.reports.reportinfosector",compact("report","NGOs"));
     }
 
 

@@ -184,6 +184,18 @@ class NGOController extends \BaseController {
                 array('sector_id' => $sector_id, 'NGO_id' =>$id)
             );
 
+//            foreach(Input::get('sector') as $sector_id){
+//                $ngo_sector = NGOSector::create(array(
+//                    "sector_id" => $sector_id,
+//                    "n_gos_id" => $ngo->id
+//                ));
+//                $sector = Sector::find($sector_id);
+//                Logs::create(array(
+//                    "user_id"=>  Auth::user()->id,
+//                    "action"  =>"Add Sector ".$sector['sector_name']." to NGO nammed ".$name
+//                ));
+//            }
+
             Logs::create(array(
                 "user_id"=>  Auth::user()->id,
                 "action"  =>"Add Sector ".Sector::find($sector_id)->sector_name." to NGO nammed ".$name

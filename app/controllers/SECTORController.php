@@ -30,6 +30,15 @@ class SECTORController extends \BaseController {
 	{
 		return View::make('SECTOR.add');
 	}
+    /**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return Response
+	 */
+	public function createForNg($id)
+	{
+		return View::make('SECTOR.add',compact("id"));
+	}
 
     /**
 	 * Show the form for creating a new resource.
@@ -77,6 +86,25 @@ class SECTORController extends \BaseController {
         Logs::create(array(
             "user_id"=>  Auth::user()->id,
             "action"  =>"Add Sector nammed ".$name
+        ));
+        return "<h4 class='text-success'>Sector Added Successfull</h4>";
+	}
+
+    public function storeForNg($id)
+	{
+		$sector = Sector::create(array(
+           'sector_name' => Input::get('sector_name'),
+        ));
+
+        $ngosector = NGOSector::create(array(
+            'n_gos_id' => $id,
+            'sector_id' => $sector->id,
+        ));
+
+        $name = $sector->sector_name;
+        Logs::create(array(
+            "user_id"=>  Auth::user()->id,
+            "action"  =>"Add Sector nammed ".$name." to NGOs ".NGOs::find($id)->name
         ));
         return "<h4 class='text-success'>Sector Added Successfull</h4>";
 	}

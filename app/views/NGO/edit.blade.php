@@ -32,28 +32,20 @@ if($ngo->region == '0'){
         <div class='form-group'>
             <div class='col-sm-6'>
                 <?php
-                $sector = array(
-                    ""=>"-Select Sector-",
-                    "Agriculture and Food Security"=>"Agriculture and Food Security",
-                    "Education and Training"=>"Education and Training",
-                    "Health and HIV/AIDS"=>"Health and HIV/AIDS",
-                    "Tourism and Wildlife"=>"Tourism and Wildlife",
-                    "Social Security and Social Protection"=>"Social Security and Social Protection",
-                    "Legal and Human Rights"=>"Legal and Human Rights",
-                    "Good Governance"=>"Good Governance",
-                    "Gender and Women Empowerment"=>"Gender and Women Empowerment",
-                    "Water and Sanitation"=>"Water and Sanitation",
-                    "Environment and Climate Change"=>"Environment and Climate Change",
-                    "Labor and Employment"=>"Labor and Employment",
-                    "Finance"=>"Finance",
-                    "Women Lively Hood"=>"Women Lively Hood",
-                    "Mineral and Energy"=>"Mineral and Energy ",
-                    "Sports and Culture"=>"Sports and Culture",
-                    "Transport and Infrastructure"=>"Transport and Infrastructure",
-                )
+                $sectors = array();
                 ?>
-                Priority Sector<br>{{ Form::select('sector',$sector,$ngo->priority_sector,array('class'=>'form-control multiselect')) }}
-            </div>
+                @foreach(Sector::all() as $sector)
+                <?php
+                    $sectors[$sector->id] = $sector->sector_name;
+                ?>
+                @endforeach
+                Priority Sector<br>
+                <select name="sector[]" class="form-control" multiple>
+                 @foreach(Sector::all() as $sector)
+                    <option value="{{ $sector->id }}">{{ $sector->sector_name }}</option>
+                 @endforeach
+                </select>
+               </div>
             <div class='col-sm-6'>
                 Registration Date <br> {{ Form::text('reg_date',$ngo->registation_date,array('class'=>'dat form-control','placeholder'=>'Registration Date','required'=>'required')) }}
             </div>

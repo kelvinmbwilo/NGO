@@ -53,7 +53,8 @@
         $('#example2').dataTable({
             "fnDrawCallback": function( oSettings ) {
                 //editing a room
-                $(".edituser").click(function(){
+                $(".edituser").click(function(e){
+                    e.preventDefault();
                     var id1 = $(this).parent().attr('id');
                     var id1 = $(this).parent().attr('id');
                     var modal = '<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">';
@@ -71,7 +72,7 @@
                     $("body").append(modal);
                     $("#myModal").modal("show");
                     $(".modal-body").html("<h3><i class='fa fa-spin fa-spinner '></i><span>loading...</span><h3>");
-                    $(".modal-body").load("<?php echo url("ngo/sector/report") ?>/"+id1);
+                    $(".modal-body").load("<?php echo url("ngo/{$ngo->id}/sector/report") ?>/"+id1);
                     $("#myModal").on('hidden.bs.modal',function(){
                         $("#myModal").remove();
                     })

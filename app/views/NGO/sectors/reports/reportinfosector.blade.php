@@ -1,8 +1,12 @@
-{{ $report->sector->NGO }}
+
 <div>
 <div class="row">
            <div class="col-sm-4">
                <table class="table">
+                   <tr>
+                       <td>NGO Name</td>
+                       <td id="reporting_date">{{  $NGOs ->name }}</td>
+                   </tr>
                    <tr>
                        <td>Reporting Date</td>
                        <td id="reporting_date">{{ date("j M Y",strtotime($report->report_date)) }}</td>
@@ -10,11 +14,11 @@
 
                     <tr>
                         <td>Registration number</td>
-                        <td id="reg_no">@if($report->sector->NGOs){{ $report->sector->NGOs->certificate_no }}@endif</td>
+                        <td id="reg_no">{{ $NGOs->certificate_no }}</td>
                     </tr>
                     <tr>
                         <td>Operation Level</td>
-                        <td id="operation">@if($report->sector->NGOs){{ $report->sector->NGOs->operation_level }}@endif</td>
+                        <td id="operation">{{ $NGOs->operation_level }}</td>
                     </tr>
 
                    <tr>
@@ -23,20 +27,21 @@
                    </tr>
                    <tr>
                        <td>Address</td>
-                       <td id="address">@if($report->sector->NGOs){{ $report->sector->NGOs->postal_adress }}@endif</td>
+                       <td id="address">{{ $NGOs->postal_adress }}</td>
                    </tr>
                    <tr>
                        <td>Region</td>
+                       <td id="address">{{ $NGOs->nregion->region }}</td>
                    </tr>
                </table>
            </div>
            <div class="col-sm-5">
                <table class="table">
                    <tr>
-                       <td>Bussness Telephone:</td><td>@if($report->sector->NGOs){{ $report->sector->NGOs->phone_number }}@endif</td>
+                       <td>Bussness Telephone:</td><td>{{ $NGOs->phone_number }}</td>
                    </tr>
                    <tr>
-                       <td>Email Address:</td><td>@if($report->sector->NGOs){{ $report->sector->NGOs->email }}@endif</td>
+                       <td>Email Address:</td><td>{{ $NGOs->email }}</td>
                    </tr>
                    <tr>
                        <td>Targets:</td>
@@ -58,7 +63,7 @@
                            @if($report->archivements)
                            <ul style="padding-left: 20px">
                                @foreach($report->archivements as $value)
-                               <li>{{ $value->description }}</li>
+                               <li>{{ $value->archivements }}</li>
                                @endforeach
                            </ul>
                            @else
@@ -76,43 +81,20 @@
                    </tr><tr>
                        <th>Title</th><td>{{ Auth::user()->title }}</td>
                    </tr><tr>
-                       <th>Address</th><td>@if($report->sector->NGOs){{ $report->sector->NGOs->postal_adress }}@endif</td>
+                       <th>Address</th><td>{{ $NGOs->postal_adress }}</td>
                    </tr>
                </table>
            </div>
        </div>
        <div class="row">
 
-
-
-           <div class="col-sm-4">
-               <table class="table">
-                   <tr>
-                       <td>Local Employee</td><td>@if($report->sector->NGOs){{ count($report->sector->NGOs->employmentparticulars()->where('nationality','466')->where('employement_status','Employee')->get()) }}@endif</td>
-                   </tr>
-                    <tr>
-                       <td>Non Local Employee</td><td>@if($report->sector->NGOs){{ count($report->sector->NGOs->employmentparticulars()->where('nationality','!=','466')->where('employement_status','Employee')->get()) }}@endif</td>
-                   </tr>
-                    <tr>
-                       <td>Local Volunteers</td><td>@if($report->sector->NGOs){{ count($report->sector->NGOs->employmentparticulars()->where('nationality','466')->where('employement_status','Volunteer')->get()) }}@endif</td>
-                   </tr>
-                    <tr>
-                       <td>Non Local Volunteers</td><td>@if($report->sector->NGOs){{ count($report->sector->NGOs->employmentparticulars()->where('nationality','!=','466')->where('employement_status','Volunteer')->get()) }}@endif</td>
-                   </tr>
-                    <tr>
-                       <td>Total number of Employees</td><td>@if($report->sector->NGOs){{ count($report->sector->NGOs->employmentparticulars) }}@endif</td>
-                   </tr>
-
-               </table>
-
-           </div>
-           <div class="col-sm-8">
+           <div class="col-sm-6 col-md-offset-6">
                <div class="col-md-6">
                    <?php
                    $income= 0;
                    $exp = 0;
-                   if($report->revenueIncome){
-                       $income = $report->revenueIncome->total;
+                   if($report->SectorRevenueIncome){
+                       $income = $report->SectorRevenueIncome->total;
                    }
                    if($report->expenditure){
                        $exp = $report->expenditure->total;

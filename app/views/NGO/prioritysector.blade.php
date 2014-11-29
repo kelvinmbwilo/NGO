@@ -17,7 +17,7 @@ Sectors
                 <div class="text-muted bootstrap-admin-box-title">
                     {{--{{ $ngo->name }} Members--}}
                     Sectors
-                    <button class="btn btn-primary btn-xs pull-left add" id="add"><i class="fa fa-plus"></i> add</button>
+                    <button class="btn btn-primary btn-xs pull-left add_sector" id="add_sector"><i class="fa fa-plus"></i> add</button>
                 </div>
             </div>
             <div class="bootstrap-admin-panel-content">
@@ -67,6 +67,29 @@ Sectors
     <!--script to process the list of users-->
     <script>
         /* Table initialisation */
+        $(".add_sector").click(function(){
+
+         var id1 = $(this).parent().attr('id');
+         var modal = '<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">';
+         modal+= '<div class="modal-dialog">';
+         modal+= '<div class="modal-content">';
+         modal+= '<div class="modal-header">';
+         modal+= '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
+         modal+= '<h2 class="modal-title" id="myModalLabel">Add Sectors</h2>';
+         modal+= '</div>';
+         modal+= '<div class="modal-body">';
+         modal+= ' </div>';
+         modal+= '</div>';
+         modal+= '</div>';
+
+         $("body").append(modal);
+         $("#myModal").modal("show");
+         $(".modal-body").html("<h3><i class='fa fa-spin fa-spinner '></i><span>loading...</span><h3>");
+         $(".modal-body").load("<?php echo url("addSector") ?>/");
+         $("#myModal").on('hidden.bs.modal',function(){
+                $("#myModal").remove();
+         })
+         })
     </script>
 
 </div>
