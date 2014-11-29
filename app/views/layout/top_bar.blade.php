@@ -5,7 +5,7 @@
     <a href="index.html#" class="navbar-brand">
         <small>
             <img src="{{ asset('assets/img/logo.jpg') }} " alt="" style="width: 50px"/>
-            <h>NGOs Management Information System <span style="color: #ac2925">(NMIS)</span></h>
+            <h>Tanzania National NGO Management Information System <span style="color: #ac2925">(TNNMIS)</span></h>
         </small>
     </a>
 </div>

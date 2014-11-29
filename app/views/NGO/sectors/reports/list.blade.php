@@ -62,7 +62,7 @@
                     modal+= '<div class="modal-content">';
                     modal+= '<div class="modal-header">';
                     modal+= '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
-                    modal+= '<h2 class="modal-title" id="myModalLabel">Yearly Report Info</h2>';
+                    modal+= '<h2 class="modal-title" id="myModalLabel">Annual Report Info</h2>';
                     modal+= '</div>';
                     modal+= '<div class="modal-body">';
                     modal+= ' </div>';

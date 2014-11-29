@@ -1,48 +1,22 @@
 
 <div>
+<h3>NGO Name:{{  $NGOs ->name }}</h3>
 <div class="row">
            <div class="col-sm-4">
                <table class="table">
                    <tr>
-                       <td>NGO Name</td>
-                       <td id="reporting_date">{{  $NGOs ->name }}</td>
-                   </tr>
-                   <tr>
                        <td>Reporting Date</td>
                        <td id="reporting_date">{{ date("j M Y",strtotime($report->report_date)) }}</td>
                    </tr>
-
-                    <tr>
-                        <td>Registration number</td>
-                        <td id="reg_no">{{ $NGOs->certificate_no }}</td>
-                    </tr>
-                    <tr>
-                        <td>Operation Level</td>
-                        <td id="operation">{{ $NGOs->operation_level }}</td>
-                    </tr>
-
                    <tr>
                        <td>Sector</td>
                        <td id="category">{{ $report->sector->sector_name }}</td>
                    </tr>
-                   <tr>
-                       <td>Address</td>
-                       <td id="address">{{ $NGOs->postal_adress }}</td>
-                   </tr>
-                   <tr>
-                       <td>Region</td>
-                       <td id="address">{{ $NGOs->nregion->region }}</td>
-                   </tr>
+
                </table>
            </div>
-           <div class="col-sm-5">
+           <div class="col-sm-8">
                <table class="table">
-                   <tr>
-                       <td>Bussness Telephone:</td><td>{{ $NGOs->phone_number }}</td>
-                   </tr>
-                   <tr>
-                       <td>Email Address:</td><td>{{ $NGOs->email }}</td>
-                   </tr>
                    <tr>
                        <td>Targets:</td>
                        <td>
@@ -74,22 +48,11 @@
 
                </table>
            </div>
-           <div class="col-sm-3">
-               <table class="table">
-                   <tr>
-                       <th>Name</th><td>{{ Auth::user()->firstname }} {{ Auth::user()->middename }} {{ Auth::user()->lastname }} </td>
-                   </tr><tr>
-                       <th>Title</th><td>{{ Auth::user()->title }}</td>
-                   </tr><tr>
-                       <th>Address</th><td>{{ $NGOs->postal_adress }}</td>
-                   </tr>
-               </table>
-           </div>
        </div>
        <div class="row">
 
-           <div class="col-sm-6 col-md-offset-6">
-               <div class="col-md-6">
+           <div class="row-fluid ">
+               <div class="col-md-12">
                    <?php
                    $income= 0;
                    $exp = 0;

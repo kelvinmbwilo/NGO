@@ -276,5 +276,7 @@ Route::get('ngo/{nid}/sector/{id}/report_',array('uses'=>'SECTORReportController
 
 //viewing list of reports of particular ngo
 Route::get('ngo/{nid}/sector/report/{id}',array('uses'=>'SECTORReportController@show'));
+//viewing financial report
+Route::get('financial',array('uses'=>'NGOStastisticController@financial'));
 //deleting ngo report
 Route::post('ngo/sector/report/delete/{report_id}',array('uses'=>'SECTORReportController@destroy'));
