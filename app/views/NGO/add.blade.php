@@ -19,7 +19,7 @@ $district = array();
         <div class='form-group'>
 
             <div class='col-sm-6'>
-                Registration Type <br>  {{ Form::select('reg_type',array(''=>'-Select-','Registered'=>'Registered','Compliance'=>'Compliance'),'',array('class'=>'form-control','required'=>'requiered')) }}
+                Registration Type <br>  {{ Form::select('reg_type',array(''=>'-Select-','Normal'=>'Normal','Compliance'=>'Compliance'),'',array('class'=>'form-control','required'=>'requiered')) }}
             </div>
             <div class='col-sm-6'>
                 Level Of Operation<br>{{ Form::select('operation',array('International'=>'International','National'=>'National','Regional'=>'Regional','District'=>'District'),'',array('class'=>'form-control','required'=>'requiered')) }}
@@ -74,8 +74,11 @@ $district = array();
 
         <div class='form-group'>
 
-            <div class='col-sm-12'>
+            <div class='col-sm-6'>
                 Postal Address <br> {{ Form::text('postal','',array('class'=>'form-control','placeholder'=>'Postal Address')) }}
+            </div>
+             <div class='col-sm-6'>
+                Physical Address <br> {{ Form::text('physical','',array('class'=>'form-control','placeholder'=>'Physical Address')) }}
             </div>
         </div>
 
@@ -111,6 +114,11 @@ $district = array();
         })
 
         function afterSuccess(){
+            $("#output").html("<h3><i class='fa fa-spin fa-spinner text-success'></i><span>added successfully...</span><h3>");
+            setTimeout(function() {
+                            $("#myModal").modal("hide");
+                        }, 3000);
+                        $("#ngos").load("<?php echo url("ngo/list") ?>")
 
         }
     });

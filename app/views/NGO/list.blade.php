@@ -119,11 +119,14 @@ $(document).ready(function(){
                             var recordId = $(this).parent("td").attr("id");
                             var page = $(this).attr("href");
 
-                            if(page!="#edit" && page!="#b" ){
+                            if(page!="#edit" && page!="#b" && page!="prioritysectors" ){
                                 window.location.replace('{{ url("ngo/'+recordId+'/'+page+'") }}');
                             }
 
+                          if(page=="prioritysectors"){
+                             window.location.replace('{{ url("ngo/'+recordId+'/sector/prioritysectors") }}');
 
+                           }
                         });
                         //editing a room
                         $(".edituser").click(function(){
@@ -240,11 +243,7 @@ $(document).ready(function(){
                                 btn.hide("slow").next("hr").hide("slow");
                             });
                         });//endof deleting category
-                        $(".prioritysectors").click(function(e){
-                                  e.preventDefault();
-                                  var id1 = $(this).parent().attr('id');
-                                        $(".data_ngo").load("<?php echo url("ngo/prioritysector") ?>/"+id1);
-                        });//endof deleting category
+
                     }
                 });
         });

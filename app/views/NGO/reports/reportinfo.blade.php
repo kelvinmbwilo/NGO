@@ -48,7 +48,7 @@
 
   @foreach($annualReports as $annualReport)
 
- @if($annualReport->year == "2013")
+ @if($annualReport->year == $report->year)
 
  @if($p==0)
     <div role="tabpanel" class="tab-pane active" id="{{ $sector->sector_id }}">

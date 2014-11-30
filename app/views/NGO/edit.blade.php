@@ -23,7 +23,7 @@ if($ngo->region == '0'){
 
         <div class='form-group'>
             <div class='col-sm-6'>
-                Registration Type <br>  {{ Form::select('reg_type',array(''=>'-Select-','Registered'=>'Normal','Compliance'=>'Compliance'),$ngo->registation_type,array('class'=>'form-control','required'=>'requiered')) }}
+                Registration Type <br>  {{ Form::select('reg_type',array(''=>'-Select-','Normal'=>'Normal','Compliance'=>'Compliance'),$ngo->registation_type,array('class'=>'form-control','required'=>'requiered')) }}
             </div>
             <div class='col-sm-6'>
                 Level Of Operation<br>{{ Form::select('operation',array('International'=>'International','National'=>'National','Regional'=>'Regional','District'=>'District'),$ngo->operation_level,array('class'=>'form-control','required'=>'requiered')) }}
@@ -76,10 +76,13 @@ if($ngo->region == '0'){
 
         <div class='form-group'>
 
-            <div class='col-sm-12'>
+            <div class='col-sm-6'>
                 Postal Address <br> {{ Form::text('postal',$ngo->postal_adress,array('class'=>'form-control','placeholder'=>'Postal Address')) }}
             </div>
 
+            <div class='col-sm-6'>
+                Physical Address <br> {{ Form::text('physical',$ngo->postal_adress,array('class'=>'form-control','placeholder'=>'Physical Address')) }}
+            </div>
         </div>
 
         <div id="output"></div>
@@ -125,10 +128,11 @@ if($ngo->region == '0'){
         })
 
         function afterSuccess(){
-            setTimeout(function() {
-                $("#myModal").modal("hide");
-            }, 3000);
-            $("#listuser").load("<?php echo url("ngo/list") ?>")
+            $("#output").html("<h3><i class='fa fa-spin fa-spinner text-success'></i><span>added successfully...</span><h3>");
+                setTimeout(function() {
+                     $("#myModal").modal("hide");
+                }, 3000);
+                $("#ngos").load("<?php echo url("ngo/list") ?>")
         }
     });
 </script>
