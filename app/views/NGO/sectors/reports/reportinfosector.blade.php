@@ -65,7 +65,7 @@
                            @if($report->SectorPractices)
                            <ul style="padding-left: 20px">
                                @foreach($report->SectorPractices as $value)
-                               <li>{{ $value->description }}</li>
+                               <li>{{ $value->practices }}</li>
                                @endforeach
                            </ul>
                            @else
@@ -84,11 +84,12 @@
                    <?php
                    $income= 0;
                    $exp = 0;
+                   $exps = 0;
                    if($report->SectorRevenueIncome){
-                       $income = $report->SectorRevenueIncome->total;
+                       $income += $report->SectorRevenueIncome->total;
                    }
-                   if($report->expenditure){
-                       $exp = $report->expenditure->total;
+                   if($report->expenditures){
+                       $exp += $report->expenditure->total;
                    }
                    ?>
                    <table class="table">
