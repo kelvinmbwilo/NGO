@@ -18,7 +18,6 @@ NGOs Management
     <li role="presentation" class="active"><a href="#ngos" aria-controls="ngos" role="tab" data-toggle="tab">NGOs</a></li>
     <li role="presentation"><a href="#sectors" aria-controls="sectors" role="tab" data-toggle="tab">Sectors</a></li>
   </ul>
-
   <!-- Tab panes -->
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="ngos">

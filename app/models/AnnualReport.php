@@ -28,11 +28,11 @@ class AnnualReport extends Eloquent {
     }
 
     public function NGOChallanges(){
-        return $this->hasMany('NGO_challanges','annual_report_id', 'id');
+        return $this->hasMany('NGOChallanges','report_id', 'id');
     }
 
     public function NGOPractices(){
-        return $this->hasMany('NGO_practices','annual_report_id', 'id');
+        return $this->hasMany('NGOPractices','report_id', 'id');
     }
 
     public function revenueIncome(){

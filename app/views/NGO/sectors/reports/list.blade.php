@@ -53,7 +53,8 @@
         $('#example2').dataTable({
             "fnDrawCallback": function( oSettings ) {
                 //editing a room
-                $(".edituser").click(function(){
+                $(".edituser").click(function(e){
+                    e.preventDefault();
                     var id1 = $(this).parent().attr('id');
                     var id1 = $(this).parent().attr('id');
                     var modal = '<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">';
@@ -61,7 +62,7 @@
                     modal+= '<div class="modal-content">';
                     modal+= '<div class="modal-header">';
                     modal+= '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
-                    modal+= '<h2 class="modal-title" id="myModalLabel">Yearly Report Info</h2>';
+                    modal+= '<h2 class="modal-title" id="myModalLabel">Annual Report Info</h2>';
                     modal+= '</div>';
                     modal+= '<div class="modal-body">';
                     modal+= ' </div>';
@@ -71,7 +72,7 @@
                     $("body").append(modal);
                     $("#myModal").modal("show");
                     $(".modal-body").html("<h3><i class='fa fa-spin fa-spinner '></i><span>loading...</span><h3>");
-                    $(".modal-body").load("<?php echo url("ngo/sector/report") ?>/"+id1);
+                    $(".modal-body").load("<?php echo url("ngo/{$ngo->id}/sector/report") ?>/"+id1);
                     $("#myModal").on('hidden.bs.modal',function(){
                         $("#myModal").remove();
                     })

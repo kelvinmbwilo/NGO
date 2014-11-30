@@ -30,11 +30,11 @@ Sectors
             context: document.body
         }).done(function(data) {
 
-            var sectorDataTable = '<table class="table table-striped table-bordered" id="sector">';
+            var sectorDataTable = '<table class="table table-striped table-bordered" id="sector_table">';
                 sectorDataTable += '<thead>';
                 sectorDataTable += '<tr>';
                 sectorDataTable += '<th> SN </th>';
-                sectorDataTable += '<th>Sector Name </th>';
+                sectorDataTable += '<th>Sector Names </th>';
                 sectorDataTable += '<th> Action </th>';
                 sectorDataTable += '</tr>';
                 sectorDataTable += '</thead>';
@@ -54,7 +54,7 @@ Sectors
             sectorDataTable += '</tbody>';
             sectorDataTable += '</table>';
             $(".data_sector").html(sectorDataTable);
-                $('#sector').dataTable({
+                $('#sector_table').dataTable({
                     "fnDrawCallback": function( oSettings ) {
 
                         $(".add_sector").click(function(){

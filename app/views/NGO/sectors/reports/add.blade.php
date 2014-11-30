@@ -73,8 +73,6 @@
             $('#reportinfo').on('submit', function(e) {
             var formval = $(this).serialize();
                 e.preventDefault();
-
-alert(formval);
                 $("#output").html("<h3><i class='fa fa-spin fa-spinner '></i><span>Making changes please wait...</span><h3>");
                 $(this).ajaxSubmit({
                     target: '#output',

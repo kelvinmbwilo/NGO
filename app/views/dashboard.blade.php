@@ -21,7 +21,7 @@
                     </div>
                     <div class="databox-right">
                         <span class="databox-number themesecondary">{{ count(NGOs::all()) }}</span>
-                        <div class="databox-text darkgray">Registered NGOs</div>
+                        <div class="databox-text darkgray">Registered NGO</div>
                         <div class="databox-stat themesecondary radius-bordered">
                             <i class="stat-icon icon-lg fa fa-tasks"></i>
                         </div>
@@ -39,7 +39,7 @@
                         <span class="databox-number themethirdcolor col-xs-4" style="padding: 2px;font-size: 11px">All {{ count(NGOsMembers::all()) }}</span>
                         <span class="databox-number themethirdcolor  col-xs-4" style="padding: 2px;font-size: 11px"> <i class="fa fa-male"></i> {{ count(NGOsMembers::where('sex','Male')->get()) }}</span>
                         <span class="databox-number themethirdcolor  col-xs-4" style="padding: 2px;font-size: 11px"> <i class="fa fa-female"></i> {{ count(NGOsMembers::where('sex','Female')->get()) }}</span>
-                        <div class="databox-text darkgray col-xs-11">NGOs Members</div>
+                        <div class="databox-text darkgray col-xs-11">NGO Members</div>
 
                     </div>
                 </div>

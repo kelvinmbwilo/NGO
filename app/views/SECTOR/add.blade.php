@@ -11,7 +11,13 @@
  ?>
  <div class="panel panel-default">
      <div class="panel-body">
+        @if(isset($id))
+
+         {{ Form::open(array("url"=>url('sector/add/'.$id),"class"=>"form-horizontal","id"=>'FileUploader')) }}
+        @else
          {{ Form::open(array("url"=>url('sector/add'),"class"=>"form-horizontal","id"=>'FileUploader')) }}
+         @endif
+
          <div class='form-group'>
 
              <div class='col-sm-6'>

@@ -19,7 +19,7 @@ $district = array();
         <div class='form-group'>
 
             <div class='col-sm-6'>
-                Registration Type <br>  {{ Form::select('reg_type',array(''=>'-Select-','Registered'=>'Normal','Compliance'=>'Compliance'),'',array('class'=>'form-control','required'=>'requiered')) }}
+                Registration Type <br>  {{ Form::select('reg_type',array(''=>'-Select-','Normal'=>'Normal','Compliance'=>'Compliance'),'',array('class'=>'form-control','required'=>'requiered')) }}
             </div>
             <div class='col-sm-6'>
                 Level Of Operation<br>{{ Form::select('operation',array('International'=>'International','National'=>'National','Regional'=>'Regional','District'=>'District'),'',array('class'=>'form-control','required'=>'requiered')) }}
@@ -37,7 +37,7 @@ $district = array();
                 ?>
                 @endforeach
                 Priority Sector<br>
-                <select name="sector[]" class="form-control multiselect" multiple="multiple" >
+                <select name="sector[]" class="form-control" multiple>
                  @foreach(Sector::all() as $sector)
                     <option value="{{ $sector->id }}">{{ $sector->sector_name }}</option>
                  @endforeach
@@ -74,8 +74,11 @@ $district = array();
 
         <div class='form-group'>
 
-            <div class='col-sm-12'>
+            <div class='col-sm-6'>
                 Postal Address <br> {{ Form::text('postal','',array('class'=>'form-control','placeholder'=>'Postal Address')) }}
+            </div>
+             <div class='col-sm-6'>
+                Physical Address <br> {{ Form::text('physical','',array('class'=>'form-control','placeholder'=>'Physical Address')) }}
             </div>
         </div>
 
@@ -90,17 +93,6 @@ $district = array();
 <script>
     $(document).ready(function (){
 
-    $(".multiselect").multiselect(
-                         {   header: "Select an option",
-                             noneSelectedText: "Select an Option",
-                             selectedList: 1,
-                             click: function(event, ui){
-                                if(ui.checked){
-                                     console.log(ui);
-                                }
-                                }
-
-                         }).multiselectfilter();
 
         $('#FileUploader').on('submit', function(e) {
             e.preventDefault();
@@ -122,6 +114,11 @@ $district = array();
         })
 
         function afterSuccess(){
+            $("#output").html("<h3><i class='fa fa-spin fa-spinner text-success'></i><span>added successfully...</span><h3>");
+            setTimeout(function() {
+                            $("#myModal").modal("hide");
+                        }, 3000);
+                        $("#ngos").load("<?php echo url("ngo/list") ?>")
 
         }
     });

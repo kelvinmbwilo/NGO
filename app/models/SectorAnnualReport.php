@@ -28,17 +28,17 @@ class SectorAnnualReport extends Eloquent {
     }
 
     public function SectorChallanges(){
-        return $this->hasMany('SectorChallanges','annual_report_id', 'id');
+        return $this->hasMany('SectorChallanges','report_id', 'id');
     }
 
     public function SectorPractices(){
-        return $this->hasMany('Sector_practices','annual_report_id', 'id');
+        return $this->hasMany('SectorPractices','report_id', 'id');
     }
 
-    public function revenueIncome(){
-        return $this->hasOne('RevenueIncome','report_id', 'id');
+    public function SectorRevenueIncome(){
+        return $this->hasOne('SectorRevenueIncome','report_id', 'id');
     }
     public function expenditure(){
-        return $this->hasOne('Expendeture','report_id', 'id');
+        return $this->hasOne('SectorExpendeture','report_id', 'id');
     }
 }

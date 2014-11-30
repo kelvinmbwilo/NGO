@@ -91,7 +91,7 @@ Route::get('ngo/edit/{id}',array('as'=>'editngo', 'uses'=>'NGOController@edit'))
 
 //display
 Route::get('ngo/members/{id}',array('as'=>'o', 'uses'=>'NGOController@listmembers'));
-Route::get('ngo/{id}/prioritysectors',array('as'=>'o', 'uses'=>'NGOController@listPrioritySectors'));
+Route::get('ngo/{id}/sector/prioritysectors',array('as'=>'o', 'uses'=>'NGOController@listPrioritySectors'));
 
 //editng ngo information
 Route::post('ngo/edit/{id}',array('as'=>'editngo1', 'uses'=>'NGOController@update'));
@@ -251,8 +251,10 @@ Route::get('practices',array('uses'=>'StatisticsController@show'));
  */
 
 Route::get('addSector',array('as'=>'addSector', 'uses'=>'SECTORController@create'));
+Route::get('addSector/{id}',array('as'=>'addSector', 'uses'=>'SECTORController@createForNg'));
 Route::get('sectorJson',array('as'=>'sectorJson', 'uses'=>'SECTORController@sectorJson'));
 Route::post('sector/add',array('as'=>'sectorAdd', 'uses'=>'SECTORController@store'));
+Route::post('sector/add/{id}',array('as'=>'ndsectorAdd', 'uses'=>'SECTORController@storeForNg'));
 Route::get('sector/edit/{id}',array('as'=>'sectorEdit', 'uses'=>'SECTORController@edit'));
 Route::post('sector/edit/{id}',array('as'=>'sectorEdit', 'uses'=>'SECTORController@update'));
 Route::get('sectors',array('as'=>'sectorlist', 'uses'=>'SECTORController@sectorlist'));
@@ -267,14 +269,13 @@ Route::get('sector/{id}/report/{nid}/add',array('uses'=>'SECTORReportController@
 Route::post('sector/{id}/report/{nid}/sum',array('uses'=>'SECTORReportController@store'));
 
 //display a list of ngo reports
-    Route::get('ngo/{nid}/sector/{id}/report/',array('uses'=>'SECTORReportController@reportlist'));
+Route::get('ngo/{nid}/sector/{id}/report/',array('uses'=>'SECTORReportController@reportlist'));
 
-Route::get('ngo/{id}/sector/report',array('uses'=>'SECTORReportController@index'));
+Route::get('ngo/{nid}/sector/{id}/report_',array('uses'=>'SECTORReportController@index'));
 
 
 //viewing list of reports of particular ngo
-Route::get('ngo/sector/report/{id}',array('uses'=>'SECTORReportController@show'));
-
+Route::get('ngo/{nid}/sector/report/{id}',array('uses'=>'SECTORReportController@show'));
 //viewing financial report
 Route::get('financial',array('uses'=>'NGOStastisticController@financial'));
 //deleting ngo report

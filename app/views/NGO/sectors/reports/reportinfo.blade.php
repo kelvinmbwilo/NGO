@@ -4,7 +4,6 @@
 <div>
 <div role="tabpanel">
 
-
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
   <?php $i=0 ?>
@@ -28,7 +27,8 @@
             <div class="col-sm-4">
                 <table class="table">
                     <tr>
-                        <td>Reporting Date</td>
+                        <td>Reporting Date
+</td>
                         <td id="reporting_date">{{ date("j M Y",strtotime($report->report_date)) }}</td>
                     </tr>
                     <tr>

@@ -25,7 +25,7 @@
 <li>
     <a href="{{ url('reports') }}">
         <i class="menu-icon fa fa-th"></i>
-        <span class="menu-text"> Yearly Reports </span>
+        <span class="menu-text"> Annual Reports </span>
     </a>
 </li>
 <li>

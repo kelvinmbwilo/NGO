@@ -23,7 +23,7 @@ if($ngo->region == '0'){
 
         <div class='form-group'>
             <div class='col-sm-6'>
-                Registration Type <br>  {{ Form::select('reg_type',array(''=>'-Select-','Registered'=>'Normal','Compliance'=>'Compliance'),$ngo->registation_type,array('class'=>'form-control','required'=>'requiered')) }}
+                Registration Type <br>  {{ Form::select('reg_type',array(''=>'-Select-','Normal'=>'Normal','Compliance'=>'Compliance'),$ngo->registation_type,array('class'=>'form-control','required'=>'requiered')) }}
             </div>
             <div class='col-sm-6'>
                 Level Of Operation<br>{{ Form::select('operation',array('International'=>'International','National'=>'National','Regional'=>'Regional','District'=>'District'),$ngo->operation_level,array('class'=>'form-control','required'=>'requiered')) }}
@@ -32,28 +32,20 @@ if($ngo->region == '0'){
         <div class='form-group'>
             <div class='col-sm-6'>
                 <?php
-                $sector = array(
-                    ""=>"-Select Sector-",
-                    "Agriculture and Food Security"=>"Agriculture and Food Security",
-                    "Education and Training"=>"Education and Training",
-                    "Health and HIV/AIDS"=>"Health and HIV/AIDS",
-                    "Tourism and Wildlife"=>"Tourism and Wildlife",
-                    "Social Security and Social Protection"=>"Social Security and Social Protection",
-                    "Legal and Human Rights"=>"Legal and Human Rights",
-                    "Good Governance"=>"Good Governance",
-                    "Gender and Women Empowerment"=>"Gender and Women Empowerment",
-                    "Water and Sanitation"=>"Water and Sanitation",
-                    "Environment and Climate Change"=>"Environment and Climate Change",
-                    "Labor and Employment"=>"Labor and Employment",
-                    "Finance"=>"Finance",
-                    "Women Lively Hood"=>"Women Lively Hood",
-                    "Mineral and Energy"=>"Mineral and Energy ",
-                    "Sports and Culture"=>"Sports and Culture",
-                    "Transport and Infrastructure"=>"Transport and Infrastructure",
-                )
+                $sectors = array();
                 ?>
-                Priority Sector<br>{{ Form::select('sector',$sector,$ngo->priority_sector,array('class'=>'form-control multiselect')) }}
-            </div>
+                @foreach(Sector::all() as $sector)
+                <?php
+                    $sectors[$sector->id] = $sector->sector_name;
+                ?>
+                @endforeach
+                Priority Sector<br>
+                <select name="sector[]" class="form-control" multiple>
+                 @foreach(Sector::all() as $sector)
+                    <option value="{{ $sector->id }}">{{ $sector->sector_name }}</option>
+                 @endforeach
+                </select>
+               </div>
             <div class='col-sm-6'>
                 Registration Date <br> {{ Form::text('reg_date',$ngo->registation_date,array('class'=>'dat form-control','placeholder'=>'Registration Date','required'=>'required')) }}
             </div>
@@ -84,10 +76,13 @@ if($ngo->region == '0'){
 
         <div class='form-group'>
 
-            <div class='col-sm-12'>
+            <div class='col-sm-6'>
                 Postal Address <br> {{ Form::text('postal',$ngo->postal_adress,array('class'=>'form-control','placeholder'=>'Postal Address')) }}
             </div>
 
+            <div class='col-sm-6'>
+                Physical Address <br> {{ Form::text('physical',$ngo->postal_adress,array('class'=>'form-control','placeholder'=>'Physical Address')) }}
+            </div>
         </div>
 
         <div id="output"></div>
@@ -133,10 +128,11 @@ if($ngo->region == '0'){
         })
 
         function afterSuccess(){
-            setTimeout(function() {
-                $("#myModal").modal("hide");
-            }, 3000);
-            $("#listuser").load("<?php echo url("ngo/list") ?>")
+            $("#output").html("<h3><i class='fa fa-spin fa-spinner text-success'></i><span>added successfully...</span><h3>");
+                setTimeout(function() {
+                     $("#myModal").modal("hide");
+                }, 3000);
+                $("#ngos").load("<?php echo url("ngo/list") ?>")
         }
     });
 </script>

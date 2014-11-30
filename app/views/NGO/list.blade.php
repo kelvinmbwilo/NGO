@@ -73,28 +73,30 @@ $(document).ready(function(){
         }).done(function(data) {
 
             var ngoDataTable = '<table class="table table-striped table-bordered" id="example2_ngo_all">';
-                ngoDataTable += '<thead>';
-                ngoDataTable += '<tr>';
-                ngoDataTable += '<th> SN </th>';
-                ngoDataTable += '<th> Name </th>';
-                ngoDataTable += '<th> Registration No </th>';
-                ngoDataTable += '<th> Registration Date </th>';
-                ngoDataTable += '<th> Registration Type </th>';
-                ngoDataTable += '<th> Level Of Operation</th>';
-                ngoDataTable += '<th> Action </th>';
-                ngoDataTable += '</tr>';
-                ngoDataTable += '</thead>';
-                ngoDataTable += '<tbody>';
-                var  rowCounter = 1;
-            $.each(data,function(index,val){
-                ngoDataTable += '<tr>';
-                ngoDataTable += '<td>'+rowCounter+'</td>';
-                ngoDataTable += '<td style="text-transform: capitalize">'+val["name"]+'</td>';
-                ngoDataTable += '<td>'+val["certificate_no"]+'</td>';
-                ngoDataTable += '<td>'+val["registation_date"]+'</td>';
-                ngoDataTable += '<td>'+val["registation_type"]+'</td>';
-                ngoDataTable += '<td>'+val["operation_level"]+'</td>';
-                ngoDataTable += '<td class="action_group" id="'+val["id"]+'">';
+                    ngoDataTable += '<thead>';
+                    ngoDataTable += '<tr>';
+                    ngoDataTable += '<th> SN </th>';
+                    ngoDataTable += '<th> Name </th>';
+                    ngoDataTable += '<th> Registration No </th>';
+                    ngoDataTable += '<th> Physical Address </th>';
+                    ngoDataTable += '<th> Registration Date </th>';
+                    ngoDataTable += '<th> Registration Type </th>';
+                    ngoDataTable += '<th> Level Of Operation</th>';
+                    ngoDataTable += '<th> Action </th>';
+                    ngoDataTable += '</tr>';
+                    ngoDataTable += '</thead>';
+                    ngoDataTable += '<tbody>';
+                    var  rowCounter = 1;
+                $.each(data,function(index,val){
+                    ngoDataTable += '<tr>';
+                    ngoDataTable += '<td>'+rowCounter+'</td>';
+                    ngoDataTable += '<td style="text-transform: capitalize">'+val["name"]+'</td>';
+                    ngoDataTable += '<td>'+val["certificate_no"]+'</td>';
+                    ngoDataTable += '<td>'+val["phisycal_add"]+'</td>';
+                    ngoDataTable += '<td>'+val["registation_date"]+'</td>';
+                    ngoDataTable += '<td>'+val["registation_type"]+'</td>';
+                    ngoDataTable += '<td>'+val["operation_level"]+'</td>';
+                    ngoDataTable += '<td class="action_group" id="'+val["id"]+'">';
                 ngoDataTable += '<a href="prioritysectors" title="View Priority Sectors" class="prioritysectors"><i class="fa fa-list text-success"></i> Priority Sectors</a>&nbsp;&nbsp;&nbsp';
                 ngoDataTable += '<a href="member" title="View Members" ><i class="fa fa-list text-success"></i> Members</a>&nbsp;&nbsp;&nbsp';
                 ngoDataTable += '<a href="bearer" title="View Employee" ><i class="fa fa-th-large text-warning"></i> Employee</a>&nbsp;&nbsp;&nbsp;';
@@ -117,10 +119,14 @@ $(document).ready(function(){
                             var recordId = $(this).parent("td").attr("id");
                             var page = $(this).attr("href");
 
-                            if(page!="#edit" && page!="#b"){
+                            if(page!="#edit" && page!="#b" && page!="prioritysectors" ){
                                 window.location.replace('{{ url("ngo/'+recordId+'/'+page+'") }}');
                             }
 
+                          if(page=="prioritysectors"){
+                             window.location.replace('{{ url("ngo/'+recordId+'/sector/prioritysectors") }}');
+
+                           }
                         });
                         //editing a room
                         $(".edituser").click(function(){
@@ -237,11 +243,7 @@ $(document).ready(function(){
                                 btn.hide("slow").next("hr").hide("slow");
                             });
                         });//endof deleting category
-                        $(".prioritysectors").click(function(e){
-                                  e.preventDefault();
-                                  var id1 = $(this).parent().attr('id');
-                                        $(".data_ngo").load("<?php echo url("ngo/prioritysector") ?>/"+id1);
-                        });//endof deleting category
+
                     }
                 });
         });
@@ -254,12 +256,13 @@ $(document).ready(function(){
                 context: document.body
             }).done(function(data) {
 
-                var ngoDataTable = '<table class="table table-striped table-bordered" id="example2_mult">';
+                var ngoDataTable = '<table class="table table-striped table-bordered" id="example2_ngo_mult">';
                     ngoDataTable += '<thead>';
                     ngoDataTable += '<tr>';
                     ngoDataTable += '<th> SN </th>';
                     ngoDataTable += '<th> Name </th>';
                     ngoDataTable += '<th> Registration No </th>';
+                    ngoDataTable += '<th> Physical Address </th>';
                     ngoDataTable += '<th> Registration Date </th>';
                     ngoDataTable += '<th> Registration Type </th>';
                     ngoDataTable += '<th> Level Of Operation</th>';
@@ -273,6 +276,7 @@ $(document).ready(function(){
                     ngoDataTable += '<td>'+rowCounter+'</td>';
                     ngoDataTable += '<td style="text-transform: capitalize">'+val["name"]+'</td>';
                     ngoDataTable += '<td>'+val["certificate_no"]+'</td>';
+                    ngoDataTable += '<td>'+val["phisycal_add"]+'</td>';
                     ngoDataTable += '<td>'+val["registation_date"]+'</td>';
                     ngoDataTable += '<td>'+val["registation_type"]+'</td>';
                     ngoDataTable += '<td>'+val["operation_level"]+'</td>';
@@ -280,7 +284,7 @@ $(document).ready(function(){
                     ngoDataTable += '<a href="prioritysectors" title="View Priority Sectors" class="prioritysectors"><i class="fa fa-list text-success"></i> Priority Sectors</a>&nbsp;&nbsp;&nbsp';
                     ngoDataTable += '<a href="member" title="View Members" ><i class="fa fa-list text-success"></i> Members</a>&nbsp;&nbsp;&nbsp';
                     ngoDataTable += '<a href="bearer" title="View Employee" ><i class="fa fa-th-large text-warning"></i> Employee</a>&nbsp;&nbsp;&nbsp;';
-                    ngoDataTable += '<a href="report" title="View Report" ><i class="fa fa-briefcase text-primary"></i> Reports</a>&nbsp;&nbsp;&nbsp;';
+                    ngoDataTable += '<a href="report_" title="View Report" ><i class="fa fa-briefcase text-primary"></i> Reports</a>&nbsp;&nbsp;&nbsp;';
                     ngoDataTable += '<a href="#edit" title="edit NGO" class="edituser"><i class="fa fa-pencil text-info"></i> edit</a>&nbsp;&nbsp;';
                     ngoDataTable += '<a href="summary" title="View NGO Summary" class="summary"><i class="fa fa-user text-info"></i> Summary</a>&nbsp;&nbsp;';
                     ngoDataTable += '<a href="#b" title="delete User" class="deleteuser"><i class="fa fa-trash-o text-danger"></i> </a>';
@@ -299,9 +303,21 @@ $(document).ready(function(){
                                 var recordId = $(this).parent("td").attr("id");
                                 var page = $(this).attr("href");
 
-                                if(page!="#edit" && page!="#b"){
-                                    window.location.replace('{{ url("ngo/'+recordId+'/sector/'+page+'") }}');
+                                if(page!="#edit" && page!="#b" && page!="report" && page!="prioritysectors"){
+                                    window.location.replace('{{ url("ngo/'+recordId+'/'+page+'") }}');
+
                                 }
+
+                                if(page=="report_"){
+                                var sec = 'a';
+                                    window.location.replace('{{ url("ngo/'+recordId+'/sector/'+sec+'/'+page+'") }}');
+
+                                }
+                                if(page=="prioritysectors"){
+                                    window.location.replace('{{ url("ngo/'+recordId+'/sector/prioritysectors") }}');
+
+                                }
+
 
                             });
                             //editing a room
@@ -422,7 +438,7 @@ $(document).ready(function(){
                             $(".prioritysectors").click(function(e){
                                       e.preventDefault();
                                       var id1 = $(this).parent().attr('id');
-                                            $(".data_ngo").load("<?php echo url("ngo/prioritysector") ?>/"+id1);
+                                            $(".data_ngo").load("<?php echo url("ngo/prioritysectors") ?>/"+id1);
                             });//endof deleting category
                         }
                     });
@@ -437,28 +453,30 @@ $.ajax({
         }).done(function(data) {
 
             var ngoDataTable = '<table class="table table-striped table-bordered" id="example2_single">';
-                ngoDataTable += '<thead>';
-                ngoDataTable += '<tr>';
-                ngoDataTable += '<th> SN </th>';
-                ngoDataTable += '<th> Name </th>';
-                ngoDataTable += '<th> Registration No </th>';
-                ngoDataTable += '<th> Registration Date </th>';
-                ngoDataTable += '<th> Registration Type </th>';
-                ngoDataTable += '<th> Level Of Operation</th>';
-                ngoDataTable += '<th> Action </th>';
-                ngoDataTable += '</tr>';
-                ngoDataTable += '</thead>';
-                ngoDataTable += '<tbody>';
-                var  rowCounter = 1;
-            $.each(data,function(index,val){
-                ngoDataTable += '<tr>';
-                ngoDataTable += '<td>'+rowCounter+'</td>';
-                ngoDataTable += '<td style="text-transform: capitalize">'+val["name"]+'</td>';
-                ngoDataTable += '<td>'+val["certificate_no"]+'</td>';
-                ngoDataTable += '<td>'+val["registation_date"]+'</td>';
-                ngoDataTable += '<td>'+val["registation_type"]+'</td>';
-                ngoDataTable += '<td>'+val["operation_level"]+'</td>';
-                ngoDataTable += '<td class="action_group" id="'+val["id"]+'">';
+                    ngoDataTable += '<thead>';
+                    ngoDataTable += '<tr>';
+                    ngoDataTable += '<th> SN </th>';
+                    ngoDataTable += '<th> Name </th>';
+                    ngoDataTable += '<th> Registration No </th>';
+                    ngoDataTable += '<th> Physical Address </th>';
+                    ngoDataTable += '<th> Registration Date </th>';
+                    ngoDataTable += '<th> Registration Type </th>';
+                    ngoDataTable += '<th> Level Of Operation</th>';
+                    ngoDataTable += '<th> Action </th>';
+                    ngoDataTable += '</tr>';
+                    ngoDataTable += '</thead>';
+                    ngoDataTable += '<tbody>';
+                    var  rowCounter = 1;
+                $.each(data,function(index,val){
+                    ngoDataTable += '<tr>';
+                    ngoDataTable += '<td>'+rowCounter+'</td>';
+                    ngoDataTable += '<td style="text-transform: capitalize">'+val["name"]+'</td>';
+                    ngoDataTable += '<td>'+val["certificate_no"]+'</td>';
+                    ngoDataTable += '<td>'+val["phisycal_add"]+'</td>';
+                    ngoDataTable += '<td>'+val["registation_date"]+'</td>';
+                    ngoDataTable += '<td>'+val["registation_type"]+'</td>';
+                    ngoDataTable += '<td>'+val["operation_level"]+'</td>';
+                    ngoDataTable += '<td class="action_group" id="'+val["id"]+'">';
                 ngoDataTable += '<a href="prioritysectors" title="View Priority Sectors" class="prioritysectors"><i class="fa fa-list text-success"></i> Priority Sectors</a>&nbsp;&nbsp;&nbsp';
                 ngoDataTable += '<a href="member" title="View Members" ><i class="fa fa-list text-success"></i> Members</a>&nbsp;&nbsp;&nbsp';
                 ngoDataTable += '<a href="bearer" title="View Employee" ><i class="fa fa-th-large text-warning"></i> Employee</a>&nbsp;&nbsp;&nbsp;';
@@ -481,9 +499,19 @@ $.ajax({
                             var recordId = $(this).parent("td").attr("id");
                             var page = $(this).attr("href");
 
-                            if(page!="#edit" && page!="#b"){
-                                window.location.replace('{{ url("ngo/'+recordId+'/'+page+'") }}');
-                            }
+                                         if(page!="#edit" && page!="#b" &&  page!="prioritysectors"){
+                                           window.location.replace('{{ url("ngo/'+recordId+'/'+page+'") }}');
+
+                                          }
+                                         {{--if(page=="report_"){--}}
+                                           {{--var sec = 'a';--}}
+                                           {{--window.location.replace('{{ url("ngo/'+recordId+'/sector/'+sec+'/'+page+'") }}');--}}
+
+                                         {{--}--}}
+                                         if(page=="prioritysectors"){
+                                            window.location.replace('{{ url("ngo/'+recordId+'/sector/prioritysectors") }}');
+
+                                         }
 
                         });
                         //editing a room
