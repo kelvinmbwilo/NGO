@@ -117,7 +117,7 @@
                            @if($annualReport->SectorPractices)
                            <ul style="padding-left: 20px">
                                @foreach($annualReport->SectorPractices as $value)
-                               <li>{{ $value->description }}</li>
+                               <li>{{ $value->practices }}</li>
                                @endforeach
                            </ul>
                            @else
