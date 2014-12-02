@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b290b2f2-359b-4642-913d-8257f327a6e4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/NGOController.php" afterPath="$PROJECT_DIR$/app/controllers/NGOController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/statistics/financial.blade.php" afterPath="$PROJECT_DIR$/app/views/statistics/financial.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="b290b2f2-359b-4642-913d-8257f327a6e4" name="Default" comment="" />
     <ignored path="NGO.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -62,7 +58,7 @@
       <file leaf-file-name="add.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/NGO/add.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="49.296295" vertical-offset="1331" max-vertical-offset="2358">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="1331" max-vertical-offset="2358">
               <folding />
             </state>
           </provider>
@@ -72,43 +68,7 @@
         <entry file="file://$PROJECT_DIR$/app/views/NGO/edit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2592">
-              <folding>
-                <marker date="1417330165325" expanded="true" signature="319:4330" placeholder="..." />
-                <marker date="1417330165325" expanded="true" signature="348:4323" placeholder="..." />
-                <marker date="1417330165325" expanded="true" signature="496:940" placeholder="..." />
-                <marker date="1417330165325" expanded="true" signature="532:698" placeholder="..." />
-                <marker date="1417330165325" expanded="true" signature="733:925" placeholder="..." />
-                <marker date="1417330165325" expanded="true" signature="974:1570" placeholder="..." />
-                <marker date="1417330165325" expanded="true" signature="1009:1245" placeholder="..." />
-                <marker date="1417330165325" expanded="true" signature="1280:1555" placeholder="..." />
-                <marker date="1417330165325" expanded="true" signature="1603:2624" placeholder="..." />
-                <marker date="1417330165325" expanded="true" signature="1638:2227" placeholder="..." />
-                <marker date="1417330165325" expanded="true" signature="2008:2205" placeholder="..." />
-                <marker date="1417330165325" expanded="true" signature="2262:2465" placeholder="..." />
-                <marker date="1417330165325" expanded="true" signature="2486:2609" placeholder="..." />
-                <marker date="1417330165325" expanded="true" signature="2525:2586" placeholder="{&quot;dateFormat&quot;: &quot;yy-mm-dd&quot;...}" />
-                <marker date="1417330165325" expanded="true" signature="2658:3037" placeholder="..." />
-                <marker date="1417330165325" expanded="true" signature="2693:2830" placeholder="..." />
-                <marker date="1417330165325" expanded="true" signature="2865:3022" placeholder="..." />
-                <marker date="1417330165325" expanded="true" signature="3081:3542" placeholder="..." />
-                <marker date="1417330165325" expanded="true" signature="3129:3313" placeholder="..." />
-                <marker date="1417330165325" expanded="true" signature="3361:3527" placeholder="..." />
-                <marker date="1417330165325" expanded="true" signature="3576:3999" placeholder="..." />
-                <marker date="1417330165325" expanded="true" signature="3612:3777" placeholder="..." />
-                <marker date="1417330165325" expanded="true" signature="3813:3984" placeholder="..." />
-                <marker date="1417330165325" expanded="true" signature="4087:4284" placeholder="..." />
-                <marker date="1417330165325" expanded="true" signature="4339:5881" placeholder="..." />
-                <marker date="1417330165325" expanded="true" signature="4374:5870" placeholder="{...}" />
-                <marker date="1417330165325" expanded="true" signature="4433:4800" placeholder="{&quot;header&quot;: &quot;Select an option&quot;...}" />
-                <marker date="1417330165325" expanded="true" signature="4621:4776" placeholder="{...}" />
-                <marker date="1417330165325" expanded="true" signature="4665:4746" placeholder="{...}" />
-                <marker date="1417330165325" expanded="true" signature="4876:5166" placeholder="{...}" />
-                <marker date="1417330165325" expanded="true" signature="5064:5153" placeholder="{&quot;target&quot;: '#output'...}" />
-                <marker date="1417330165325" expanded="true" signature="5261:5511" placeholder="{...}" />
-                <marker date="1417330165325" expanded="true" signature="5438:5500" placeholder="{...}" />
-                <marker date="1417330165325" expanded="true" signature="5545:5864" placeholder="{...}" />
-                <marker date="1417330165325" expanded="true" signature="5712:5781" placeholder="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -116,7 +76,7 @@
       <file leaf-file-name="NGOController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/NGOController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="113" column="36" selection-start="2798" selection-end="2798" vertical-scroll-proportion="-6.5185184" vertical-offset="1858" max-vertical-offset="4374">
+            <state line="113" column="27" selection-start="2779" selection-end="2779" vertical-scroll-proportion="0.0" vertical-offset="2034" max-vertical-offset="4392">
               <folding />
             </state>
           </provider>
@@ -125,7 +85,7 @@
       <file leaf-file-name="financial.blade.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/statistics/financial.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="40" selection-start="577" selection-end="577" vertical-scroll-proportion="0.20338982" vertical-offset="378" max-vertical-offset="972">
+            <state line="27" column="40" selection-start="577" selection-end="577" vertical-scroll-proportion="0.40677965" vertical-offset="270" max-vertical-offset="972">
               <folding />
             </state>
           </provider>
@@ -143,7 +103,7 @@
       <file leaf-file-name="SECTORController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/SECTORController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="100" column="35" selection-start="2054" selection-end="2054" vertical-scroll-proportion="0.0" vertical-offset="1512" max-vertical-offset="3276">
+            <state line="100" column="35" selection-start="2054" selection-end="2054" vertical-scroll-proportion="0.0" vertical-offset="1800" max-vertical-offset="3276">
               <folding />
             </state>
           </provider>
@@ -250,7 +210,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -365,6 +324,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -440,7 +400,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3028701" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3074018" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.8243671" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -502,6 +462,48 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/views/NGO/add.blade.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2358">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/NGO/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2592">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/NGOController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="113" column="27" selection-start="2779" selection-end="2779" vertical-scroll-proportion="0.0" vertical-offset="2034" max-vertical-offset="4392">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/statistics/financial.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="40" selection-start="577" selection-end="577" vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="972">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="256" column="97" selection-start="9840" selection-end="9840" vertical-scroll-proportion="0.0" vertical-offset="4608" max-vertical-offset="5184">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/SECTORController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="35" selection-start="2054" selection-end="2054" vertical-scroll-proportion="0.0" vertical-offset="1800" max-vertical-offset="3276">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/NGO/add.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="2358">
           <folding />
         </state>
@@ -510,43 +512,7 @@
     <entry file="file://$PROJECT_DIR$/app/views/NGO/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2592">
-          <folding>
-            <marker date="1417330165325" expanded="true" signature="319:4330" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="348:4323" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="496:940" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="532:698" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="733:925" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="974:1570" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="1009:1245" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="1280:1555" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="1603:2624" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="1638:2227" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="2008:2205" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="2262:2465" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="2486:2609" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="2525:2586" placeholder="{&quot;dateFormat&quot;: &quot;yy-mm-dd&quot;...}" />
-            <marker date="1417330165325" expanded="true" signature="2658:3037" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="2693:2830" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="2865:3022" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="3081:3542" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="3129:3313" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="3361:3527" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="3576:3999" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="3612:3777" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="3813:3984" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="4087:4284" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="4339:5881" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="4374:5870" placeholder="{...}" />
-            <marker date="1417330165325" expanded="true" signature="4433:4800" placeholder="{&quot;header&quot;: &quot;Select an option&quot;...}" />
-            <marker date="1417330165325" expanded="true" signature="4621:4776" placeholder="{...}" />
-            <marker date="1417330165325" expanded="true" signature="4665:4746" placeholder="{...}" />
-            <marker date="1417330165325" expanded="true" signature="4876:5166" placeholder="{...}" />
-            <marker date="1417330165325" expanded="true" signature="5064:5153" placeholder="{&quot;target&quot;: '#output'...}" />
-            <marker date="1417330165325" expanded="true" signature="5261:5511" placeholder="{...}" />
-            <marker date="1417330165325" expanded="true" signature="5438:5500" placeholder="{...}" />
-            <marker date="1417330165325" expanded="true" signature="5545:5864" placeholder="{...}" />
-            <marker date="1417330165325" expanded="true" signature="5712:5781" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -671,43 +637,7 @@
     <entry file="file://$PROJECT_DIR$/app/views/NGO/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2592">
-          <folding>
-            <marker date="1417330165325" expanded="true" signature="319:4330" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="348:4323" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="496:940" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="532:698" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="733:925" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="974:1570" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="1009:1245" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="1280:1555" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="1603:2624" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="1638:2227" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="2008:2205" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="2262:2465" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="2486:2609" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="2525:2586" placeholder="{&quot;dateFormat&quot;: &quot;yy-mm-dd&quot;...}" />
-            <marker date="1417330165325" expanded="true" signature="2658:3037" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="2693:2830" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="2865:3022" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="3081:3542" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="3129:3313" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="3361:3527" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="3576:3999" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="3612:3777" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="3813:3984" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="4087:4284" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="4339:5881" placeholder="..." />
-            <marker date="1417330165325" expanded="true" signature="4374:5870" placeholder="{...}" />
-            <marker date="1417330165325" expanded="true" signature="4433:4800" placeholder="{&quot;header&quot;: &quot;Select an option&quot;...}" />
-            <marker date="1417330165325" expanded="true" signature="4621:4776" placeholder="{...}" />
-            <marker date="1417330165325" expanded="true" signature="4665:4746" placeholder="{...}" />
-            <marker date="1417330165325" expanded="true" signature="4876:5166" placeholder="{...}" />
-            <marker date="1417330165325" expanded="true" signature="5064:5153" placeholder="{&quot;target&quot;: '#output'...}" />
-            <marker date="1417330165325" expanded="true" signature="5261:5511" placeholder="{...}" />
-            <marker date="1417330165325" expanded="true" signature="5438:5500" placeholder="{...}" />
-            <marker date="1417330165325" expanded="true" signature="5545:5864" placeholder="{...}" />
-            <marker date="1417330165325" expanded="true" signature="5712:5781" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -727,21 +657,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/NGO/add.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="49.296295" vertical-offset="1331" max-vertical-offset="2358">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="1331" max-vertical-offset="2358">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/NGOController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="36" selection-start="2798" selection-end="2798" vertical-scroll-proportion="-6.5185184" vertical-offset="1858" max-vertical-offset="4374">
+        <state line="113" column="27" selection-start="2779" selection-end="2779" vertical-scroll-proportion="0.0" vertical-offset="2034" max-vertical-offset="4392">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/statistics/financial.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="40" selection-start="577" selection-end="577" vertical-scroll-proportion="0.20338982" vertical-offset="378" max-vertical-offset="972">
+        <state line="27" column="40" selection-start="577" selection-end="577" vertical-scroll-proportion="0.40677965" vertical-offset="270" max-vertical-offset="972">
           <folding />
         </state>
       </provider>
