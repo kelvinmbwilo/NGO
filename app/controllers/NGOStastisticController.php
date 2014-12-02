@@ -100,7 +100,6 @@ class NGOStastisticController extends \BaseController {
                     <th> Registration No </th>
                     <th> Registration Date </th>
                     <th> Registration Type </th>
-                    <th> Priority Sector</th>
                     <th> Phone Number</th>
                     <th> Email</th>
                     <th> Postal Address</th>
@@ -115,7 +114,6 @@ class NGOStastisticController extends \BaseController {
     <td><?php echo $us->certificate_no ?></td>
     <td><?php echo $us->registation_date ?></td>
     <td><?php echo $us->registation_type ?></td>
-    <td><?php echo $us->priority_sector ?></td>
     <td><?php echo $us->phone_number ?></td>
     <td><a href="mailto:<?php $us->email ?>"><?php echo $us->email ?></a></td>
     <td><?php echo $us->postal_adress ?></td>
@@ -176,24 +174,7 @@ class NGOStastisticController extends \BaseController {
         $tabletitle = "";
 if($operate == "sector"){
     if(count($sector) == 0){
-       $array = array(
-            "Agriculture and Food Security"=>"Agriculture and Food Security",
-            "Education and Training"=>"Education and Training",
-            "Health and HIV/AIDS"=>"Health and HIV/AIDS",
-            "Tourism and Wildlife"=>"Tourism and Wildlife",
-            "Social Security and Social Protection"=>"Social Security and Social Protection",
-            "Legal and Human Rights"=>"Legal and Human Rights",
-            "Good Governance"=>"Good Governance",
-            "Gender and Women Empowerment"=>"Gender and Women Empowerment",
-            "Water and Sanitation"=>"Water and Sanitation",
-            "Environment and Climate Change"=>"Environment and Climate Change",
-            "Labor and Employment"=>"Labor and Employment",
-            "Finance"=>"Finance",
-           "Women Lively Hood"=>"Women Lively Hood",
-            " Mineral and Energy "=>"Mineral and Energy ",
-            "Sports and Culture"=>"Sports and Culture",
-            "Transport and Infrastructure"=>"Transport and Infrastructure",
-        );
+       $array = Sector::all()->lists('sector_name','id');
     }else{
         foreach ($sector as $sec){
             $array[$sec] = $sec;
@@ -260,9 +241,15 @@ elseif($operate == "Districts"){
         echo "<td>".$i."</td>";
         echo "<td>".$value."</td>";
         if($condition == "all"){
-            echo "<td>".count(NGOs::where("$columnss",$key)->get())."</td>";
+            if($operate == "sector")
+                echo "<td>".count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->get())."</td>";
+            else
+                echo "<td>".count(NGOs::where("$columnss",$key)->get())."</td>";
         }else{
-            echo "<td>".count(NGOs::where("$columnss",$key)->where('registation_type',$condition)->get())."</td>";
+            if($operate == "sector")
+                echo "<td>".count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->where('registation_type',$condition)->get())."</td>";
+            else
+                echo "<td>".count(NGOs::where("$columnss",$key)->where('registation_type',$condition)->get())."</td>";
         }
 
         echo "</tr>";
@@ -277,24 +264,7 @@ elseif($operate == "Districts"){
         $tabletitle = "";
         if($operate == "sector"){
             if(count($sector) == 0){
-                $array = array(
-                    "Agriculture and Food Security"=>"Agriculture and Food Security",
-                    "Education and Training"=>"Education and Training",
-                    "Health and HIV/AIDS"=>"Health and HIV/AIDS",
-                    "Tourism and Wildlife"=>"Tourism and Wildlife",
-                    "Social Security and Social Protection"=>"Social Security and Social Protection",
-                    "Legal and Human Rights"=>"Legal and Human Rights",
-                    "Good Governance"=>"Good Governance",
-                    "Gender and Women Empowerment"=>"Gender and Women Empowerment",
-                    "Water and Sanitation"=>"Water and Sanitation",
-                    "Environment and Climate Change"=>"Environment and Climate Change",
-                    "Labor and Employment"=>"Labor and Employment",
-                    "Finance"=>"Finance",
-                    "Women Lively Hood"=>"Women Lively Hood",
-                    "Mineral and Energy"=>"Mineral and Energy ",
-                    "Sports and Culture"=>"Sports and Culture",
-                    "Transport and Infrastructure"=>"Transport and Infrastructure",
-                );
+                $array = Sector::all()->lists('sector_name','id');
             }else{
                 foreach ($sector as $sec){
                     $array[$sec] = $sec;
@@ -352,13 +322,26 @@ elseif($operate == "Districts"){
                 foreach($array as $key=>$value){
                     $k++;
                     if($condition == "all"){
-                        $category1 .= (count($array) == $k)?"'$value'":"'$value',";
-                        $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->get()):count(NGOs::where($columnss,$key)->get()).",";
-                        $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."},";
+                        if($operate == "sector"){
+                            $category1 .= (count($array) == $k)?"'$value'":"'$value',";
+                            $column1 .= (count($array) == $k)?count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->get()):count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->get()).",";
+                            $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->get())."}":"{ name:'".$value."',y: ".count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->get())."},";
+                        }else{
+                            $category1 .= (count($array) == $k)?"'$value'":"'$value',";
+                            $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->get()):count(NGOs::where($columnss,$key)->get()).",";
+                            $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."},";
+                        }
                     }else{
-                        $category1 .= (count($array) == $k)?"'$value'":"'$value',";
-                        $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get()):count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get()).",";
-                        $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."},";
+                        if($operate == "sector"){
+                            $category1 .= (count($array) == $k)?"'$value'":"'$value',";
+                            $column1 .= (count($array) == $k)?count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->where('registation_type',$condition)->get()):count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->where('registation_type',$condition)->get()).",";
+                            $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->where('registation_type',$condition)->get())."}":"{ name:'".$value."',y: ".count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->where('registation_type',$condition)->get())."},";
+                        }else{
+                            $category1 .= (count($array) == $k)?"'$value'":"'$value',";
+                            $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get()):count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get()).",";
+                            $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."},";
+                        }
+
                     }
 
                 }
@@ -398,24 +381,7 @@ public function column($ngo,$region,$district,$sector,$operation,$title,$operate
         $tabletitle = "";
         if($operate == "sector"){
             if(count($sector) == 0){
-                $array = array(
-                    "Agriculture and Food Security"=>"Agriculture and Food Security",
-                    "Education and Training"=>"Education and Training",
-                    "Health and HIV/AIDS"=>"Health and HIV/AIDS",
-                    "Tourism and Wildlife"=>"Tourism and Wildlife",
-                    "Social Security and Social Protection"=>"Social Security and Social Protection",
-                    "Legal and Human Rights"=>"Legal and Human Rights",
-                    "Good Governance"=>"Good Governance",
-                    "Gender and Women Empowerment"=>"Gender and Women Empowerment",
-                    "Water and Sanitation"=>"Water and Sanitation",
-                    "Environment and Climate Change"=>"Environment and Climate Change",
-                    "Labor and Employment"=>"Labor and Employment",
-                    "Finance"=>"Finance",
-                    "Women Lively Hood"=>"Women Lively Hood",
-                    " Mineral and Energy "=>"Mineral and Energy ",
-                    "Sports and Culture"=>"Sports and Culture",
-                    "Transport and Infrastructure"=>"Transport and Infrastructure",
-                );
+                $array = Sector::all()->lists('sector_name','id');
             }else{
                 foreach ($sector as $sec){
                     $array[$sec] = $sec;
@@ -473,13 +439,26 @@ public function column($ngo,$region,$district,$sector,$operation,$title,$operate
                 foreach($array as $key=>$value){
                     $k++;
                     if($condition == "all"){
-                        $category1 .= (count($array) == $k)?"'$value'":"'$value',";
-                        $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->get()):count(NGOs::where($columnss,$key)->get()).",";
-                        $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."},";
+                        if($operate == "sector"){
+                            $category1 .= (count($array) == $k)?"'$value'":"'$value',";
+                            $column1 .= (count($array) == $k)?count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->get()):count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->get()).",";
+                            $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->get())."}":"{ name:'".$value."',y: ".count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->get())."},";
+                        }else{
+                            $category1 .= (count($array) == $k)?"'$value'":"'$value',";
+                            $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->get()):count(NGOs::where($columnss,$key)->get()).",";
+                            $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."},";
+                        }
                     }else{
-                        $category1 .= (count($array) == $k)?"'$value'":"'$value',";
-                        $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get()):count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get()).",";
-                        $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."},";
+                        if($operate == "sector"){
+                            $category1 .= (count($array) == $k)?"'$value'":"'$value',";
+                            $column1 .= (count($array) == $k)?count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->where('registation_type',$condition)->get()):count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->where('registation_type',$condition)->get()).",";
+                            $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->where('registation_type',$condition)->get())."}":"{ name:'".$value."',y: ".count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->where('registation_type',$condition)->get())."},";
+                        }else{
+                            $category1 .= (count($array) == $k)?"'$value'":"'$value',";
+                            $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get()):count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get()).",";
+                            $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."},";
+                        }
+
                     }
                 }
         ?>
@@ -519,24 +498,7 @@ public function column($ngo,$region,$district,$sector,$operation,$title,$operate
         $tabletitle = "";
         if($operate == "sector"){
             if(count($sector) == 0){
-                $array = array(
-                    "Agriculture and Food Security"=>"Agriculture and Food Security",
-                    "Education and Training"=>"Education and Training",
-                    "Health and HIV/AIDS"=>"Health and HIV/AIDS",
-                    "Tourism and Wildlife"=>"Tourism and Wildlife",
-                    "Social Security and Social Protection"=>"Social Security and Social Protection",
-                    "Legal and Human Rights"=>"Legal and Human Rights",
-                    "Good Governance"=>"Good Governance",
-                    "Gender and Women Empowerment"=>"Gender and Women Empowerment",
-                    "Water and Sanitation"=>"Water and Sanitation",
-                    "Environment and Climate Change"=>"Environment and Climate Change",
-                    "Labor and Employment"=>"Labor and Employment",
-                    "Finance"=>"Finance",
-                    "Women Lively Hood"=>"Women Lively Hood",
-                    " Mineral and Energy "=>"Mineral and Energy ",
-                    "Sports and Culture"=>"Sports and Culture",
-                    "Transport and Infrastructure"=>"Transport and Infrastructure",
-                );
+                $array = Sector::all()->lists('sector_name','id');
             }else{
                 foreach ($sector as $sec){
                     $array[$sec] = $sec;
@@ -594,13 +556,26 @@ public function column($ngo,$region,$district,$sector,$operation,$title,$operate
         foreach($array as $key=>$value){
             $k++;
             if($condition == "all"){
-                $category1 .= (count($array) == $k)?"'$value'":"'$value',";
-                $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->get()):count(NGOs::where($columnss,$key)->get()).",";
-                $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."},";
+                if($operate == "sector"){
+                    $category1 .= (count($array) == $k)?"'$value'":"'$value',";
+                    $column1 .= (count($array) == $k)?count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->get()):count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->get()).",";
+                    $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->get())."}":"{ name:'".$value."',y: ".count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->get())."},";
+                }else{
+                    $category1 .= (count($array) == $k)?"'$value'":"'$value',";
+                    $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->get()):count(NGOs::where($columnss,$key)->get()).",";
+                    $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."},";
+                }
             }else{
-                $category1 .= (count($array) == $k)?"'$value'":"'$value',";
-                $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get()):count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get()).",";
-                $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."},";
+                if($operate == "sector"){
+                    $category1 .= (count($array) == $k)?"'$value'":"'$value',";
+                    $column1 .= (count($array) == $k)?count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->where('registation_type',$condition)->get()):count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->where('registation_type',$condition)->get()).",";
+                    $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->where('registation_type',$condition)->get())."}":"{ name:'".$value."',y: ".count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->where('registation_type',$condition)->get())."},";
+                }else{
+                    $category1 .= (count($array) == $k)?"'$value'":"'$value',";
+                    $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get()):count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get()).",";
+                    $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."},";
+                }
+
             }
         }
 
@@ -641,24 +616,7 @@ public function column($ngo,$region,$district,$sector,$operation,$title,$operate
         $tabletitle = "";
         if($operate == "sector"){
             if(count($sector) == 0){
-                $array = array(
-                    "Agriculture and Food Security"=>"Agriculture and Food Security",
-                    "Education and Training"=>"Education and Training",
-                    "Health and HIV/AIDS"=>"Health and HIV/AIDS",
-                    "Tourism and Wildlife"=>"Tourism and Wildlife",
-                    "Social Security and Social Protection"=>"Social Security and Social Protection",
-                    "Legal and Human Rights"=>"Legal and Human Rights",
-                    "Good Governance"=>"Good Governance",
-                    "Gender and Women Empowerment"=>"Gender and Women Empowerment",
-                    "Water and Sanitation"=>"Water and Sanitation",
-                    "Environment and Climate Change"=>"Environment and Climate Change",
-                    "Labor and Employment"=>"Labor and Employment",
-                    "Finance"=>"Finance",
-                    "Women Lively Hood"=>"Women Lively Hood",
-                    " Mineral and Energy "=>"Mineral and Energy ",
-                    "Sports and Culture"=>"Sports and Culture",
-                    "Transport and Infrastructure"=>"Transport and Infrastructure",
-                );
+                $array = Sector::all()->lists('sector_name','id');
             }else{
                 foreach ($sector as $sec){
                     $array[$sec] = $sec;
@@ -716,13 +674,26 @@ public function column($ngo,$region,$district,$sector,$operation,$title,$operate
         foreach($array as $key=>$value){
             $k++;
             if($condition == "all"){
-                $category1 .= (count($array) == $k)?"'$value'":"'$value',";
-                $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->get()):count(NGOs::where($columnss,$key)->get()).",";
-                $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."},";
+                if($operate == "sector"){
+                    $category1 .= (count($array) == $k)?"'$value'":"'$value',";
+                    $column1 .= (count($array) == $k)?count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->get()):count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->get()).",";
+                    $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->get())."}":"{ name:'".$value."',y: ".count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->get())."},";
+                }else{
+                    $category1 .= (count($array) == $k)?"'$value'":"'$value',";
+                    $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->get()):count(NGOs::where($columnss,$key)->get()).",";
+                    $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."},";
+                }
             }else{
-                $category1 .= (count($array) == $k)?"'$value'":"'$value',";
-                $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get()):count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get()).",";
-                $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."},";
+                if($operate == "sector"){
+                    $category1 .= (count($array) == $k)?"'$value'":"'$value',";
+                    $column1 .= (count($array) == $k)?count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->where('registation_type',$condition)->get()):count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->where('registation_type',$condition)->get()).",";
+                    $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->where('registation_type',$condition)->get())."}":"{ name:'".$value."',y: ".count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->where('registation_type',$condition)->get())."},";
+                }else{
+                    $category1 .= (count($array) == $k)?"'$value'":"'$value',";
+                    $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get()):count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get()).",";
+                    $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."},";
+                }
+
             }
         }
             ?>
@@ -781,24 +752,7 @@ public function pie($ngo,$region,$district,$sector,$operation,$title,$operate,$c
         $tabletitle = "";
         if($operate == "sector"){
             if(count($sector) == 0){
-                $array = array(
-                    "Agriculture and Food Security"=>"Agriculture and Food Security",
-                    "Education and Training"=>"Education and Training",
-                    "Health and HIV/AIDS"=>"Health and HIV/AIDS",
-                    "Tourism and Wildlife"=>"Tourism and Wildlife",
-                    "Social Security and Social Protection"=>"Social Security and Social Protection",
-                    "Legal and Human Rights"=>"Legal and Human Rights",
-                    "Good Governance"=>"Good Governance",
-                    "Gender and Women Empowerment"=>"Gender and Women Empowerment",
-                    "Water and Sanitation"=>"Water and Sanitation",
-                    "Environment and Climate Change"=>"Environment and Climate Change",
-                    "Labor and Employment"=>"Labor and Employment",
-                    "Finance"=>"Finance",
-                    "Women Lively Hood"=>"Women Lively Hood",
-                    " Mineral and Energy "=>"Mineral and Energy ",
-                    "Sports and Culture"=>"Sports and Culture",
-                    "Transport and Infrastructure"=>"Transport and Infrastructure",
-                );
+                $array = Sector::all()->lists('sector_name','id');
             }else{
                 foreach ($sector as $sec){
                     $array[$sec] = $sec;
@@ -856,9 +810,16 @@ public function pie($ngo,$region,$district,$sector,$operation,$title,$operate,$c
         foreach($array as $key=>$value){
             $k++;
             if($condition == "all"){
-                $pie1 .= (count($array) == $k)?"['".$value."', ".count(NGOs::where($columnss,$key)->get())."]":"['".$value."', ".count(NGOs::where($columnss,$key)->get())."],";
+                if($operate == "sector")
+                    $pie1 .= (count($array) == $k)?"['".$value."', ".count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0)))."]":"['".$value."', ".count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->get())."],";
+                else
+                    $pie1 .= (count($array) == $k)?"['".$value."', ".count(NGOs::where($columnss,$key)->get())."]":"['".$value."', ".count(NGOs::where($columnss,$key)->get())."],";
             }else{
-                $pie1 .= (count($array) == $k)?"['".$value."', ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."]":"['".$value."', ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."],";
+                if($operate == "sector")
+                    $pie1 .= (count($array) == $k)?"['".$value."', ".count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->where('registation_type',$condition)->get())."]":"['".$value."', ".count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->where('registation_type',$condition)->get())."],";
+                else
+                    $pie1 .= (count($array) == $k)?"['".$value."', ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."]":"['".$value."', ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."],";
+
             }
 
         }
@@ -889,7 +850,7 @@ public function pie($ngo,$region,$district,$sector,$operation,$title,$operate,$c
                         },
                         series: [{
                             type: 'pie',
-                            name: 'Browser share',
+                            name: 'NGOs',
                             data: [
                                 <?php echo $pie1 ?>
                             ]
@@ -911,24 +872,7 @@ public function pie($ngo,$region,$district,$sector,$operation,$title,$operate,$c
         $tabletitle = "";
         if($operate == "sector"){
             if(count($sector) == 0){
-                $array = array(
-                    "Agriculture and Food Security"=>"Agriculture and Food Security",
-                    "Education and Training"=>"Education and Training",
-                    "Health and HIV/AIDS"=>"Health and HIV/AIDS",
-                    "Tourism and Wildlife"=>"Tourism and Wildlife",
-                    "Social Security and Social Protection"=>"Social Security and Social Protection",
-                    "Legal and Human Rights"=>"Legal and Human Rights",
-                    "Good Governance"=>"Good Governance",
-                    "Gender and Women Empowerment"=>"Gender and Women Empowerment",
-                    "Water and Sanitation"=>"Water and Sanitation",
-                    "Environment and Climate Change"=>"Environment and Climate Change",
-                    "Labor and Employment"=>"Labor and Employment",
-                    "Finance"=>"Finance",
-                    "Women Lively Hood"=>"Women Lively Hood",
-                    " Mineral and Energy "=>"Mineral and Energy ",
-                    "Sports and Culture"=>"Sports and Culture",
-                    "Transport and Infrastructure"=>"Transport and Infrastructure",
-                );
+                $array = Sector::all()->lists('sector_name','id');
             }else{
                 foreach ($sector as $sec){
                     $array[$sec] = $sec;

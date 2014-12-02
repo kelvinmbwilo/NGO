@@ -51,7 +51,7 @@ Reports
             "Transport and Infrastructure"=>"Transport and Infrastructure",
         )
         ?>
-        {{ Form::select('sector[]',$sector,'',array('multiple'=>"multiple",'class'=>'form-control multi')) }}
+        {{ Form::select('sector[]',Sector::all()->lists('sector_name','id'),'',array('multiple'=>"multiple",'class'=>'form-control multi')) }}
 
     </div>
     <div class="col-sm-3 ">
