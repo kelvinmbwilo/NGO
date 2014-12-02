@@ -75,6 +75,7 @@ class NGOController extends \BaseController {
     /**
 	 * Show the form for creating a new resource.
 	 *
+     * @param $id
 	 * @return Response
 	 */
 	public function listPrioritySectors($id)
