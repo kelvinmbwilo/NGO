@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b290b2f2-359b-4642-913d-8257f327a6e4" name="Default" comment="" />
+    <list default="true" id="b290b2f2-359b-4642-913d-8257f327a6e4" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/NGOStastisticController.php" afterPath="$PROJECT_DIR$/app/controllers/NGOStastisticController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dashboard.blade.php" afterPath="$PROJECT_DIR$/app/views/dashboard.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/statistics/financial.blade.php" afterPath="$PROJECT_DIR$/app/views/statistics/financial.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/NGO/reports/reportinfo.blade.php" afterPath="$PROJECT_DIR$/app/views/NGO/reports/reportinfo.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/NGO/sectors/reports/reportinfosector.blade.php" afterPath="$PROJECT_DIR$/app/views/NGO/sectors/reports/reportinfosector.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="NGO.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -18,92 +25,202 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_TOOLBAR" value="true" />
-    <option name="FLATTEN" value="false" />
-    <option name="GROUP_BY_TYPE" value="true" />
-    <option name="SORT_CHILDREN" value="false" />
-    <option name="SHOW_TABLE_CONSTRAINTS" value="true" />
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - NGO@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - NGO@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="NGO" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="NGO" />
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="dashboard.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/dashboard.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="177" column="33" selection-start="8640" selection-end="8640" vertical-scroll-proportion="-3.4814816" vertical-offset="3092" max-vertical-offset="5076">
+              <folding>
+                <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#2;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#2;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#2;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="summary.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/SECTOR/summary.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="81" selection-start="1074" selection-end="1074" vertical-scroll-proportion="-14.0" vertical-offset="54" max-vertical-offset="1602">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/reports/list.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="91" column="47" selection-start="4070" selection-end="4070" vertical-scroll-proportion="-12.666667" vertical-offset="1296" max-vertical-offset="2016">
+              <folding>
+                <marker date="1417256494054" expanded="false" signature="2215:2259" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/reports/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="324">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="add.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/NGO/add.blade.php">
+        <entry file="file://$PROJECT_DIR$/app/views/reports/add.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="1331" max-vertical-offset="2358">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="2214">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/NGO/edit.blade.php">
+      <file leaf-file-name="reportinfo.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/NGO/sectors/reports/reportinfo.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2592">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="8856">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NGOController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/NGOController.php">
+      <file leaf-file-name="reportinfosector.blade.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/NGO/sectors/reports/reportinfosector.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="113" column="27" selection-start="2779" selection-end="2779" vertical-scroll-proportion="0.0" vertical-offset="2034" max-vertical-offset="4392">
+            <state line="2" column="90" selection-start="97" selection-end="97" vertical-scroll-proportion="0.076271184" vertical-offset="0" max-vertical-offset="2394">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="financial.blade.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/statistics/financial.blade.php">
+      <file leaf-file-name="Sector.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/Sector.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="40" selection-start="577" selection-end="577" vertical-scroll-proportion="0.40677965" vertical-offset="270" max-vertical-offset="972">
+            <state line="2" column="12" selection-start="13" selection-end="19" vertical-scroll-proportion="-1.3333334" vertical-offset="0" max-vertical-offset="864">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <file leaf-file-name="NGOStastisticController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/NGOStastisticController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="256" column="97" selection-start="9840" selection-end="9840" vertical-scroll-proportion="0.0" vertical-offset="4608" max-vertical-offset="5184">
-              <folding />
+            <state line="942" column="149" selection-start="41428" selection-end="41511" vertical-scroll-proportion="-4.185185" vertical-offset="6259" max-vertical-offset="7848">
+              <folding>
+                <element signature="n#table#0;n#NGOStastisticController#0;n#!!top" expanded="false" />
+                <element signature="e#7072#8444#0" expanded="false" />
+                <element signature="n#bar#0;n#NGOStastisticController#0;n#!!top" expanded="false" />
+                <element signature="e#9843#11609#0" expanded="false" />
+                <element signature="n#column#0;n#NGOStastisticController#0;n#!!top" expanded="false" />
+                <element signature="e#15860#17582#0" expanded="false" />
+                <element signature="e#21836#23602#0" expanded="false" />
+                <element signature="n#combined#0;n#NGOStastisticController#0;n#!!top" expanded="false" />
+                <element signature="e#27759#29525#0" expanded="false" />
+                <element signature="n#pie#0;n#NGOStastisticController#0;n#!!top" expanded="false" />
+                <element signature="e#34491#36213#0" expanded="false" />
+                <marker date="1417551521092" expanded="true" signature="3546:5199" placeholder="..." />
+                <marker date="1417551521092" expanded="true" signature="3584:5192" placeholder="..." />
+                <marker date="1417551521092" expanded="true" signature="3620:3856" placeholder="..." />
+                <marker date="1417551521092" expanded="true" signature="3683:3841" placeholder="..." />
+                <marker date="1417551521092" expanded="true" signature="3908:5185" placeholder="..." />
+                <marker date="1417551521092" expanded="true" signature="4149:5166" placeholder="..." />
+                <marker date="1417551521092" expanded="true" signature="4173:4579" placeholder="..." />
+                <marker date="1417551521092" expanded="true" signature="4194:4554" placeholder="..." />
+                <marker date="1417551521092" expanded="true" signature="4603:5157" placeholder="..." />
+                <marker date="1417551521092" expanded="true" signature="4699:5125" placeholder="..." />
+                <marker date="1417551521092" expanded="false" signature="4748:4774" placeholder="..." />
+                <marker date="1417551521092" expanded="true" signature="5216:6884" placeholder="..." />
+                <marker date="1417551521092" expanded="true" signature="5230:5256" placeholder="/*...*/" />
+                <marker date="1417551521092" expanded="true" signature="5298:6864" placeholder="{...}" />
+                <marker date="1417551521092" expanded="true" signature="5341:5445" placeholder="{...}" />
+                <marker date="1417551521092" expanded="true" signature="5403:5427" placeholder="{...}" />
+                <marker date="1417551521092" expanded="true" signature="5654:6848" placeholder="{...}" />
+                <marker date="1417551521092" expanded="true" signature="6757:6828" placeholder="{...}" />
+                <marker date="1417551521092" expanded="true" signature="14730:15672" placeholder="..." />
+                <marker date="1417551521092" expanded="true" signature="14758:15653" placeholder="{...}" />
+                <marker date="1417551521092" expanded="true" signature="14799:15637" placeholder="{...}" />
+                <marker date="1417551521092" expanded="true" signature="14828:14904" placeholder="{&quot;text&quot;: '&lt;?php echo $title ?&gt;'...}" />
+                <marker date="1417551521092" expanded="true" signature="14933:15019" placeholder="{...}" />
+                <marker date="1417551521092" expanded="true" signature="15049:15448" placeholder="{...}" />
+                <marker date="1417551521092" expanded="true" signature="15082:15426" placeholder="[...]" />
+                <marker date="1417551521092" expanded="true" signature="15083:15425" placeholder="{&quot;html&quot;: '&lt;?php echo $title ?&gt;'...}" />
+                <marker date="1417551521092" expanded="true" signature="15178:15399" placeholder="{&quot;left&quot;: '150px'...}" />
+                <marker date="1417551521092" expanded="true" signature="15478:15619" placeholder="[...]" />
+                <marker date="1417551521092" expanded="true" signature="15479:15597" placeholder="{&quot;type&quot;: 'column'...}" />
+                <marker date="1417551521092" expanded="true" signature="20702:21641" placeholder="..." />
+                <marker date="1417551521092" expanded="true" signature="20730:21622" placeholder="{...}" />
+                <marker date="1417551521092" expanded="true" signature="20771:21606" placeholder="{...}" />
+                <marker date="1417551521092" expanded="true" signature="20800:20876" placeholder="{&quot;text&quot;: '&lt;?php echo $title ?&gt;'...}" />
+                <marker date="1417551521092" expanded="true" signature="20905:20991" placeholder="{...}" />
+                <marker date="1417551521092" expanded="true" signature="21021:21420" placeholder="{...}" />
+                <marker date="1417551521092" expanded="true" signature="21054:21398" placeholder="[...]" />
+                <marker date="1417551521092" expanded="true" signature="21055:21397" placeholder="{&quot;html&quot;: '&lt;?php echo $title ?&gt;'...}" />
+                <marker date="1417551521092" expanded="true" signature="21150:21371" placeholder="{&quot;left&quot;: '150px'...}" />
+                <marker date="1417551521092" expanded="true" signature="21450:21588" placeholder="[...]" />
+                <marker date="1417551521092" expanded="true" signature="21451:21566" placeholder="{&quot;type&quot;: 'bar'...}" />
+                <marker date="1417551521092" expanded="true" signature="26507:27552" placeholder="..." />
+                <marker date="1417551521092" expanded="true" signature="26539:27529" placeholder="{...}" />
+                <marker date="1417551521092" expanded="true" signature="26585:27509" placeholder="{...}" />
+                <marker date="1417551521092" expanded="true" signature="26618:26702" placeholder="{&quot;text&quot;: '&lt;?php echo $title ?&gt;'...}" />
+                <marker date="1417551521092" expanded="true" signature="26735:26829" placeholder="{...}" />
+                <marker date="1417551521092" expanded="true" signature="26863:27298" placeholder="{...}" />
+                <marker date="1417551521092" expanded="true" signature="26900:27272" placeholder="[...]" />
+                <marker date="1417551521092" expanded="true" signature="26901:27271" placeholder="{&quot;html&quot;: '&lt;?php echo $title ?&gt;'...}" />
+                <marker date="1417551521092" expanded="true" signature="27004:27241" placeholder="{&quot;left&quot;: '150px'...}" />
+                <marker date="1417551521092" expanded="true" signature="27332:27487" placeholder="[...]" />
+                <marker date="1417551521092" expanded="true" signature="27333:27461" placeholder="{&quot;type&quot;: 'line'...}" />
+                <marker date="1417551521092" expanded="true" signature="32429:34296" placeholder="..." />
+                <marker date="1417551521092" expanded="true" signature="32461:34273" placeholder="{...}" />
+                <marker date="1417551521092" expanded="true" signature="32507:34253" placeholder="{...}" />
+                <marker date="1417551521092" expanded="true" signature="32540:32625" placeholder="{&quot;text&quot;: '&lt;?php  echo $title ?&gt;'...}" />
+                <marker date="1417551521092" expanded="true" signature="32658:32752" placeholder="{...}" />
+                <marker date="1417551521092" expanded="true" signature="32786:33222" placeholder="{...}" />
+                <marker date="1417551521092" expanded="true" signature="32823:33196" placeholder="[...]" />
+                <marker date="1417551521092" expanded="true" signature="32824:33195" placeholder="{&quot;html&quot;: '&lt;?php  echo $title ?&gt;'...}" />
+                <marker date="1417551521092" expanded="true" signature="32928:33165" placeholder="{&quot;left&quot;: '150px'...}" />
+                <marker date="1417551521092" expanded="true" signature="33256:34231" placeholder="[...]" />
+                <marker date="1417551521092" expanded="true" signature="33257:33387" placeholder="{&quot;type&quot;: 'column'...}" />
+                <marker date="1417551521092" expanded="true" signature="33389:33808" placeholder="{&quot;name&quot;: 'Average'...}" />
+                <marker date="1417551521092" expanded="true" signature="33576:33782" placeholder="{&quot;lineWidth&quot;: 2...}" />
+                <marker date="1417551521092" expanded="true" signature="33810:34230" placeholder="{&quot;name&quot;: 'NGOs'...}" />
+                <marker date="1417551521092" expanded="true" signature="34126:34204" placeholder="{&quot;enabled&quot;: false...}" />
+                <marker date="1417551521092" expanded="true" signature="37713:39021" placeholder="..." />
+                <marker date="1417551521092" expanded="true" signature="37745:38998" placeholder="{...}" />
+                <marker date="1417551521092" expanded="true" signature="37791:38978" placeholder="{...}" />
+                <marker date="1417551521092" expanded="true" signature="37824:38003" placeholder="{&quot;plotBackgroundColor&quot;: null...}" />
+                <marker date="1417551521092" expanded="true" signature="38036:38120" placeholder="{&quot;text&quot;: '&lt;?php echo $title ?&gt;'...}" />
+                <marker date="1417551521092" expanded="true" signature="38155:38271" placeholder="{&quot;pointFormat&quot;: '{series.name}: &lt;b&gt;{point.percentage:.1f}%&lt;/b&gt;'...}" />
+                <marker date="1417551521092" expanded="true" signature="38310:38692" placeholder="{...}" />
+                <marker date="1417551521092" expanded="true" signature="38345:38666" placeholder="{&quot;allowPointSelect&quot;: true...}" />
+                <marker date="1417551521092" expanded="true" signature="38498:38584" placeholder="{&quot;enabled&quot;: false...}" />
+                <marker date="1417551521092" expanded="true" signature="38726:38956" placeholder="[...]" />
+                <marker date="1417551521092" expanded="true" signature="38727:38955" placeholder="{&quot;name&quot;: 'NGOs'...}" />
+                <marker date="1417551521092" expanded="true" signature="38846:38929" placeholder="[...]" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SECTORController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/SECTORController.php">
+      <file leaf-file-name="Expendeture.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/Expendeture.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="100" column="35" selection-start="2054" selection-end="2054" vertical-scroll-proportion="0.0" vertical-offset="1800" max-vertical-offset="3276">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="4.0" vertical-offset="108" max-vertical-offset="630">
               <folding />
             </state>
           </provider>
@@ -123,10 +240,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/database/migrations/2014_11_25_153920_create_ngosectors_table.php" />
-        <option value="$PROJECT_DIR$/app/database/migrations/2014_11_25_153920_create_NGOsectors_table.php" />
-        <option value="$PROJECT_DIR$/app/models/SectorRevenueIncome.php" />
-        <option value="$PROJECT_DIR$/app/models/SectorChallanges.php" />
         <option value="$PROJECT_DIR$/app/views/SECTOR/add.blade.php" />
         <option value="$PROJECT_DIR$/app/views/NGO/index.blade.php" />
         <option value="$PROJECT_DIR$/app/views/SECTOR/edit.blade.php" />
@@ -166,14 +279,18 @@
         <option value="$PROJECT_DIR$/app/controllers/SECTORReportController.php" />
         <option value="$PROJECT_DIR$/app/models/SectorAnnualReport.php" />
         <option value="$PROJECT_DIR$/app/models/Sector.php" />
-        <option value="$PROJECT_DIR$/app/views/NGO/sectors/reports/reportinfosector.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/UserController.php" />
         <option value="$PROJECT_DIR$/app/config/database.php" />
-        <option value="$PROJECT_DIR$/app/views/NGO/reports/reportinfo.blade.php" />
         <option value="$PROJECT_DIR$/app/views/practices.blade.php" />
         <option value="$PROJECT_DIR$/app/views/layout/master.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/NGOController.php" />
+        <option value="$PROJECT_DIR$/app/controllers/NGOStastisticController.php" />
         <option value="$PROJECT_DIR$/app/views/statistics/financial.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/dashboard.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/reports/list.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/NGO/reports/reportinfo.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/SECTOR/summary.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/NGO/sectors/reports/reportinfosector.blade.php" />
       </list>
     </option>
   </component>
@@ -278,7 +395,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="statistics" />
+              <option name="myItemId" value="SECTOR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NGO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NGO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reports" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -301,6 +440,106 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="NGO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NGO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NGO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NGO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sectors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NGO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NGO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NGO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sectors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reports" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NGO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NGO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NGO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reports" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NGO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NGO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -400,14 +639,14 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3074018" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.44939578" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.8243671" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.8240181" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928476" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45662847" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34154353" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -609,11 +848,6 @@
         <state line="62" column="24" selection-start="1899" selection-end="1899" vertical-scroll-proportion="0.0" vertical-offset="846" max-vertical-offset="2340" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/NGO/reports/reportinfo.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="55" selection-start="4349" selection-end="4349" vertical-scroll-proportion="0.0" vertical-offset="1971" max-vertical-offset="8784" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="522" />
@@ -669,9 +903,201 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Expendeture.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="4.0" vertical-offset="108" max-vertical-offset="630">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/statistics/financial.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="40" selection-start="577" selection-end="577" vertical-scroll-proportion="0.40677965" vertical-offset="270" max-vertical-offset="972">
+        <state line="43" column="3" selection-start="1101" selection-end="1101" vertical-scroll-proportion="-9.0" vertical-offset="531" max-vertical-offset="1062">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Sector.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="12" selection-start="13" selection-end="19" vertical-scroll-proportion="-1.3333334" vertical-offset="0" max-vertical-offset="864">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/NGOStastisticController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="942" column="149" selection-start="41428" selection-end="41511" vertical-scroll-proportion="-4.185185" vertical-offset="6259" max-vertical-offset="7848">
+          <folding>
+            <element signature="n#table#0;n#NGOStastisticController#0;n#!!top" expanded="false" />
+            <element signature="e#7072#8444#0" expanded="false" />
+            <element signature="n#bar#0;n#NGOStastisticController#0;n#!!top" expanded="false" />
+            <element signature="e#9843#11609#0" expanded="false" />
+            <element signature="n#column#0;n#NGOStastisticController#0;n#!!top" expanded="false" />
+            <element signature="e#15860#17582#0" expanded="false" />
+            <element signature="e#21836#23602#0" expanded="false" />
+            <element signature="n#combined#0;n#NGOStastisticController#0;n#!!top" expanded="false" />
+            <element signature="e#27759#29525#0" expanded="false" />
+            <element signature="n#pie#0;n#NGOStastisticController#0;n#!!top" expanded="false" />
+            <element signature="e#34491#36213#0" expanded="false" />
+            <marker date="1417551521092" expanded="true" signature="3546:5199" placeholder="..." />
+            <marker date="1417551521092" expanded="true" signature="3584:5192" placeholder="..." />
+            <marker date="1417551521092" expanded="true" signature="3620:3856" placeholder="..." />
+            <marker date="1417551521092" expanded="true" signature="3683:3841" placeholder="..." />
+            <marker date="1417551521092" expanded="true" signature="3908:5185" placeholder="..." />
+            <marker date="1417551521092" expanded="true" signature="4149:5166" placeholder="..." />
+            <marker date="1417551521092" expanded="true" signature="4173:4579" placeholder="..." />
+            <marker date="1417551521092" expanded="true" signature="4194:4554" placeholder="..." />
+            <marker date="1417551521092" expanded="true" signature="4603:5157" placeholder="..." />
+            <marker date="1417551521092" expanded="true" signature="4699:5125" placeholder="..." />
+            <marker date="1417551521092" expanded="false" signature="4748:4774" placeholder="..." />
+            <marker date="1417551521092" expanded="true" signature="5216:6884" placeholder="..." />
+            <marker date="1417551521092" expanded="true" signature="5230:5256" placeholder="/*...*/" />
+            <marker date="1417551521092" expanded="true" signature="5298:6864" placeholder="{...}" />
+            <marker date="1417551521092" expanded="true" signature="5341:5445" placeholder="{...}" />
+            <marker date="1417551521092" expanded="true" signature="5403:5427" placeholder="{...}" />
+            <marker date="1417551521092" expanded="true" signature="5654:6848" placeholder="{...}" />
+            <marker date="1417551521092" expanded="true" signature="6757:6828" placeholder="{...}" />
+            <marker date="1417551521092" expanded="true" signature="14730:15672" placeholder="..." />
+            <marker date="1417551521092" expanded="true" signature="14758:15653" placeholder="{...}" />
+            <marker date="1417551521092" expanded="true" signature="14799:15637" placeholder="{...}" />
+            <marker date="1417551521092" expanded="true" signature="14828:14904" placeholder="{&quot;text&quot;: '&lt;?php echo $title ?&gt;'...}" />
+            <marker date="1417551521092" expanded="true" signature="14933:15019" placeholder="{...}" />
+            <marker date="1417551521092" expanded="true" signature="15049:15448" placeholder="{...}" />
+            <marker date="1417551521092" expanded="true" signature="15082:15426" placeholder="[...]" />
+            <marker date="1417551521092" expanded="true" signature="15083:15425" placeholder="{&quot;html&quot;: '&lt;?php echo $title ?&gt;'...}" />
+            <marker date="1417551521092" expanded="true" signature="15178:15399" placeholder="{&quot;left&quot;: '150px'...}" />
+            <marker date="1417551521092" expanded="true" signature="15478:15619" placeholder="[...]" />
+            <marker date="1417551521092" expanded="true" signature="15479:15597" placeholder="{&quot;type&quot;: 'column'...}" />
+            <marker date="1417551521092" expanded="true" signature="20702:21641" placeholder="..." />
+            <marker date="1417551521092" expanded="true" signature="20730:21622" placeholder="{...}" />
+            <marker date="1417551521092" expanded="true" signature="20771:21606" placeholder="{...}" />
+            <marker date="1417551521092" expanded="true" signature="20800:20876" placeholder="{&quot;text&quot;: '&lt;?php echo $title ?&gt;'...}" />
+            <marker date="1417551521092" expanded="true" signature="20905:20991" placeholder="{...}" />
+            <marker date="1417551521092" expanded="true" signature="21021:21420" placeholder="{...}" />
+            <marker date="1417551521092" expanded="true" signature="21054:21398" placeholder="[...]" />
+            <marker date="1417551521092" expanded="true" signature="21055:21397" placeholder="{&quot;html&quot;: '&lt;?php echo $title ?&gt;'...}" />
+            <marker date="1417551521092" expanded="true" signature="21150:21371" placeholder="{&quot;left&quot;: '150px'...}" />
+            <marker date="1417551521092" expanded="true" signature="21450:21588" placeholder="[...]" />
+            <marker date="1417551521092" expanded="true" signature="21451:21566" placeholder="{&quot;type&quot;: 'bar'...}" />
+            <marker date="1417551521092" expanded="true" signature="26507:27552" placeholder="..." />
+            <marker date="1417551521092" expanded="true" signature="26539:27529" placeholder="{...}" />
+            <marker date="1417551521092" expanded="true" signature="26585:27509" placeholder="{...}" />
+            <marker date="1417551521092" expanded="true" signature="26618:26702" placeholder="{&quot;text&quot;: '&lt;?php echo $title ?&gt;'...}" />
+            <marker date="1417551521092" expanded="true" signature="26735:26829" placeholder="{...}" />
+            <marker date="1417551521092" expanded="true" signature="26863:27298" placeholder="{...}" />
+            <marker date="1417551521092" expanded="true" signature="26900:27272" placeholder="[...]" />
+            <marker date="1417551521092" expanded="true" signature="26901:27271" placeholder="{&quot;html&quot;: '&lt;?php echo $title ?&gt;'...}" />
+            <marker date="1417551521092" expanded="true" signature="27004:27241" placeholder="{&quot;left&quot;: '150px'...}" />
+            <marker date="1417551521092" expanded="true" signature="27332:27487" placeholder="[...]" />
+            <marker date="1417551521092" expanded="true" signature="27333:27461" placeholder="{&quot;type&quot;: 'line'...}" />
+            <marker date="1417551521092" expanded="true" signature="32429:34296" placeholder="..." />
+            <marker date="1417551521092" expanded="true" signature="32461:34273" placeholder="{...}" />
+            <marker date="1417551521092" expanded="true" signature="32507:34253" placeholder="{...}" />
+            <marker date="1417551521092" expanded="true" signature="32540:32625" placeholder="{&quot;text&quot;: '&lt;?php  echo $title ?&gt;'...}" />
+            <marker date="1417551521092" expanded="true" signature="32658:32752" placeholder="{...}" />
+            <marker date="1417551521092" expanded="true" signature="32786:33222" placeholder="{...}" />
+            <marker date="1417551521092" expanded="true" signature="32823:33196" placeholder="[...]" />
+            <marker date="1417551521092" expanded="true" signature="32824:33195" placeholder="{&quot;html&quot;: '&lt;?php  echo $title ?&gt;'...}" />
+            <marker date="1417551521092" expanded="true" signature="32928:33165" placeholder="{&quot;left&quot;: '150px'...}" />
+            <marker date="1417551521092" expanded="true" signature="33256:34231" placeholder="[...]" />
+            <marker date="1417551521092" expanded="true" signature="33257:33387" placeholder="{&quot;type&quot;: 'column'...}" />
+            <marker date="1417551521092" expanded="true" signature="33389:33808" placeholder="{&quot;name&quot;: 'Average'...}" />
+            <marker date="1417551521092" expanded="true" signature="33576:33782" placeholder="{&quot;lineWidth&quot;: 2...}" />
+            <marker date="1417551521092" expanded="true" signature="33810:34230" placeholder="{&quot;name&quot;: 'NGOs'...}" />
+            <marker date="1417551521092" expanded="true" signature="34126:34204" placeholder="{&quot;enabled&quot;: false...}" />
+            <marker date="1417551521092" expanded="true" signature="37713:39021" placeholder="..." />
+            <marker date="1417551521092" expanded="true" signature="37745:38998" placeholder="{...}" />
+            <marker date="1417551521092" expanded="true" signature="37791:38978" placeholder="{...}" />
+            <marker date="1417551521092" expanded="true" signature="37824:38003" placeholder="{&quot;plotBackgroundColor&quot;: null...}" />
+            <marker date="1417551521092" expanded="true" signature="38036:38120" placeholder="{&quot;text&quot;: '&lt;?php echo $title ?&gt;'...}" />
+            <marker date="1417551521092" expanded="true" signature="38155:38271" placeholder="{&quot;pointFormat&quot;: '{series.name}: &lt;b&gt;{point.percentage:.1f}%&lt;/b&gt;'...}" />
+            <marker date="1417551521092" expanded="true" signature="38310:38692" placeholder="{...}" />
+            <marker date="1417551521092" expanded="true" signature="38345:38666" placeholder="{&quot;allowPointSelect&quot;: true...}" />
+            <marker date="1417551521092" expanded="true" signature="38498:38584" placeholder="{&quot;enabled&quot;: false...}" />
+            <marker date="1417551521092" expanded="true" signature="38726:38956" placeholder="[...]" />
+            <marker date="1417551521092" expanded="true" signature="38727:38955" placeholder="{&quot;name&quot;: 'NGOs'...}" />
+            <marker date="1417551521092" expanded="true" signature="38846:38929" placeholder="[...]" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/dashboard.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="177" column="33" selection-start="8640" selection-end="8640" vertical-scroll-proportion="-3.4814816" vertical-offset="3092" max-vertical-offset="5076">
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/NGO/reports/list.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="50" selection-start="3352" selection-end="3352" vertical-scroll-proportion="0.36363637" vertical-offset="1242" max-vertical-offset="2376">
+          <folding>
+            <marker date="1417256494050" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1417256494050" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/NGO/reports/reportinfo.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="167" column="73" selection-start="5947" selection-end="5947" vertical-scroll-proportion="-5.3333335" vertical-offset="2862" max-vertical-offset="8784">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/SECTOR/summary.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="81" selection-start="1074" selection-end="1074" vertical-scroll-proportion="-14.0" vertical-offset="54" max-vertical-offset="1602">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/reports/list.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="47" selection-start="4070" selection-end="4070" vertical-scroll-proportion="-12.666667" vertical-offset="1296" max-vertical-offset="2016">
+          <folding>
+            <marker date="1417256494054" expanded="false" signature="2215:2259" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/reports/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="512">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/reports/add.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2214">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/NGO/sectors/reports/reportinfo.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8856">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/NGO/sectors/reports/reportinfosector.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="90" selection-start="97" selection-end="97" vertical-scroll-proportion="0.076271184" vertical-offset="0" max-vertical-offset="2394">
           <folding />
         </state>
       </provider>

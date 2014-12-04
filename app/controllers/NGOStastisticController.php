@@ -177,7 +177,8 @@ if($operate == "sector"){
        $array = Sector::all()->lists('sector_name','id');
     }else{
         foreach ($sector as $sec){
-            $array[$sec] = $sec;
+            $array1 = Sector::all()->lists('sector_name','id');
+            $array[$sec] = $array1[$sec];
         }
     }
    $columnss = "priority_sector";
@@ -235,6 +236,7 @@ elseif($operate == "Districts"){
     echo "<th>".$tabletitle."</th>";
     echo "<th>Number</th>";
     echo "</tr>";
+//     print_r($array);exit;
     foreach($array as $key => $value){
         $i++;
         echo "<tr>";
@@ -267,7 +269,8 @@ elseif($operate == "Districts"){
                 $array = Sector::all()->lists('sector_name','id');
             }else{
                 foreach ($sector as $sec){
-                    $array[$sec] = $sec;
+                    $array1 = Sector::all()->lists('sector_name','id');
+                    $array[$sec] = $array1[$sec];
                 }
             }
             $columnss = "priority_sector";
@@ -379,18 +382,19 @@ public function column($ngo,$region,$district,$sector,$operation,$title,$operate
         $array = array();
         $columnss = "";
         $tabletitle = "";
-        if($operate == "sector"){
-            if(count($sector) == 0){
-                $array = Sector::all()->lists('sector_name','id');
-            }else{
-                foreach ($sector as $sec){
-                    $array[$sec] = $sec;
-                }
+    if($operate == "sector"){
+        if(count($sector) == 0){
+            $array = Sector::all()->lists('sector_name','id');
+        }else{
+            foreach ($sector as $sec){
+                $array1 = Sector::all()->lists('sector_name','id');
+                $array[$sec] = $array1[$sec];
             }
-            $columnss = "priority_sector";
-            $tabletitle = "Priority Sector";
-
         }
+        $columnss = "priority_sector";
+        $tabletitle = "Priority Sector";
+
+    }
         elseif($operate == "level"){
             if(count($operation) == 0){
                 $array = array(
@@ -501,7 +505,8 @@ public function column($ngo,$region,$district,$sector,$operation,$title,$operate
                 $array = Sector::all()->lists('sector_name','id');
             }else{
                 foreach ($sector as $sec){
-                    $array[$sec] = $sec;
+                    $array1 = Sector::all()->lists('sector_name','id');
+                    $array[$sec] = $array1[$sec];
                 }
             }
             $columnss = "priority_sector";
@@ -619,7 +624,8 @@ public function column($ngo,$region,$district,$sector,$operation,$title,$operate
                 $array = Sector::all()->lists('sector_name','id');
             }else{
                 foreach ($sector as $sec){
-                    $array[$sec] = $sec;
+                    $array1 = Sector::all()->lists('sector_name','id');
+                    $array[$sec] = $array1[$sec];
                 }
             }
             $columnss = "priority_sector";
@@ -750,18 +756,19 @@ public function pie($ngo,$region,$district,$sector,$operation,$title,$operate,$c
         $array = array();
         $columnss = "";
         $tabletitle = "";
-        if($operate == "sector"){
-            if(count($sector) == 0){
-                $array = Sector::all()->lists('sector_name','id');
-            }else{
-                foreach ($sector as $sec){
-                    $array[$sec] = $sec;
-                }
+    if($operate == "sector"){
+        if(count($sector) == 0){
+            $array = Sector::all()->lists('sector_name','id');
+        }else{
+            foreach ($sector as $sec){
+                $array1 = Sector::all()->lists('sector_name','id');
+                $array[$sec] = $array1[$sec];
             }
-            $columnss = "priority_sector";
-            $tabletitle = "Priority Sector";
-
         }
+        $columnss = "priority_sector";
+        $tabletitle = "Priority Sector";
+
+    }
         elseif($operate == "level"){
             if(count($operation) == 0){
                 $array = array(
@@ -875,7 +882,8 @@ public function pie($ngo,$region,$district,$sector,$operation,$title,$operate,$c
                 $array = Sector::all()->lists('sector_name','id');
             }else{
                 foreach ($sector as $sec){
-                    $array[$sec] = $sec;
+                    $array1 = Sector::all()->lists('sector_name','id');
+                    $array[$sec] = $array1[$sec];
                 }
             }
             $columnss = "priority_sector";
@@ -930,13 +938,26 @@ public function pie($ngo,$region,$district,$sector,$operation,$title,$operate,$c
         foreach($array as $key=>$value){
             $k++;
             if($condition == "all"){
-                $category1 .= (count($array) == $k)?"'$value'":"'$value',";
-                $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->get()):count(NGOs::where($columnss,$key)->get()).",";
-                $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."},";
+                if($operate == "sector"){
+                    $category1 .= (count($array) == $k)?"'$value'":"'$value',";
+                    $column1 .= (count($array) == $k)?count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->get()):count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->get()).",";
+                    $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->get())."}":"{ name:'".$value."',y: ".count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->get())."},";
+                }else{
+                    $category1 .= (count($array) == $k)?"'$value'":"'$value',";
+                    $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->get()):count(NGOs::where($columnss,$key)->get()).",";
+                    $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->get())."},";
+                }
             }else{
-                $category1 .= (count($array) == $k)?"'$value'":"'$value',";
-                $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get()):count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get()).",";
-                $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."},";
+                if($operate == "sector"){
+                    $category1 .= (count($array) == $k)?"'$value'":"'$value',";
+                    $column1 .= (count($array) == $k)?count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->where('registation_type',$condition)->get()):count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->where('registation_type',$condition)->get()).",";
+                    $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->where('registation_type',$condition)->get())."}":"{ name:'".$value."',y: ".count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->where('registation_type',$condition)->get())."},";
+                }else{
+                    $category1 .= (count($array) == $k)?"'$value'":"'$value',";
+                    $column1 .= (count($array) == $k)?count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get()):count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get()).",";
+                    $pie1 .= (count($array) == $k)?"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where($columnss,$key)->where('registation_type',$condition)->get())."},";
+                }
+
             }
         }
         require_once dirname(__FILE__) . '/Classes/PHPExcel.php';
