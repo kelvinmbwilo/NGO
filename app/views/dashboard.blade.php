@@ -151,51 +151,37 @@
 </div>
 <script>
     <?php
-$sector = array(
-                    "Agriculture and Food Security"=>"Agriculture and Food Security",
-                    "Education and Training"=>"Education and Training",
-                    "Health and HIV/AIDS"=>"Health and HIV/AIDS",
-                    "Tourism and Wildlife"=>"Tourism and Wildlife",
-                    "Social Security and Social Protection"=>"Social Security and Social Protection",
-                    "Legal and Human Rights"=>"Legal and Human Rights",
-                    "Good Governance"=>"Good Governance",
-                    "Gender and Women Empowerment"=>"Gender and Women Empowerment",
-                    "Water and Sanitation"=>"Water and Sanitation",
-                    "Environment and Climate Change"=>"Environment and Climate Change",
-                    "Labor and Employment"=>"Labor and Employment",
-                    "Finance"=>"Finance",
-                    " Mineral and Energy "=>"Mineral and Energy ",
-                    "Sports and Culture"=>"Sports and Culture",
-                    "Transport and Infrastructure"=>"Transport and Infrastructure",
-                );
-                $i =0;
-                $category = "";
-                $column = "";
-                $pie = "";
-                foreach($sector as $value){
-                $i++;
-                 $category .= (count($sector) == $i)?"'$value'":"'$value',";
-                 $column .= (count($sector) == $i)?count(NGOs::where('priority_sector',$value)->get()):count(NGOs::where('priority_sector',$value)->get()).",";
-                 $pie .= (count($sector) == $i)?"{ name:'".$value."',y: ".count(NGOs::where('priority_sector',$value)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where('priority_sector',$value)->get())."},";
 
-                }
-                $operation = array(
-                    'International'=>'International',
-                    'National'=>'National',
-                    'Regional'=>'Regional',
-                    'District'=>'District'
-                );
-                $k =0;
-                $category1 = "";
-                $column1 = "";
-                $pie1 = "";
-                foreach($operation as $value){
-                $k++;
-                 $category1 .= (count($operation) == $i)?"'$value'":"'$value',";
-                 $column1 .= (count($operation) == $i)?count(NGOs::where('operation_level',$value)->get()):count(NGOs::where('operation_level',$value)->get()).",";
-                 $pie1 .= (count($operation) == $i)?"{ name:'".$value."',y: ".count(NGOs::where('operation_level',$value)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where('operation_level',$value)->get())."},";
+    $operation = array(
+        'International'=>'International',
+        'National'=>'National',
+        'Regional'=>'Regional',
+        'District'=>'District'
+    );
+    $k =0;
+    $category1 = "";
+    $column1 = "";
+    $pie1 = "";
+    foreach($operation as $value){
+    $k++;
+     $category1 .= (count($operation) == $k)?"'$value'":"'$value',";
+     $column1 .= (count($operation) == $k)?count(NGOs::where('operation_level',$value)->get()):count(NGOs::where('operation_level',$value)->get()).",";
+     $pie1 .= (count($operation) == $k)?"{ name:'".$value."',y: ".count(NGOs::where('operation_level',$value)->get())."}":"{ name:'".$value."',y: ".count(NGOs::where('operation_level',$value)->get())."},";
 
-                }
+    }
+
+    $sector = Sector::all()->lists('sector_name','id');
+        $i =0;
+        $category = "";
+        $column = "";
+        $pie = "";
+        foreach($sector as $key=>$value){
+        $i++;
+         $category .= (count($sector) == $i)?"'$value'":"'$value',";
+         $column .= (count($sector) == $i)?count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->get()):count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->get()).",";
+         $pie .= (count($sector) == $i)?"{ name:'".$value."',y: ".count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->get())."}":"{ name:'".$value."',y: ".count(NGOs::whereIn('id',NGOSector::where('sector_id',$key)->get()->lists('n_gos_id')+array(0))->get())."},";
+
+        }
 
 ?>
     $(function () {

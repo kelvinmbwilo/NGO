@@ -25,6 +25,7 @@ Financial Reports
    <tbody>
    @foreach(Expendeture::all() as $sector)
    <?php
+   if($sector->NGOs){
    $income = RevenueIncome::where('NGO_id',$sector->NGOs->id)->first();
    ?>
    <tr>
@@ -37,6 +38,10 @@ Financial Reports
        <td>{{ $sector->liabilities }}</td>
        <td>{{{ $sector->assets - $sector->liabilities }}}</td>
    </tr>
+
+<?php
+}
+   ?>
    @endforeach
    </tbody>
 

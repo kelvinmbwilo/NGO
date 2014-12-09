@@ -75,6 +75,7 @@ class NGOController extends \BaseController {
     /**
 	 * Show the form for creating a new resource.
 	 *
+     * @param $id
 	 * @return Response
 	 */
 	public function listPrioritySectors($id)
@@ -183,7 +184,7 @@ class NGOController extends \BaseController {
         foreach($_POST['sector'] as $sector_id){
 
             DB::table('NGOs_Sector')->insert(
-                array('sector_id' => $sector_id, 'NGO_id' =>$id)
+                array('sector_id' => $sector_id, 'n_gos_id' =>$id)
             );
 
 //            foreach(Input::get('sector') as $sector_id){

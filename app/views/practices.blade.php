@@ -37,21 +37,9 @@
             Priority Sectors <span class="caret"></span>
         </a>
         <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-            <li><a href="#Agriculture" role="tab" data-toggle="tab">Agriculture and Food Security</a> </li>
-            <li><a href="#Education" role="tab" data-toggle="tab">Education and Training</a> </li>
-            <li><a href="#Health" role="tab" data-toggle="tab">Health and HIV/AIDS</a> </li>
-            <li><a href="#Tourism" role="tab" data-toggle="tab">Tourism and Wildlife</a> </li>
-            <li><a href="#Social" role="tab" data-toggle="tab">Social Security and Social Protection</a> </li>
-            <li><a href="#Legal" role="tab" data-toggle="tab">Legal and Human Rights</a> </li>
-            <li><a href="#Good" role="tab" data-toggle="tab">Good Governance</a> </li>
-            <li><a href="#Gender" role="tab" data-toggle="tab">Gender and Women Empowerment</a> </li>
-            <li><a href="#Water" role="tab" data-toggle="tab">Water and Sanitation</a> </li>
-            <li><a href="#Environment" role="tab" data-toggle="tab">Environment and Climate Change</a> </li>
-            <li><a href="#Labor" role="tab" data-toggle="tab">Labor and Employment</a> </li>
-            <li><a href="#Finance" role="tab" data-toggle="tab">Finance</a> </li>
-            <li><a href="#Mineral" role="tab" data-toggle="tab">Mineral and Energy</a> </li>
-            <li><a href="#Sports" role="tab" data-toggle="tab">Sports and Culture</a> </li>
-            <li><a href="#Transport" role="tab" data-toggle="tab">Transport and Infrastructure</a> </li>
+            @foreach(Sector::all() as $sector)
+             <li><a href="#sector{{ $sector->id }}" role="tab" data-toggle="tab">{{ $sector->sector_name }}</a> </li>
+            @endforeach
         </ul>
     </li>
 </ul>
@@ -116,16 +104,16 @@
     "Transport"=>"Transport and Infrastructure",
     );
 ?>
-    @foreach($array as $key => $sector)
-    <div class="tab-pane" id="{{ $key }}">
+    @foreach(Sector::all() as $sector)
+    <div class="tab-pane" id="sector{{ $sector->id }}">
         <div class="media">
             <div class="media-body pract">
-                @if(count(NGOPractices::whereIn('NGO_id',NGOs::where('priority_sector',$sector)->lists('id')+array(0))->get()) == 0)
-                <h4 class="text-center">No NGOs Good Practices For {{ $sector }} Sector</h4>
+                @if(count(NGOPractices::whereIn('NGO_id',NGOSector::where('sector_id',$sector->id)->lists('n_gos_id')+array(0))->get()) == 0)
+                <h4 class="text-center">No NGOs Good Practices For {{ $sector->sector_name }} Sector</h4>
                 @else
-                <h4 class="text-center">NGOs Good Practice For {{ $sector }} Sector</h4>
+                <h4 class="text-center">NGOs Good Practice For {{ $sector->sector_name }} Sector</h4>
                 @endif
-                @foreach(NGOPractices::whereIn('NGO_id',NGOs::where('priority_sector',$sector)->lists('id')+array(0))->get() as $practice)
+                @foreach(NGOPractices::whereIn('NGO_id',NGOSector::where('sector_id',$sector->id)->lists('n_gos_id')+array(0))->get() as $practice)
                 <h4 class="media-heading">@if($practice->NGOs){{ $practice->NGOs->name }}@endif</h4>
                 <p>{{ $practice->description }}</p>
                 @endforeach
