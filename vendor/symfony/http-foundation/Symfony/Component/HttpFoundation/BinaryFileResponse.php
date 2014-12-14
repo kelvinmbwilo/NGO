@@ -72,7 +72,7 @@ class BinaryFileResponse extends Response
     /**
      * Sets the file to stream.
      *
-     * @param \SplFileInfo|string $file The file to stream
+     * @param \SplFileInfo|string $file               The file to stream
      * @param string              $contentDisposition
      * @param bool                $autoEtag
      * @param bool                $autoLastModified
@@ -84,7 +84,11 @@ class BinaryFileResponse extends Response
     public function setFile($file, $contentDisposition = null, $autoEtag = false, $autoLastModified = true)
     {
         if (!$file instanceof File) {
-            $file = new File((string) $file);
+            if ($file instanceof \SplFileInfo) {
+                $file = new File($file->getPathname());
+            } else {
+                $file = new File((string) $file);
+            }
         }
 
         if (!$file->isReadable()) {

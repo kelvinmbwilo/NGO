@@ -37,7 +37,7 @@ class SECTORController extends \BaseController {
 	 */
 	public function createForNg($id)
 	{
-		return View::make('SECTOR.add',compact("id"));
+		return View::make('SECTOR.addforNgo',compact("id"));
 	}
 
     /**
@@ -92,19 +92,15 @@ class SECTORController extends \BaseController {
 
     public function storeForNg($id)
 	{
-		$sector = Sector::create(array(
-           'sector_name' => Input::get('sector_name'),
-        ));
 
         $ngosector = NGOSector::create(array(
             'n_gos_id' => $id,
-            'sector_id' => $sector->id,
+            'sector_id' => Input::get('sector_name'),
         ));
 
-        $name = $sector->sector_name;
         Logs::create(array(
             "user_id"=>  Auth::user()->id,
-            "action"  =>"Add Sector nammed ".$name." to NGOs ".NGOs::find($id)->name
+            "action"  =>"Add Sector nammed ".Sector::find(Input::get('sector_name'))->sector_name." to NGOs ".NGOs::find($id)->name
         ));
         return "<h4 class='text-success'>Sector Added Successfull</h4>";
 	}
@@ -170,6 +166,17 @@ class SECTORController extends \BaseController {
             "user_id"=>  Auth::user()->id,
             "action"  =>"Delete Sector nammed ".$name
         ));
+	}
+    public function destroyngSector($id,$nid)
+	{
+		$sector = NGOSector::where("n_gos_id",$nid)->where("sector_id",$id)->first();
+
+        $sector->delete();
+
+//        Logs::create(array(
+//            "user_id"=>  Auth::user()->id,
+//            "action"  =>"Delete Sector nammed ".$name
+//        ));
 	}
 
 

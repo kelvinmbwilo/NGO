@@ -1,6 +1,6 @@
 
 <div>
-<h3>NGO Name:{{  $NGOs ->name }}<a class="print pull-right" href="#"><i class="fa fa-print"></i> </a></h3>
+<h3>NGO Name:{{  $NGOs ->name }}<a class="print pull-right" target="_blank" href="{{ url('printsectorreports') }}/{{ $NGOs->id }}/{{ $report->id }}"><i class="fa fa-print"></i> </a></h3>
 <div class="row">
            <div class="col-sm-4">
                <table class="table">

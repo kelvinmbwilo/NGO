@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'NGO',
 			'username'  => 'root',
-			'password'  => 'yunge',
+			'password'  => 'mpande',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

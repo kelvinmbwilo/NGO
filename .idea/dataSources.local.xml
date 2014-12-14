@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="MySQL - NGO@localhost" uuid="7194c5e9-051c-4349-83e3-e579d1625213">
+    <data-source name="MySQL - @localhost" uuid="60da7a7d-9b14-41d8-8a78-c7910e2d7de3">
       <user-name>root</user-name>
       <user-password>dfc1dfcfdfdcdfcedfc5dfc7</user-password>
     </data-source>

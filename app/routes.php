@@ -121,6 +121,9 @@ Route::post('report/add',array('as'=>'addngo1', 'uses'=>'NGOController@store'));
 //viewing list of ngos
 Route::get('reports',array('as'=>'listngo', 'uses'=>'ReportsController@index'));
 
+Route::get('printngoreports/{id}',array('as'=>'printngo','uses'=>'printController@printNGOReport'));
+Route::get('printsectorreports/{nid}/{id}',array('as'=>'printsector','uses'=>'printController@printSectorReport'));
+
 //display a form to edit ngo information
 Route::get('ngo/edit/{id}',array('as'=>'editngo', 'uses'=>'NGOController@edit'));
 
@@ -259,6 +262,7 @@ Route::get('sector/edit/{id}',array('as'=>'sectorEdit', 'uses'=>'SECTORControlle
 Route::post('sector/edit/{id}',array('as'=>'sectorEdit', 'uses'=>'SECTORController@update'));
 Route::get('sectors',array('as'=>'sectorlist', 'uses'=>'SECTORController@sectorlist'));
 Route::post('sector/delete/{id}',array('as'=>'sectorDelete', 'uses'=>'SECTORController@destroy'));
+Route::get('sector/{id}/deleteuser/{nid}',array('as'=>'sectorDelete', 'uses'=>'SECTORController@destroyngSector'));
 Route::get('sector/{id}/goodpractises/{nid}',array('as'=>'sectorGoodpractises', 'uses'=>'SECTORController@goodpractises'));
 Route::get('sector/{id}/report/{nid}',array('as'=>'sectorReport', 'uses'=>'SECTORController@sectorReport'));
 
