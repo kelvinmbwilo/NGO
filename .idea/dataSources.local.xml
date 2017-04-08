@@ -2,9 +2,13 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="MySQL - @localhost" uuid="60da7a7d-9b14-41d8-8a78-c7910e2d7de3">
+      <database-info product="MySQL" version="5.5.40-0ubuntu0.14.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.31 ( Revision: alexander.soklakov@oracle.com-20140520065950-groqzzbvxprqdmnz )">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
       <user-name>root</user-name>
       <user-password>dfc1dfcfdfdcdfcedfc5dfc7</user-password>
     </data-source>
   </component>
 </project>
-

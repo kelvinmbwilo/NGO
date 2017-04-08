@@ -37,42 +37,43 @@ Purchase: http://wrapbootstrap.com
 <!--Body-->
 <body>
 <div class="login-container animated fadeInDown">
+<br><br><br>
+<div class="row">
 
-    <form method="post" action="{{ url('login') }}" style="" autocomplete="off">
-    <div class="loginbox bg-white" style="height: auto!important">
-        <div class="loginbox-title">SIGN IN</div>
-        <div class="loginbox-or">
-            <div class="or-line"></div>
-            <div class="or">OR</div>
-        </div>
-        <div class="loginbox-textbox">
-            <input name="email" type="text" class="form-control" placeholder="Username" required="required" />
-        </div>
-        <div class="loginbox-textbox">
-            <input name="password" type="password" class="form-control" placeholder="Password"  required="required" />
-        </div>
-        <div class="loginbox-forgot">
+    <div class="col-md-4 col-md-offset-4">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p style='text-align:center'> SIGN IN</p>
+                <form method="post" action="{{ url('login') }}" style="" autocomplete="off">
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input name="email" id="email" type="text" class="form-control" placeholder="Username" required="required" />
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input name="password" id="password" type="password" class="form-control" placeholder="Password"  required="required" />
+                        <div class="form-group">
+                            <input type="checkbox" name="keep"> Keep me logged In
 
-                <input type="checkbox" name="keep"> Keep me logged In
+                            &nbsp;&nbsp;&nbsp;<a href="#">Forgot Password?</a>
+                        </div>
 
-            &nbsp;&nbsp;&nbsp;<a href="#">Forgot Password?</a>
+                        <input type="submit" class="btn btn-primary btn-block" value="Login">
+                </form>
+                <div class="logobox">
+                    @if(isset($error))
+                        <div class="alert alert-danger alert-dismissable" style="padding: 5px">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <strong>{{ $error }}!</strong>
+                        </div>
+                    @endif
+                </div>
+            </div>
         </div>
-        <div class="loginbox-submit">
-            <input type="submit" class="btn btn-primary btn-block" value="Login">
-        </div>
-
-    </div>
-    </form>
-    <div class="logobox">
-        @if(isset($error))
-        <div class="alert alert-danger alert-dismissable" style="padding: 5px">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            <strong>{{ $error }}!</strong>
-        </div>
-        @endif
     </div>
 </div>
 
+</div>
 <!--Basic Scripts-->
 <script src="{{ asset('assets/js/jquery-2.0.3.min.js') }}"></script>
 <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>

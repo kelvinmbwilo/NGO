@@ -8,7 +8,7 @@
 ?>
 
 <div>
-<h3>NGO Name: {{ NGOs::find($report->NGOs->id)->name }}</h3><a class="print pull-right" href="{{ url('printngoreports') }}/{{ $report->id }}" target="_blank"><i class="fa fa-print fa-2x"></i> </a>
+<h3>NGO Name: {{ NGOs::find($report->NGOs->id)->name }}</h3><a class="print pull-right" href="{{ url('printngoreports') }}/{{ $report->id }}" target="_blank"><i class="fa fa-download fa-2x"></i> </a>
 <div role="tabpanel">
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">

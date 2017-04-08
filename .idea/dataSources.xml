@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3502064432">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
     <data-source source="LOCAL" name="MySQL - @localhost" uuid="60da7a7d-9b14-41d8-8a78-c7910e2d7de3">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
@@ -10,8 +10,6 @@
         <property name="zeroDateTimeBehavior" value="convertToNull" />
         <property name="tinyInt1isBit" value="false" />
       </driver-properties>
-      <libraries />
     </data-source>
   </component>
 </project>
-

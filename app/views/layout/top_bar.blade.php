@@ -2,7 +2,7 @@
 <div class="navbar-container">
 <!-- Navbar Barnd -->
 <div class="navbar-header pull-left">
-    <a href="index.html#" class="navbar-brand">
+    <a href="#" class="navbar-brand">
         <small>
             <img src="{{ asset('assets/img/logo.jpg') }} " alt="" style="width: 50px"/>
             <h>Tanzania National NGO Management Information System <span style="color: #ac2925">(TNNMIS)</span></h>

@@ -144,9 +144,6 @@ Reports
         }
 
         //submiting the report form
-
-
-
     });
 </script>
 @stop

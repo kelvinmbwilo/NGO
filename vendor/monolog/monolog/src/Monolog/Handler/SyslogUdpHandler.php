@@ -21,11 +21,13 @@ use Monolog\Handler\SyslogUdp\UdpSocket;
  */
 class SyslogUdpHandler extends AbstractSyslogHandler
 {
+    protected $socket;
+
     /**
      * @param string  $host
      * @param int     $port
      * @param mixed   $facility
-     * @param integer $level    The minimum logging level at which this handler will be triggered
+     * @param int     $level    The minimum logging level at which this handler will be triggered
      * @param Boolean $bubble   Whether the messages that are handled can bubble up the stack or not
      */
     public function __construct($host, $port = 514, $facility = LOG_USER, $level = Logger::DEBUG, $bubble = true)
@@ -57,17 +59,17 @@ class SyslogUdpHandler extends AbstractSyslogHandler
             $message = implode("\n", $message);
         }
 
-        return preg_split('/$\R?^/m', $message);
+        return preg_split('/$\R?^/m', $message, -1, PREG_SPLIT_NO_EMPTY);
     }
 
     /**
      * Make common syslog header (see rfc5424)
      */
-    private function makeCommonSyslogHeader($severity)
+    protected function makeCommonSyslogHeader($severity)
     {
         $priority = $severity + $this->facility;
 
-        return "<$priority>: ";
+        return "<$priority>1 ";
     }
 
     /**
