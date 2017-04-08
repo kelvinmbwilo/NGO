@@ -194,7 +194,7 @@ $(document).ready(function(){
                             $("body").append(modal);
                             $("#myModal").modal("show");
                             $(".modal-body").html("<h3><i class='fa fa-spin fa-spinner '></i><span>loading...</span><h3>");
-                            $(".modal-body").load("<?php echo url("ngo/add") ?>/");
+                            $(".modal-body").load("<?php echo url("NGO/public/ngo/add") ?>/");
                             $("#myModal").on('hidden.bs.modal',function(){
                                 $("#myModal").remove();
                             })
@@ -367,31 +367,6 @@ $(document).ready(function(){
                                     $("#myModal").remove();
                                 })
                             })
-
-                            //adding a NGO
-                            $(".add").click(function(){
-                                var id1 = $(this).parent().attr('id');
-                                var modal = '<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">';
-                                modal+= '<div class="modal-dialog">';
-                                modal+= '<div class="modal-content">';
-                                modal+= '<div class="modal-header">';
-                                modal+= '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
-                                modal+= '<h2 class="modal-title" id="myModalLabel">Update NGO  Information</h2>';
-                                modal+= '</div>';
-                                modal+= '<div class="modal-body">';
-                                modal+= ' </div>';
-                                modal+= '</div>';
-                                modal+= '</div>';
-
-                                $("body").append(modal);
-                                $("#myModal").modal("show");
-                                $(".modal-body").html("<h3><i class='fa fa-spin fa-spinner '></i><span>loading...</span><h3>");
-                                $(".modal-body").load("<?php echo url("ngo/add") ?>/");
-                                $("#myModal").on('hidden.bs.modal',function(){
-                                    $("#myModal").remove();
-                                })
-                            })
-
 
                             //display user log
                             $(".userlog").click(function(){
