@@ -89,13 +89,13 @@
     </table>
     <script>
         $(document).ready(function () {
+            var income = 0, expenditure = 0, less = 0, liab = 0, asset = 0, net = 0;
             $('#exampleall').dataTable(
                 {
                     "drawCallback": function (settings) {
                         var api = this.api();
-                        var rows = api.rows({ page: 'current' }).nodes();
+                        var rows = api.rows({page: 'current'}).nodes();
                         var last = null;
-
 
 
                         rows.each(function (group, i) {
@@ -110,59 +110,64 @@
                         });
                     },
                     "footerCallback": function (row, data, start, end, display) {
-//                        console.log(data);
-                        var api = this.api( {"filter": "applied"}),
-                            intVal = function (i) {
-                            console.log(i)
-                                return typeof i === 'string' ?
-                                    i.replace(/[, Rs]|(\.\d{2})/g, "") * 1 :
-                                    typeof i === 'number' ?
-                                        i : 0;
-                            },
-                            income = api
-                                .column(3)
-                                .data()
-                                .reduce(function (a, b) {
-                                    console.log(a, b)
-                                    return intVal(a) + intVal(b);
-                                }, 0),
+                        display.sort();
+                        var intVal = function (i) {
+                            return typeof i === 'string' ?
+                                i.replace(/[, Rs]|(\.\d{2})/g, "") * 1 :
+                                typeof i === 'number' ?
+                                    i : 0;
+                        }
+                        var newData = [];
 
-                            expenditure = api
-                                .column(4)
-                                .data()
-                                .reduce(function (a, b) {
-                                    return intVal(a) + intVal(b);
-                                }, 0),
-                            less = api
-                                .column(5)
-                                .data()
-                                .reduce(function (a, b) {
-                                    return intVal(a) + intVal(b);
-                                }, 0),
-                            liab = api
-                                .column(6)
-                                .data()
-                                .reduce(function (a, b) {
-                                    return intVal(a) + intVal(b);
-                                }, 0)
-                            asset = api
-                                .column(7)
-                                .data()
-                                .reduce(function (a, b) {
-                                    return intVal(a) + intVal(b);
-                                }, 0),
-                            net = api
-                                .column(8)
-                                .data()
-                                .reduce(function (a, b) {
-                                    return intVal(a) + intVal(b);
-                                }, 0)
-                            ;
+                        $.each(display, function (rowIndex, rowValue) {
+                            newData.push(data[rowValue]);
+                        })
+
+                        if (newData.length > 0) {
+                            income = 0, expenditure = 0, less = 0, liab = 0, asset = 0, net = 0;
+                            newData.reduce(function (accumulator,
+                                                     currentValue,
+                                                     currentIndex,
+                                                     array) {
+                                if (accumulator) {
+                                    income += intVal(accumulator[3]);
+                                    expenditure += intVal(accumulator[4]);
+                                    less += intVal(accumulator[5]);
+                                    liab += intVal(accumulator[6]);
+                                    asset += intVal(accumulator[7]);
+                                    net += intVal(accumulator[8]);
+                                }
+
+                                if (currentValue) {
+                                    income += intVal(currentValue[3]);
+                                    expenditure += intVal(currentValue[4]);
+                                    less += intVal(currentValue[5]);
+                                    liab += intVal(currentValue[6]);
+                                    asset += intVal(currentValue[7]);
+                                    net += intVal(currentValue[8]);
+                                }
+
+                            })
+
+
+                        }
+                        if (newData.length == 1) {
+
+                            income += intVal(newData[0][3]);
+                            expenditure += intVal(newData[0][4]);
+                            less += intVal(newData[0][5]);
+                            liab += intVal(newData[0][6]);
+                            asset += intVal(newData[0][7]);
+                            net += intVal(newData[0][8]);
+
+                        }
 
                         $("th#income").text(income);
                         $("th#expenditure").text(expenditure);
                         $("th#less").text(less);
                         $("th#liab").text(liab);
+                        $("th#asset").text(asset);
+                        $("th#net").text(net);
 
                     }
                 }
